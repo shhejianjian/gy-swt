@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="114" id="KGk-i7-Jjw" customClass="GYHomeCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="113"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="d8l-wr-Ixm">
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="d8l-wr-Ixm" secondAttribute="height" multiplier="4:3" id="AQ6-mn-eYx"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="庆祝建党95周年暨“七一”表彰大会大会大会" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHc-1V-UM1">
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-11-01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM8-GY-zxC">
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="d8l-wr-Ixm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7Eb-As-mtJ"/>
+                    <constraint firstItem="dM8-GY-zxC" firstAttribute="leading" secondItem="d8l-wr-Ixm" secondAttribute="trailing" constant="8" id="FM4-fy-NQK"/>
+                    <constraint firstAttribute="trailing" secondItem="dM8-GY-zxC" secondAttribute="trailing" constant="8" id="FWO-3a-ARu"/>
+                    <constraint firstItem="d8l-wr-Ixm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="N1g-4r-xds"/>
+                    <constraint firstItem="hHc-1V-UM1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="R1u-mQ-nfb"/>
+                    <constraint firstItem="d8l-wr-Ixm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Wu1-L7-d8w"/>
+                    <constraint firstAttribute="bottom" secondItem="dM8-GY-zxC" secondAttribute="bottom" constant="8" id="ee0-QP-4E2"/>
+                    <constraint firstAttribute="trailing" secondItem="hHc-1V-UM1" secondAttribute="trailing" constant="8" id="iI6-7q-etm"/>
+                    <constraint firstItem="hHc-1V-UM1" firstAttribute="leading" secondItem="d8l-wr-Ixm" secondAttribute="trailing" constant="8" id="vgk-wc-ADP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="66" y="24"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="1" width="1920" height="1080"/>
+    </resources>
+</document>
