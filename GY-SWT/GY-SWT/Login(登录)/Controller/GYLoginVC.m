@@ -9,6 +9,8 @@
 #import "GYLoginVC.h"
 #import "MXConstant.h"
 #import "GYRegistVC.h"
+#import "GYNetRegistVC.h"
+
 @interface GYLoginVC ()
 @property (strong, nonatomic) IBOutlet UIButton *loginBtn;
 @property (strong, nonatomic) IBOutlet UIButton *regiestBtn;
@@ -30,6 +32,10 @@
     [self.navigationController pushViewController:registVC animated:YES];
 }
 
+- (IBAction)loginBtnClick:(id)sender {
+    GYNetRegistVC *nrHomeVC = [[GYNetRegistVC alloc]init];
+    [self.navigationController pushViewController:nrHomeVC animated:YES];
+}
 
 
 @end

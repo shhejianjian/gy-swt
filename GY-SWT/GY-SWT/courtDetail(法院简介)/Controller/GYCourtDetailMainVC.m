@@ -169,7 +169,6 @@ static NSString *ID5=@"GYCDFIfthCell";
     } else if (tableView == self.fifthTableView) {
         return 85;
     }
-    
     return 0;
     
 }
@@ -189,18 +188,6 @@ static NSString *ID5=@"GYCDFIfthCell";
     self.secondDetailView.hidden = YES;
     self.secondTableView.hidden = NO;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 - (IBAction)firstBtnClick:(UIButton *)sender {
