@@ -19,10 +19,11 @@ static NSString *ID=@"GYNoticePucCell";
 #define SCREENWIDTH  ([UIScreen mainScreen].bounds.size.width)
 #define SCREENHEIGHT ([UIScreen mainScreen].bounds.size.height)
 
-@interface GYNoticePublicVC ()<XFSegmentViewDelegate>{
-    UIImageView *imgView;
-    NSArray *names;
-}
+@interface GYNoticePublicVC ()<XFSegmentViewDelegate>
+//{
+//    UIImageView *imgView;
+//    NSArray *names;
+//}
 @property (strong, nonatomic) IBOutlet UIView *detailView;
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) IBOutlet UIView *cellDetailView;
@@ -40,8 +41,8 @@ static NSString *ID=@"GYNoticePucCell";
     self.myTableView.layer.cornerRadius = 5;
     self.backToTableBtn.layer.cornerRadius = 15;
     
-    names = @[@"1",@"2",@"3"];
-    self.view.backgroundColor=ContentBackGroundColor;
+//    names = @[@"1",@"2",@"3"];
+//    self.view.backgroundColor=ContentBackGroundColor;
     
     XFSegmentView *segView=[[XFSegmentView alloc]initWithFrame:Frame(0, 64, SCREEN_WIDTH, WH(40))];
     [self.view addSubview:segView];

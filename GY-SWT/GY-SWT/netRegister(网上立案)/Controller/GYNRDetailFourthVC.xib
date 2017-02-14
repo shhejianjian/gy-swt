@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYNRDetailFourthVC">
             <connections>
+                <outlet property="detailView" destination="e2e-pS-z1h" id="Ges-YS-0mr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,9 +23,17 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="OEv-xk-Nc4">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2e-pS-z1h">
+                    <rect key="frame" x="10" y="114" width="355" height="483"/>
+                    <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="e2e-pS-z1h" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="114" id="4sg-fe-AmF"/>
+                <constraint firstAttribute="bottom" secondItem="e2e-pS-z1h" secondAttribute="bottom" constant="70" id="Aws-ok-bdI"/>
+                <constraint firstAttribute="trailing" secondItem="e2e-pS-z1h" secondAttribute="trailing" constant="10" id="Iwj-aH-feo"/>
+                <constraint firstItem="e2e-pS-z1h" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="J9P-wK-eLC"/>
                 <constraint firstAttribute="trailing" secondItem="OEv-xk-Nc4" secondAttribute="trailing" id="acQ-md-olh"/>
                 <constraint firstItem="OEv-xk-Nc4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="h2I-Ln-j6B"/>
                 <constraint firstItem="OEv-xk-Nc4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ol3-5k-Xmr"/>

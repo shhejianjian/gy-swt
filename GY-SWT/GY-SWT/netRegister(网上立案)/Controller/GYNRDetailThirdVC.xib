@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYNRDetailThirdVC">
             <connections>
+                <outlet property="detailView" destination="L9u-0j-wpe" id="Mtt-54-o3F"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,11 +23,19 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="l2M-YY-Vtx">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9u-0j-wpe">
+                    <rect key="frame" x="10" y="74" width="355" height="523"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="L9u-0j-wpe" secondAttribute="bottom" constant="70" id="17h-bm-jpu"/>
+                <constraint firstItem="L9u-0j-wpe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="80c-sR-0xb"/>
                 <constraint firstItem="l2M-YY-Vtx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Y6r-bx-t5g"/>
+                <constraint firstAttribute="trailing" secondItem="L9u-0j-wpe" secondAttribute="trailing" constant="10" id="Zzb-yg-KQP"/>
                 <constraint firstAttribute="bottom" secondItem="l2M-YY-Vtx" secondAttribute="bottom" id="cFe-lu-wJf"/>
+                <constraint firstItem="L9u-0j-wpe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="d2b-gf-edb"/>
                 <constraint firstAttribute="trailing" secondItem="l2M-YY-Vtx" secondAttribute="trailing" id="j7A-cn-TcV"/>
                 <constraint firstItem="l2M-YY-Vtx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lGw-Mg-SZc"/>
             </constraints>

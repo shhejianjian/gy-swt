@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYNRDetailFirstVC">
             <connections>
+                <outlet property="detailView" destination="piY-RV-Fre" id="JSt-HN-Jdc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,13 +23,21 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="0qw-Hl-hU4">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="piY-RV-Fre">
+                    <rect key="frame" x="10" y="74" width="355" height="523"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="piY-RV-Fre" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="64W-p8-vEd"/>
                 <constraint firstAttribute="bottom" secondItem="0qw-Hl-hU4" secondAttribute="bottom" id="7hm-il-xLh"/>
                 <constraint firstItem="0qw-Hl-hU4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Koj-Hj-BpY"/>
+                <constraint firstAttribute="trailing" secondItem="piY-RV-Fre" secondAttribute="trailing" constant="10" id="NEv-Om-WTG"/>
                 <constraint firstAttribute="trailing" secondItem="0qw-Hl-hU4" secondAttribute="trailing" id="RVO-Rh-MHi"/>
                 <constraint firstItem="0qw-Hl-hU4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hsC-TA-Cd5"/>
+                <constraint firstAttribute="bottom" secondItem="piY-RV-Fre" secondAttribute="bottom" constant="70" id="jWH-yv-KKF"/>
+                <constraint firstItem="piY-RV-Fre" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="vO1-T0-pcK"/>
             </constraints>
         </view>
     </objects>

@@ -8,6 +8,7 @@
 
 #import "GYNRDetailThirdVC.h"
 @interface GYNRDetailThirdVC ()
+@property (strong, nonatomic) IBOutlet UIView *detailView;
 
 @end
 
@@ -15,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.detailView.layer.cornerRadius = 5;
     // Do any additional setup after loading the view from its nib.
 }
 

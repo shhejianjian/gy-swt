@@ -8,4 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-NSString *const BaseUrl = @"http://192.16.137.1:8080/swt";
+NSString *const BaseUrl = @"http://202.101.70.125:8080";

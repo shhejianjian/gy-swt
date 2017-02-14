@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYNRDetailSecondVC">
             <connections>
+                <outlet property="detailView" destination="kG8-q5-LYb" id="JRy-gk-1La"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,14 +23,23 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="BXE-Wu-VIi">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kG8-q5-LYb">
+                    <rect key="frame" x="10" y="114" width="355" height="483"/>
+                    <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="BXE-Wu-VIi" secondAttribute="trailing" id="8yq-cL-rQG"/>
                 <constraint firstItem="BXE-Wu-VIi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="B9Q-u4-wjS"/>
                 <constraint firstAttribute="bottom" secondItem="BXE-Wu-VIi" secondAttribute="bottom" id="U2w-20-tbe"/>
+                <constraint firstItem="kG8-q5-LYb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Xw3-AV-tBv"/>
+                <constraint firstItem="kG8-q5-LYb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="114" id="oUs-On-xZQ"/>
+                <constraint firstAttribute="trailing" secondItem="kG8-q5-LYb" secondAttribute="trailing" constant="10" id="pcI-ec-g9B"/>
                 <constraint firstItem="BXE-Wu-VIi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sB6-jB-sDI"/>
+                <constraint firstAttribute="bottom" secondItem="kG8-q5-LYb" secondAttribute="bottom" constant="70" id="sLE-ih-EHf"/>
             </constraints>
+            <point key="canvasLocation" x="-90" y="34"/>
         </view>
     </objects>
     <resources>

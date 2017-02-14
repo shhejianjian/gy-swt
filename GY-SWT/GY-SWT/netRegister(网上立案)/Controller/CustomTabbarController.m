@@ -8,7 +8,7 @@
 
 #import "CustomTabbarController.h"
 #define EACH_W(A) ([UIScreen mainScreen].bounds.size.width/A)
-#define EACH_H (self.tabBar.bounds.size.height)
+#define EACH_H 60
 #define BTNTAG 10000
 #import "GYNRDetailFirstVC.h"
 #import "GYNRDetailSecondVC.h"
@@ -38,7 +38,7 @@
     [self initControllers];
 }
 - (void)viewWillAppear:(BOOL)animated {
-    self.mxNavigationItem.title = @"网上立案-基本信息";
+    self.mxNavigationItem.title = @"网上立案";
 }
 
 #pragma mark - 如果想添加控制器到tabbar里面在这里面实例化就行
@@ -76,7 +76,7 @@
     NSArray * normImage = @[@"first",@"second",@"third",@"fourth"];
     //  只需修改选中图片的名字
     NSArray * selectImage = @[@"first-selected",@"second-selected",@"third-selected",@"fourth-selected"];
-    UIImageView *tabbar = [[UIImageView alloc]initWithFrame:self.tabBar.frame];
+    UIImageView *tabbar = [[UIImageView alloc]initWithFrame:CGRectMake(0, kScreen_Height-EACH_H, kScreen_Width, EACH_H)];
     tabbar.backgroundColor =  [UIColor whiteColor];
     tabbar.userInteractionEnabled = YES;
     for(int i = 0;i<self.viewControllers.count;i++)
@@ -103,16 +103,16 @@
     NSLog(@"被点了-%ld",(long)sender.tag);
     switch (sender.tag) {
         case 10000:
-            self.mxNavigationItem.title = @"网上立案-基本信息";
+
             break;
         case 10001:
-            self.mxNavigationItem.title = @"网上立案-当事人信息";
+
             break;
         case 10002:
-            self.mxNavigationItem.title = @"网上立案-代理人信息";
+
             break;
         case 10003:
-            self.mxNavigationItem.title = @"网上立案-上传资料";
+
             break;
         default:
             break;
