@@ -7,6 +7,7 @@
 //
 
 #import "GYPeopleContactVC.h"
+#import "MXConstant.h"
 
 @interface GYPeopleContactVC ()
 @property (strong, nonatomic) IBOutlet UIView *detailView;
@@ -19,6 +20,7 @@
     [super viewDidLoad];
     self.detailView.layer.cornerRadius = 5;
     self.detailView.layer.masksToBounds = YES;
+    self.mxNavigationItem.title = @"便民联络";
     // Do any additional setup after loading the view from its nib.
 }
 

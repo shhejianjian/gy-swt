@@ -54,6 +54,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="detailView" destination="pnh-tD-joR" id="ncS-MJ-JnO"/>
+                <outlet property="nameLabel" destination="7Cc-8X-T9u" id="lZP-ty-3SO"/>
             </connections>
             <point key="canvasLocation" x="-174" y="32"/>
         </tableViewCell>

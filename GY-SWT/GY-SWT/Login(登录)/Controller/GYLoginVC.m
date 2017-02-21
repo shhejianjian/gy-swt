@@ -10,10 +10,16 @@
 #import "MXConstant.h"
 #import "GYRegistVC.h"
 #import "GYNetRegistVC.h"
+#import "GYLoginModel.h"
+
 
 @interface GYLoginVC ()
 @property (strong, nonatomic) IBOutlet UIButton *loginBtn;
 @property (strong, nonatomic) IBOutlet UIButton *regiestBtn;
+
+@property (strong, nonatomic) IBOutlet UITextField *userNameTextFiled;
+@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
+
 
 @end
 
@@ -33,9 +39,28 @@
 }
 
 - (IBAction)loginBtnClick:(id)sender {
-    GYNetRegistVC *nrHomeVC = [[GYNetRegistVC alloc]init];
-    [self.navigationController pushViewController:nrHomeVC animated:YES];
+    [MBProgressHUD showMessage:@"正在登录" toView:self.view];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"loginUserType"] = @"1";
+    params[@"appLoginName"] = self.userNameTextFiled.text;
+    params[@"appPassword"] = self.passwordTextField.text;
+    [GYHttpTool post:wsla_loginUrl ticket:@"" params:params success:^(id json) {
+        
+        NSLog(@"%@---%@",json,params);
+        GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
+        if ([loginModel.success isEqualToString:@"true"]) {
+            NSLog(@"ticket:%@",loginModel.ticket);
+            [MBProgressHUD showSuccess:loginModel.msg];
+            GYNetRegistVC *nrHomeVC = [[GYNetRegistVC alloc]init];
+            nrHomeVC.loginTicket = loginModel.ticket;
+            [self.navigationController pushViewController:nrHomeVC animated:YES];
+        } else {
+            [MBProgressHUD showError:loginModel.msg];
+        }
+        [MBProgressHUD hideHUDForView:self.view];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
 }
-
 
 @end

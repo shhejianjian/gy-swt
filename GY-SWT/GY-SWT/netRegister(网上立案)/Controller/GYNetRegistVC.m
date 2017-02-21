@@ -19,6 +19,13 @@ static NSString *ID=@"GYNRHomeCell";
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) IBOutlet UIView *detailView;
 
+@property (nonatomic, strong) NSMutableArray *wslaListArr;
+/** 记录当前页码 */
+@property (nonatomic, assign) int currentPage;
+/** 总数 */
+@property (nonatomic, assign) NSInteger  totalCount;
+
+
 @end
 
 @implementation GYNetRegistVC
@@ -31,7 +38,22 @@ static NSString *ID=@"GYNRHomeCell";
     self.detailView.layer.cornerRadius = 5;
     self.detailView.layer.masksToBounds = YES;
     self.addNewRegistBtn.layer.cornerRadius = 15;
+    
+    [self loadWslaAjxxListInfo];
     // Do any additional setup after loading the view from its nib.
+}
+
+
+- (void)loadWslaAjxxListInfo{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"pageSize"] = @"8";
+    params[@"page"] = @"1";
+    [GYHttpTool post:wsla_ajxx_listInfoUrl ticket:self.loginTicket params:params success:^(id json) {
+        NSLog(@"%@",json);
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
 }
 
 #pragma mark - tableViewDelegate

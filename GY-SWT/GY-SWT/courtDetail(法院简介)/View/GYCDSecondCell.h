@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GYBmznModel.h"
 
 @interface GYCDSecondCell : UITableViewCell
+@property (nonatomic, strong) GYBmznModel *secondSwhModel;
 
 @end

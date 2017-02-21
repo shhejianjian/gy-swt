@@ -16,5 +16,19 @@
 
 
 
+
 //根目录地址
 extern NSString *const BaseUrl;
+extern NSString *const courtUrl;
+extern NSString *const noticePublic;
+extern NSString *const npDetailUrl;
+extern NSString *const news_list_infoUrl;
+extern NSString *const xgmc_listInfoUrl;
+extern NSString *const bmzn_listInfoUrl;
+extern NSString *const bmzn_detailInfoUrl;
+extern NSString *const wsla_loginUrl;
+extern NSString *const wsla_ajxx_listInfoUrl;
+
+
+
+

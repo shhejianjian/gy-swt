@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface GYNetRegistVC : UIViewController
-
+@property (nonatomic ,copy) NSString *loginTicket;
 @end

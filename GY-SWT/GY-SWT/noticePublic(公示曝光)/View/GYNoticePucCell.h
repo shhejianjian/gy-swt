@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "GYNPModel.h"
+
 @interface GYNoticePucCell : UITableViewCell
+@property (nonatomic, strong) GYNPModel *losePeopleModel;
 
 @end

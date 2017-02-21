@@ -12,7 +12,8 @@
 #import "GYCDFIfthCell.h"
 #import "GYCDThirdCell.h"
 #import "GYCDFourthCell.h"
-
+#import "GYSWHModel.h"
+#import "GYBmznModel.h"
 
 #define bottomColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:0.9]
 #define bottomBtnColor bottomColor(12,59,79)
@@ -23,7 +24,7 @@ static NSString *ID4=@"GYCDFourthCell";
 static NSString *ID5=@"GYCDFIfthCell";
 
 
-@interface GYCourtDetailMainVC ()
+@interface GYCourtDetailMainVC ()<UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UIButton *firstBtn;
 @property (strong, nonatomic) IBOutlet UIButton *secondBtn;
 @property (strong, nonatomic) IBOutlet UIButton *thirdBtn;
@@ -41,6 +42,16 @@ static NSString *ID5=@"GYCDFIfthCell";
 @property (strong, nonatomic) IBOutlet UITableView *fourthTableView;
 @property (strong, nonatomic) IBOutlet UITableView *fifthTableView;
 
+@property (strong, nonatomic) IBOutlet UILabel *detailViewNameLabel;
+@property (strong, nonatomic) IBOutlet UIButton *detailViewBackBtn;
+@property (strong, nonatomic) IBOutlet UITextView *detailViewNoteLabel;
+
+@property (nonatomic, strong) NSMutableArray *xgmcListArr;
+/** 记录当前页码 */
+@property (nonatomic, assign) int currentPage;
+/** 总数 */
+@property (nonatomic, assign) NSInteger  totalCount;
+
 @end
 
 @implementation GYCourtDetailMainVC
@@ -50,8 +61,7 @@ static NSString *ID5=@"GYCDFIfthCell";
     
     self.mxNavigationItem.title = @"法院简介";
     
-    NSLog(@"%d",kScreenIphone5);
-    
+    self.detailViewBackBtn.layer.cornerRadius = 15;
     self.firstView.layer.cornerRadius = 5;
     self.secondView.layer.cornerRadius = 5;
     self.secondTableView.layer.cornerRadius = 5;
@@ -78,6 +88,75 @@ static NSString *ID5=@"GYCDFIfthCell";
     
     [self.fifthTableView registerNib:[UINib nibWithNibName:@"GYCDFIfthCell" bundle:nil] forCellReuseIdentifier:ID5];
     
+    [self loadCourtDetail];
+}
+
+
+- (void)loadXgmcListInfoWithType:(NSString *)type {
+    [self.xgmcListArr removeAllObjects];
+    [MBProgressHUD showMessage:@"正在加载" toView:self.view];
+//    [SVProgressHUD showWithStatus:@"正在加载"];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"fydm"] = @"O10";
+    params[@"lx"] = type;
+    params[@"page"] = @"1";
+    params[@"pageSize"] = @"10";
+    [GYHttpTool post:xgmc_listInfoUrl ticket:@"" params:params success:^(id json) {
+        NSLog(@"%@",json);
+        NSArray *arr = [GYSWHModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
+        for (GYSWHModel *swhModel in arr) {
+            [self.xgmcListArr addObject:swhModel];
+        }
+        if ([type isEqualToString:@"5"]) {
+            [self.thirdTableView reloadData];
+
+        }
+        if ([type isEqualToString:@"6"]) {
+            [self.fourthTableView reloadData];
+
+        }
+        if ([type isEqualToString:@"1"]) {
+            [self.fifthTableView reloadData];
+
+        }
+        [MBProgressHUD hideHUDForView:self.view];
+//        [SVProgressHUD dismiss];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+- (void)loadBmznListInfo {
+    [self.xgmcListArr removeAllObjects];
+    [MBProgressHUD showMessage:@"正在加载" toView:self.view];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"fydm"] = @"O10";
+    params[@"page"] = @"1";
+    params[@"pageSize"] = @"10";
+    [GYHttpTool post:bmzn_listInfoUrl ticket:@"" params:params success:^(id json) {
+        NSLog(@"%@",json);
+        NSArray *arr = [GYBmznModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
+        for (GYBmznModel *swhModel in arr) {
+            [self.xgmcListArr addObject:swhModel];
+        }
+        [self.secondTableView reloadData];
+        [MBProgressHUD hideHUDForView:self.view];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+- (void) loadCourtDetail {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"fydm"] = @"O10";
+    params[@"typeId"] = @"18";
+    
+    [GYHttpTool post:news_list_infoUrl ticket:@"" params:params success:^(id json) {
+        NSLog(@"%@",json);
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
 }
 
 
@@ -87,9 +166,7 @@ static NSString *ID5=@"GYCDFIfthCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 
 {
-    
-    return 5;
-    
+    return self.xgmcListArr.count;
 }
 
 
@@ -106,6 +183,7 @@ static NSString *ID5=@"GYCDFIfthCell";
             secondcell=[[GYCDSecondCell alloc]init];
             
         }
+        secondcell.secondSwhModel = self.xgmcListArr[indexPath.row];
         secondcell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell = secondcell;
     } else if (tableView == self.thirdTableView){
@@ -116,6 +194,7 @@ static NSString *ID5=@"GYCDFIfthCell";
             thirdcell=[[GYCDThirdCell alloc]init];
             
         }
+        thirdcell.thirdSwhModel = self.xgmcListArr[indexPath.row];
         thirdcell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell = thirdcell;
         
@@ -127,6 +206,7 @@ static NSString *ID5=@"GYCDFIfthCell";
             fourthcell=[[GYCDFourthCell alloc]init];
             
         }
+        fourthcell.fourthSwhModel = self.xgmcListArr[indexPath.row];
         fourthcell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell = fourthcell;
         
@@ -138,6 +218,7 @@ static NSString *ID5=@"GYCDFIfthCell";
             fifthcell=[[GYCDFIfthCell alloc]init];
             
         }
+        fifthcell.fifthSwhModel = self.xgmcListArr[indexPath.row];
         fifthcell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell = fifthcell;
         
@@ -180,6 +261,18 @@ static NSString *ID5=@"GYCDFIfthCell";
     if (tableView == self.secondTableView) {
         self.secondDetailView.hidden = NO;
         self.secondTableView.hidden = YES;
+        
+        GYBmznModel *bmznModel = self.xgmcListArr[indexPath.row];
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        params[@"id"] = bmznModel.id;        
+        [GYHttpTool post:bmzn_detailInfoUrl ticket:@"" params:params success:^(id json) {
+            NSLog(@"%@",json);
+            GYBmznModel *bmznDetailModel = [GYBmznModel mj_objectWithKeyValues:json[@"parameters"][@"bmjzn"]];
+            self.detailViewNameLabel.text = bmznDetailModel.organizeName;
+            self.detailViewNoteLabel.text = bmznDetailModel.znms;
+        } failure:^(NSError *error) {
+            NSLog(@"%@",error);
+        }];
     }
     
 }
@@ -205,6 +298,11 @@ static NSString *ID5=@"GYCDFIfthCell";
     self.secondDetailView.hidden = YES;
 }
 - (IBAction)secondBtnClick:(UIButton *)sender {
+    
+    if (self.secondView.hidden == YES) {
+        [self loadBmznListInfo];
+    }
+    
     self.mxNavigationItem.title = @"部门职能";
     sender.backgroundColor = [UIColor blackColor];
     self.firstBtn.backgroundColor = bottomBtnColor;
@@ -220,6 +318,12 @@ static NSString *ID5=@"GYCDFIfthCell";
     self.secondTableView.hidden = NO;
 }
 - (IBAction)thirdBtnClick:(UIButton *)sender {
+    
+    if (self.thirdView.hidden == YES) {
+        [self loadXgmcListInfoWithType:@"5"];
+    }
+    
+    
     self.mxNavigationItem.title = @"审委会";
     sender.backgroundColor = [UIColor blackColor];
     self.firstBtn.backgroundColor = bottomBtnColor;
@@ -234,6 +338,11 @@ static NSString *ID5=@"GYCDFIfthCell";
     self.secondDetailView.hidden = YES;
 }
 - (IBAction)fourthBtnClick:(UIButton *)sender {
+    if (self.fourthView.hidden == YES) {
+        [self loadXgmcListInfoWithType:@"6"];
+    }
+    
+    
     self.mxNavigationItem.title = @"法官名册";
     sender.backgroundColor = [UIColor blackColor];
     self.firstBtn.backgroundColor = bottomBtnColor;
@@ -248,6 +357,11 @@ static NSString *ID5=@"GYCDFIfthCell";
     self.secondDetailView.hidden = YES;
 }
 - (IBAction)fifBtnClick:(UIButton *)sender {
+    
+    if (self.fifthView.hidden == YES) {
+        [self loadXgmcListInfoWithType:@"1"];
+    }
+    
     self.mxNavigationItem.title = @"陪审员";
     sender.backgroundColor = [UIColor blackColor];
     self.firstBtn.backgroundColor = bottomBtnColor;
@@ -261,21 +375,17 @@ static NSString *ID5=@"GYCDFIfthCell";
     self.fifthView.hidden = NO;
     self.secondDetailView.hidden = YES;
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UITextViewDelegate
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+    return NO;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSMutableArray *)xgmcListArr {
+    if(_xgmcListArr == nil) {
+        _xgmcListArr = [[NSMutableArray alloc] init];
+    }
+    return _xgmcListArr;
 }
-*/
 
 @end

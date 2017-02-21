@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GYSWHModel.h"
 
 @interface GYCDFourthCell : UITableViewCell
+@property (nonatomic, strong) GYSWHModel *fourthSwhModel;
 
 @end

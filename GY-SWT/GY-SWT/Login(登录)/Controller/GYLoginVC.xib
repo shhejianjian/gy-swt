@@ -12,7 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYLoginVC">
             <connections>
                 <outlet property="loginBtn" destination="ydX-Tv-Rsp" id="yPo-5O-8bn"/>
+                <outlet property="passwordTextField" destination="7rV-sa-0od" id="XMT-Ed-D0Y"/>
                 <outlet property="regiestBtn" destination="bh5-fe-uHT" id="FSF-vL-sWZ"/>
+                <outlet property="userNameTextFiled" destination="gth-Pb-Yc0" id="zr5-HF-EOG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

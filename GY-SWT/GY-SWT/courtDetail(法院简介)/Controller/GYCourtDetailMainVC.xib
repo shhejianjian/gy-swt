@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYCourtDetailMainVC">
             <connections>
+                <outlet property="detailViewBackBtn" destination="N5R-uq-WoY" id="QaS-Lj-jus"/>
+                <outlet property="detailViewNameLabel" destination="Emm-G0-hvP" id="xez-T1-G1E"/>
+                <outlet property="detailViewNoteLabel" destination="gBj-tP-fuk" id="Zvk-aL-78f"/>
                 <outlet property="fifthBtn" destination="ZfT-Xr-2rw" id="HNh-yY-VeG"/>
                 <outlet property="fifthTableView" destination="h7P-Io-HHN" id="y64-2h-Me6"/>
                 <outlet property="fifthView" destination="Tg6-Et-RCF" id="cFJ-AL-Wdr"/>
@@ -230,16 +233,48 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CT1-PI-K2R">
                     <rect key="frame" x="10" y="74" width="355" height="523"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5R-uq-WoY">
-                            <rect key="frame" x="154" y="432" width="46" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="诉讼服务中心" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emm-G0-hvP">
+                            <rect key="frame" x="10" y="10" width="335" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5R-uq-WoY">
+                            <rect key="frame" x="108" y="473" width="140" height="30"/>
+                            <color key="backgroundColor" red="0.81960784310000001" green="0.16862745100000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="2zd-SF-1tn"/>
+                                <constraint firstAttribute="width" constant="140" id="jK1-Li-UpY"/>
+                            </constraints>
+                            <state key="normal" title="返回列表">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
                             <connections>
                                 <action selector="backBtnClick:" destination="-1" eventType="touchUpInside" id="bG4-Di-aR3"/>
                             </connections>
                         </button>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gBj-tP-fuk">
+                            <rect key="frame" x="10" y="44" width="335" height="419"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="wIA-bm-L1I"/>
+                            </connections>
+                        </textView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="N5R-uq-WoY" secondAttribute="bottom" constant="20" id="3Kz-3U-CHy"/>
+                        <constraint firstAttribute="trailing" secondItem="Emm-G0-hvP" secondAttribute="trailing" constant="10" id="Cck-mZ-ikl"/>
+                        <constraint firstAttribute="trailing" secondItem="gBj-tP-fuk" secondAttribute="trailing" constant="10" id="GG7-AB-6aG"/>
+                        <constraint firstItem="N5R-uq-WoY" firstAttribute="top" secondItem="gBj-tP-fuk" secondAttribute="bottom" constant="10" id="GuL-yy-dS4"/>
+                        <constraint firstItem="Emm-G0-hvP" firstAttribute="leading" secondItem="CT1-PI-K2R" secondAttribute="leading" constant="10" id="UwB-U5-nAM"/>
+                        <constraint firstItem="gBj-tP-fuk" firstAttribute="leading" secondItem="CT1-PI-K2R" secondAttribute="leading" constant="10" id="cJO-BV-1dM"/>
+                        <constraint firstItem="gBj-tP-fuk" firstAttribute="top" secondItem="Emm-G0-hvP" secondAttribute="bottom" constant="10" id="g0f-9I-zD8"/>
+                        <constraint firstItem="N5R-uq-WoY" firstAttribute="centerX" secondItem="CT1-PI-K2R" secondAttribute="centerX" id="hLK-7l-aZf"/>
+                        <constraint firstItem="Emm-G0-hvP" firstAttribute="top" secondItem="CT1-PI-K2R" secondAttribute="top" constant="10" id="ksi-PI-ZXM"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -299,7 +334,7 @@
                 <constraint firstItem="fKd-Ns-DgL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zFk-1y-xM6"/>
                 <constraint firstItem="LCG-10-KEG" firstAttribute="width" secondItem="J1p-VF-l25" secondAttribute="width" multiplier="1:5" id="zzL-nO-nk0"/>
             </constraints>
-            <point key="canvasLocation" x="-130" y="-76"/>
+            <point key="canvasLocation" x="-130.5" y="-76.5"/>
         </view>
     </objects>
     <resources>

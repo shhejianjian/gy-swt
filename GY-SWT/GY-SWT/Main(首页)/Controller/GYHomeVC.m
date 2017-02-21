@@ -16,6 +16,11 @@
 #import "GYNoticePublicVC.h"
 #import "GYCourtDetailMainVC.h"
 #import "GYSearchCaseLoginVC.h"
+#import "GYPeopleContactVC.h"
+#import "GYPTMainVC.h"
+
+#import "GYHttpTool.h"
+
 
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
@@ -40,12 +45,33 @@ static NSString *ID=@"homeCell";
 - (void)viewWillAppear:(BOOL)animated{
     
     self.tabBarController.tabBar.hidden = YES;
+}
+
+- (void)loadData {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"pageSize"] = @"8";
+    params[@"page"] = @"1";
+    params[@"intypes"] = @"6";
+    [GYHttpTool post:courtUrl ticket:@"" params:params success:^(id json) {
+        NSLog(@"%@",json);
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
     
 }
+
+
+
+
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self loadData];
     
     NSLog(@"%f--%f",SCREEN_WIDTH,SCREEN_HEIGHT);
     
@@ -105,27 +131,87 @@ static NSString *ID=@"homeCell";
 #pragma mark - scrollViewButtonDelegate  方法
 - (void)btnClickWithBtnTag:(NSInteger)btnTag{
     
-    if (btnTag == 0) {
-//        FirstViewController *FirstVC = [[FirstViewController alloc]init];
-//        [self.navigationController pushViewController:FirstVC animated:YES];
+    
+    switch (btnTag) {
+        case 0:{
+            
+        }
+            break;
+        case 1:{
+            GYLoginVC *loginVC = [[GYLoginVC alloc]init];
+            [self.navigationController pushViewController:loginVC animated:YES];
+        }
+            
+            break;
+        case 2:{
+            GYSearchCaseLoginVC *searchLoginVC = [[GYSearchCaseLoginVC alloc]init];
+            [self.navigationController pushViewController:searchLoginVC animated:YES];
+        }
+            
+            break;
+        case 3:{
+            GYCourtDetailMainVC *CustomTabBar = [[GYCourtDetailMainVC alloc] init];
+            [self.navigationController pushViewController:CustomTabBar animated:YES];
+        }
+            
+            break;
+        case 4:{
+            GYPTMainVC *ptMainVC = [[GYPTMainVC alloc]init];
+            [self.navigationController pushViewController:ptMainVC animated:YES];
+        }
+            
+            break;
+        case 5:{
+            GYPeopleContactVC *peopleContactVC = [[GYPeopleContactVC alloc]init];
+            [self.navigationController pushViewController:peopleContactVC animated:YES];
+        }
+            
+            break;
+        case 6:{
+            GYNoticePublicVC *noticePVC = [[GYNoticePublicVC alloc]init];
+            [self.navigationController pushViewController:noticePVC animated:YES];
+        }
+            
+            break;
+        case 7:{
+            
+        }
+            
+            break;
+        case 8:{
+            
+        }
+            
+            break;
+        
+            
+        default:
+            break;
     }
-    if (btnTag == 1) {
-        GYLoginVC *loginVC = [[GYLoginVC alloc]init];
-        [self.navigationController pushViewController:loginVC animated:YES];
-    }
-    if (btnTag == 2) {
-        GYSearchCaseLoginVC *searchLoginVC = [[GYSearchCaseLoginVC alloc]init];
-        [self.navigationController pushViewController:searchLoginVC animated:YES];
-    }
-    if (btnTag == 3) {
-        NSLog(@"11");
-        GYCourtDetailMainVC *CustomTabBar = [[GYCourtDetailMainVC alloc] init];
-        [self.navigationController pushViewController:CustomTabBar animated:YES];
-    }
-    if (btnTag == 6) {
-        GYNoticePublicVC *noticePVC = [[GYNoticePublicVC alloc]init];
-        [self.navigationController pushViewController:noticePVC animated:YES];
-    }
+    
+    
+//    if (btnTag == 0) {
+////        FirstViewController *FirstVC = [[FirstViewController alloc]init];
+////        [self.navigationController pushViewController:FirstVC animated:YES];
+//    }
+//    if (btnTag == 1) {
+//        GYLoginVC *loginVC = [[GYLoginVC alloc]init];
+//        [self.navigationController pushViewController:loginVC animated:YES];
+//    }
+//    if (btnTag == 2) {
+//        GYSearchCaseLoginVC *searchLoginVC = [[GYSearchCaseLoginVC alloc]init];
+//        [self.navigationController pushViewController:searchLoginVC animated:YES];
+//    }
+//    if (btnTag == 3) {
+//        NSLog(@"11");
+//        GYCourtDetailMainVC *CustomTabBar = [[GYCourtDetailMainVC alloc] init];
+//        [self.navigationController pushViewController:CustomTabBar animated:YES];
+//    }
+//    
+//    if (btnTag == 6) {
+//        GYNoticePublicVC *noticePVC = [[GYNoticePublicVC alloc]init];
+//        [self.navigationController pushViewController:noticePVC animated:YES];
+//    }
 }
 
 -(NSArray *)dataArr{

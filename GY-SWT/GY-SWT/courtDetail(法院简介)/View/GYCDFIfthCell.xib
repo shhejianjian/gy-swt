@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdL-Co-i76">
@@ -57,8 +57,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHt-fK-Obf">
-                                <rect key="frame" x="69" y="59" width="25" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHt-fK-Obf">
+                                <rect key="frame" x="69" y="59" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -93,6 +93,10 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="detailView" destination="vdL-Co-i76" id="etn-fW-lRe"/>
+                <outlet property="dwzwLabel" destination="HHt-fK-Obf" id="lbH-G3-eE1"/>
+                <outlet property="jgLabel" destination="neK-mr-kpN" id="Oml-iX-tkr"/>
+                <outlet property="nameLabel" destination="FLS-ou-q4s" id="lMC-Tu-1v8"/>
+                <outlet property="zzmmLabel" destination="lJI-lh-zt9" id="LMc-Bt-IWz"/>
             </connections>
             <point key="canvasLocation" x="66" y="-29.5"/>
         </tableViewCell>

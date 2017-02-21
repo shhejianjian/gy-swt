@@ -101,6 +101,10 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="detailView" destination="9d2-7A-KdB" id="VmU-8A-g8E"/>
+                <outlet property="doorLabel" destination="JRd-w3-f2v" id="CRn-bI-MIF"/>
+                <outlet property="jobLabel" destination="Mew-Of-nDt" id="NKZ-KD-Ync"/>
+                <outlet property="levelLabel" destination="hIp-C9-81X" id="4gu-Vv-SPe"/>
+                <outlet property="nameLabel" destination="Pzu-zW-StH" id="SIi-4X-0sb"/>
             </connections>
             <point key="canvasLocation" x="66" y="-49"/>
         </tableViewCell>

@@ -11,6 +11,7 @@
 
 @interface GYCDSecondCell ()
 @property (strong, nonatomic) IBOutlet UIView *detailView;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end
 
@@ -20,6 +21,11 @@
     [super awakeFromNib];
     self.detailView.layer.cornerRadius = 5;
     // Initialization code
+}
+
+-(void)setSecondSwhModel:(GYBmznModel *)secondSwhModel {
+    _secondSwhModel = secondSwhModel;
+    self.nameLabel.text = secondSwhModel.organizeName;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

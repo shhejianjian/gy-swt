@@ -85,8 +85,11 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="detailView" destination="1yR-xC-fgC" id="2rf-Ca-ecf"/>
+                <outlet property="jobLabel" destination="gRz-tx-Hfa" id="olc-9T-1Y7"/>
+                <outlet property="levelLabel" destination="VqK-62-DbM" id="BTC-es-zBu"/>
+                <outlet property="nameLabel" destination="ZiA-Hk-lud" id="Rum-B8-NvD"/>
             </connections>
-            <point key="canvasLocation" x="-87" y="22"/>
+            <point key="canvasLocation" x="-275" y="22"/>
         </tableViewCell>
     </objects>
 </document>

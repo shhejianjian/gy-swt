@@ -10,6 +10,9 @@
 
 @interface GYCDThirdCell ()
 @property (strong, nonatomic) IBOutlet UIView *detailView;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *levelLabel;
+@property (strong, nonatomic) IBOutlet UILabel *jobLabel;
 
 @end
 
@@ -19,6 +22,13 @@
     [super awakeFromNib];
     self.detailView.layer.cornerRadius = 5;
     // Initialization code
+}
+
+-(void)setThirdSwhModel:(GYSWHModel *)thirdSwhModel {
+    _thirdSwhModel = thirdSwhModel;
+    self.nameLabel.text = thirdSwhModel.mcName;
+    self.levelLabel.text = thirdSwhModel.fgdjmc;
+    self.jobLabel.text = thirdSwhModel.zwmc;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

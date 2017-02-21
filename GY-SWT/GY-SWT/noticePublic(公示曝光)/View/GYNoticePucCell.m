@@ -10,6 +10,8 @@
 
 @interface GYNoticePucCell ()
 @property (strong, nonatomic) IBOutlet UIView *detailView;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *ajzhLabel;
 
 
 @end
@@ -21,6 +23,14 @@
     self.detailView.layer.cornerRadius = 5;
     // Initialization code
 }
+
+
+-(void)setLosePeopleModel:(GYNPModel *)losePeopleModel {
+    _losePeopleModel = losePeopleModel;
+    self.nameLabel.text = losePeopleModel.xm;
+    self.ajzhLabel.text = losePeopleModel.ahqc;
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
