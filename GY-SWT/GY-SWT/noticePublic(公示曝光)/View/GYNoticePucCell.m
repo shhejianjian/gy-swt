@@ -31,6 +31,11 @@
     self.ajzhLabel.text = losePeopleModel.ahqc;
 }
 
+- (void)setScListModel:(GYSCListModel *)scListModel {
+    _scListModel = scListModel;
+    self.nameLabel.text = scListModel.ahqc;
+    self.ajzhLabel.text = [NSString stringWithFormat:@"立案日期:%@",scListModel.larq];
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

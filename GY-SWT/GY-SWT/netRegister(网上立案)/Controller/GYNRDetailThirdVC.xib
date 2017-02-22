@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYNRDetailThirdVC">
             <connections>
                 <outlet property="detailView" destination="L9u-0j-wpe" id="Mtt-54-o3F"/>
+                <outlet property="myTableView" destination="XXL-LK-2WJ" id="8dq-Mf-sy8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,7 +26,23 @@
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9u-0j-wpe">
                     <rect key="frame" x="10" y="74" width="355" height="523"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XXL-LK-2WJ">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="523"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="XHs-VY-iXJ"/>
+                                <outlet property="delegate" destination="-1" id="PzC-AD-6ec"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="XXL-LK-2WJ" firstAttribute="leading" secondItem="L9u-0j-wpe" secondAttribute="leading" id="98S-FD-uYB"/>
+                        <constraint firstAttribute="trailing" secondItem="XXL-LK-2WJ" secondAttribute="trailing" id="SKW-us-rB7"/>
+                        <constraint firstAttribute="bottom" secondItem="XXL-LK-2WJ" secondAttribute="bottom" id="sKm-nK-xCu"/>
+                        <constraint firstItem="XXL-LK-2WJ" firstAttribute="top" secondItem="L9u-0j-wpe" secondAttribute="top" id="x2w-kv-MPE"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -39,6 +56,7 @@
                 <constraint firstAttribute="trailing" secondItem="l2M-YY-Vtx" secondAttribute="trailing" id="j7A-cn-TcV"/>
                 <constraint firstItem="l2M-YY-Vtx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lGw-Mg-SZc"/>
             </constraints>
+            <point key="canvasLocation" x="-102" y="42"/>
         </view>
     </objects>
     <resources>

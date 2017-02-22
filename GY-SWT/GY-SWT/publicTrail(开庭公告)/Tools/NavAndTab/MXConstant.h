@@ -32,6 +32,8 @@
 #import "UIView+Add.h"
 #import "NSString+Add.h"
 #import "MBProgressHUD+MJ.h"
+#import "AFNetworking.h"
+#import "GYLoginModel.h"
 
 #import "UIViewController+MXNavigation.h"
 #import "MXNavigationItem.h"

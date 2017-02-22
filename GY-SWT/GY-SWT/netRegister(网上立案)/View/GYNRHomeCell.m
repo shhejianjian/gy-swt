@@ -11,6 +11,8 @@
 @interface GYNRHomeCell ()
 
 @property (strong, nonatomic) IBOutlet UIView *detailView;
+@property (strong, nonatomic) IBOutlet UILabel *ahqcLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
 
@@ -21,6 +23,17 @@
     self.detailView.layer.cornerRadius = 5;
     self.detailView.layer.masksToBounds = YES;
     // Initialization code
+}
+
+- (void)setNrModel:(GYNetRegistModel *)nrModel {
+    _nrModel = nrModel;
+    self.typeLabel.text = nrModel.clztmc;
+    self.ahqcLabel.text = nrModel.ajbh;
+    if ([nrModel.tjrq isEqualToString:@""]) {
+        self.timeLabel.text = @"";
+    } else {
+        self.timeLabel.text = [NSString stringWithFormat:@"申请日期:%@",nrModel.tjrq];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

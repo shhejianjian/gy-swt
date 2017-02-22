@@ -65,6 +65,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="crL-w5-mhZ" secondAttribute="bottom" constant="5" id="BXX-kR-SCY"/>
                     <constraint firstItem="crL-w5-mhZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="LRH-Qk-swU"/>
@@ -73,7 +74,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="ahqcLabel" destination="yCl-Fd-C8j" id="7e9-9b-Srm"/>
                 <outlet property="detailView" destination="crL-w5-mhZ" id="KBE-dQ-u6R"/>
+                <outlet property="timeLabel" destination="COZ-V3-3JB" id="nhV-mT-uGo"/>
+                <outlet property="typeLabel" destination="izg-kS-BvP" id="rUY-Pf-4Bw"/>
             </connections>
             <point key="canvasLocation" x="-28" y="114"/>
         </tableViewCell>

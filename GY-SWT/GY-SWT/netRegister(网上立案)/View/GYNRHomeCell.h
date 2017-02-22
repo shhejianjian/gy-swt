@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GYNetRegistModel.h"
 @interface GYNRHomeCell : UITableViewCell
+@property (nonatomic, strong) GYNetRegistModel *nrModel;
+@property (strong, nonatomic) IBOutlet UILabel *typeLabel;
 
 @end

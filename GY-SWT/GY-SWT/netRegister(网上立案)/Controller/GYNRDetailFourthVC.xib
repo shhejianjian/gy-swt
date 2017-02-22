@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYNRDetailFourthVC">
             <connections>
                 <outlet property="detailView" destination="e2e-pS-z1h" id="Ges-YS-0mr"/>
+                <outlet property="myImageView" destination="xGs-ZS-Vn0" id="l2L-qP-t4d"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,6 +26,12 @@
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2e-pS-z1h">
                     <rect key="frame" x="10" y="114" width="355" height="483"/>
+                    <subviews>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xGs-ZS-Vn0">
+                            <rect key="frame" x="48" y="113" width="240" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>

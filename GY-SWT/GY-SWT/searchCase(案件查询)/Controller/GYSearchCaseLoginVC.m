@@ -8,10 +8,13 @@
 
 #import "GYSearchCaseLoginVC.h"
 #import "MXConstant.h"
+#import "GYSearchCaseListVC.h"
 
 @interface GYSearchCaseLoginVC ()
 @property (strong, nonatomic) IBOutlet UIButton *SPSearchBtn;
 @property (strong, nonatomic) IBOutlet UIButton *ZXSearchBtn;
+@property (strong, nonatomic) IBOutlet UITextField *userName;
+@property (strong, nonatomic) IBOutlet UITextField *password;
 
 @end
 
@@ -22,22 +25,44 @@
     self.mxNavigationItem.title = @"案件信息查询";
     self.SPSearchBtn.layer.cornerRadius = 5;
     self.ZXSearchBtn.layer.cornerRadius = 5;
+    
     // Do any additional setup after loading the view from its nib.
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)spSearchClick:(id)sender {
+    [self loginHttpWithAjType:@"2"];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)zxSearchClick:(id)sender {
+    [self loginHttpWithAjType:@"1"];
 }
-*/
+
+
+- (void)loginHttpWithAjType:(NSString *)ajType {
+    [MBProgressHUD showMessage:@"正在登录" toView:self.view];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"userid"] = self.userName.text;
+    params[@"password"] = self.password.text;
+    params[@"type"] = @"1";
+    params[@"ajType"] = ajType;
+    [GYHttpTool post:ajxcLoginUrl ticket:@"" params:params success:^(id json) {
+        NSLog(@"%@",json);
+        [MBProgressHUD hideHUDForView:self.view];
+        GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
+        
+        if ([loginModel.success isEqualToString:@"true"]) {
+            [MBProgressHUD showSuccess:loginModel.msg];
+            [[NSUserDefaults standardUserDefaults] setObject:loginModel.ticket forKey:@"ajcx_loginTicket"];
+            GYSearchCaseListVC *scLiftVC = [[GYSearchCaseListVC alloc]init];
+            [self.navigationController pushViewController:scLiftVC animated:YES];
+        } else {
+            [MBProgressHUD showError:loginModel.msg];
+        }
+        
+    } failure:^(NSError *error) {
+        
+    }];
+
+}
 
 @end

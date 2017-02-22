@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 #import "GYNPModel.h"
-
+#import "GYSCListModel.h"
 @interface GYNoticePucCell : UITableViewCell
 @property (nonatomic, strong) GYNPModel *losePeopleModel;
+@property (nonatomic, strong) GYSCListModel *scListModel;
 
 @end

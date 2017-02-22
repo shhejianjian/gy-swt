@@ -52,7 +52,7 @@
             NSLog(@"ticket:%@",loginModel.ticket);
             [MBProgressHUD showSuccess:loginModel.msg];
             GYNetRegistVC *nrHomeVC = [[GYNetRegistVC alloc]init];
-            nrHomeVC.loginTicket = loginModel.ticket;
+            [[NSUserDefaults standardUserDefaults] setObject:loginModel.ticket forKey:@"login_ticket"];
             [self.navigationController pushViewController:nrHomeVC animated:YES];
         } else {
             [MBProgressHUD showError:loginModel.msg];

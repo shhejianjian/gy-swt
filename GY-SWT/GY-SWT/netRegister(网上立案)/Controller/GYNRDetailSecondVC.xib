@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYNRDetailSecondVC">
             <connections>
                 <outlet property="detailView" destination="kG8-q5-LYb" id="JRy-gk-1La"/>
+                <outlet property="myTableView" destination="q83-kl-brA" id="RcO-RW-1xV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,7 +26,23 @@
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kG8-q5-LYb">
                     <rect key="frame" x="10" y="114" width="355" height="483"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q83-kl-brA">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="483"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="C9e-Sz-Mlr"/>
+                                <outlet property="delegate" destination="-1" id="f2X-rh-Ljl"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="q83-kl-brA" firstAttribute="top" secondItem="kG8-q5-LYb" secondAttribute="top" id="0s8-yA-dWQ"/>
+                        <constraint firstItem="q83-kl-brA" firstAttribute="leading" secondItem="kG8-q5-LYb" secondAttribute="leading" id="Myc-e3-G4n"/>
+                        <constraint firstAttribute="trailing" secondItem="q83-kl-brA" secondAttribute="trailing" id="O0Y-P0-ov5"/>
+                        <constraint firstAttribute="bottom" secondItem="q83-kl-brA" secondAttribute="bottom" id="c28-ou-Ltj"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -39,7 +56,7 @@
                 <constraint firstItem="BXE-Wu-VIi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sB6-jB-sDI"/>
                 <constraint firstAttribute="bottom" secondItem="kG8-q5-LYb" secondAttribute="bottom" constant="70" id="sLE-ih-EHf"/>
             </constraints>
-            <point key="canvasLocation" x="-90" y="34"/>
+            <point key="canvasLocation" x="-91" y="-243"/>
         </view>
     </objects>
     <resources>

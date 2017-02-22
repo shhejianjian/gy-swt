@@ -76,7 +76,7 @@ static NSString *ID5=@"GYCDFIfthCell";
     self.thirdView.layer.masksToBounds = YES;
     self.fourthView.layer.masksToBounds = YES;
     self.fifthView.layer.masksToBounds = YES;
-    NSURL *url = [[NSURL alloc]initWithString:@"http://www.baidu.com"];
+    NSURL *url = [[NSURL alloc]initWithString:@"http://202.101.70.125:8080/bs/fyjj/getFyjjDetial.shtml?fydm=O10"];
     [self.firstView loadRequest:[NSURLRequest requestWithURL:url]];
     self.firstView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
     
@@ -88,7 +88,6 @@ static NSString *ID5=@"GYCDFIfthCell";
     
     [self.fifthTableView registerNib:[UINib nibWithNibName:@"GYCDFIfthCell" bundle:nil] forCellReuseIdentifier:ID5];
     
-    [self loadCourtDetail];
 }
 
 
@@ -146,18 +145,7 @@ static NSString *ID5=@"GYCDFIfthCell";
     }];
 }
 
-- (void) loadCourtDetail {
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"fydm"] = @"O10";
-    params[@"typeId"] = @"18";
-    
-    [GYHttpTool post:news_list_infoUrl ticket:@"" params:params success:^(id json) {
-        NSLog(@"%@",json);
-        
-    } failure:^(NSError *error) {
-        NSLog(@"%@",error);
-    }];
-}
+
 
 
 

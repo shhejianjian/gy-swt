@@ -19,6 +19,7 @@
 
 //根目录地址
 extern NSString *const BaseUrl;
+extern NSString *const fileUrl;
 extern NSString *const courtUrl;
 extern NSString *const noticePublic;
 extern NSString *const npDetailUrl;
@@ -28,6 +29,15 @@ extern NSString *const bmzn_listInfoUrl;
 extern NSString *const bmzn_detailInfoUrl;
 extern NSString *const wsla_loginUrl;
 extern NSString *const wsla_ajxx_listInfoUrl;
+extern NSString *const wsla_ajxx_detailInfoUrl;
+extern NSString *const wsla_ajxx_detailDsrInfoUrl;
+extern NSString *const wsla_ajxx_detailDlrInfoUrl;
+extern NSString *const wsla_ajxx_detailClxxInfoUrl;
+extern NSString *const ajxcLoginUrl;
+extern NSString *const ajxcListUrl;
+extern NSString *const spajcxDetailUrl;
+extern NSString *const wsla_ajxx_detailClxxImageInfoUrl;
+
 
 
 

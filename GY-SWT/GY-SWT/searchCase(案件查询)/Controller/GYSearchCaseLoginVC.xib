@@ -13,6 +13,8 @@
             <connections>
                 <outlet property="SPSearchBtn" destination="dhs-iM-CFj" id="bk7-oW-TI9"/>
                 <outlet property="ZXSearchBtn" destination="Cas-Sl-ZJb" id="zQX-2L-cLv"/>
+                <outlet property="password" destination="QB1-vR-z7m" id="wVF-q6-dob"/>
+                <outlet property="userName" destination="uw0-bO-aVo" id="yf3-FQ-ZlV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -63,6 +65,9 @@
                     <state key="normal" title="执行案件查询">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="zxSearchClick:" destination="-1" eventType="touchUpInside" id="Tfz-Jb-00w"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_用户名" translatesAutoresizingMaskIntoConstraints="NO" id="4xL-yf-0ZO">
                     <rect key="frame" x="20" y="284" width="30" height="30"/>
@@ -97,6 +102,9 @@
                     <state key="normal" title="审判案件查询">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="spSearchClick:" destination="-1" eventType="touchUpInside" id="IKg-rd-9PK"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
