@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface GYSearchCaseListVC : UIViewController
-
+@property (nonatomic, copy) NSString *ajTypeStr;
 @end

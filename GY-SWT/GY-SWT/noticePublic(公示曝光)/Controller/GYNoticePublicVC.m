@@ -11,10 +11,7 @@
 #import "XFSegmentView.h"
 #import "LGLSearchBar.h"
 #import "GYNoticePucCell.h"
-
 #import "GYNPModel.h"
-
-
 #import "GYNPDetailModel.h"
 
 static NSString *ID=@"GYNoticePucCell";

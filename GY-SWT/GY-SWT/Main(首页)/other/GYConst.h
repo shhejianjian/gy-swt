@@ -37,7 +37,7 @@ extern NSString *const ajxcLoginUrl;
 extern NSString *const ajxcListUrl;
 extern NSString *const spajcxDetailUrl;
 extern NSString *const wsla_ajxx_detailClxxImageInfoUrl;
-
+extern NSString *const bmll_ListInfoUrl;
 
 
 

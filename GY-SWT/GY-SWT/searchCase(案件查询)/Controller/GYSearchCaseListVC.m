@@ -11,6 +11,7 @@
 #import "GYNoticePucCell.h"
 #import "GYSCListModel.h"
 #import "GYSCTabbarVC.h"
+#import "GYSCZXTabbarVC.h"
 static NSString *ID=@"GYNoticePucCell";
 
 
@@ -100,13 +101,20 @@ static NSString *ID=@"GYNoticePucCell";
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     GYSCListModel *scListModel = self.scListArr[indexPath.row];
-    GYSCTabbarVC *scTabbarVC = [[GYSCTabbarVC alloc]init];
-    scTabbarVC.ahqcStr = scListModel.ahqc;
+    NSLog(@"==%@",scListModel.ajbs);
     [[NSUserDefaults standardUserDefaults] setObject:scListModel.ajbs forKey:@"ajxxcx_ajbs"];
-    [self.navigationController pushViewController:scTabbarVC animated:YES];
     
+    if ([self.ajTypeStr isEqualToString:@"2"]) {
+        GYSCTabbarVC *scTabbarVC = [[GYSCTabbarVC alloc]init];
+        scTabbarVC.ahqcStr = scListModel.ahqc;
+        [self.navigationController pushViewController:scTabbarVC animated:YES];
+    }
+    if ([self.ajTypeStr isEqualToString:@"1"]) {
+        GYSCZXTabbarVC *zxTabbarVC = [[GYSCZXTabbarVC alloc]init];
+        zxTabbarVC.ahqcStr = scListModel.ahqc;
+        [self.navigationController pushViewController:zxTabbarVC animated:YES];
+    }
 }
 
 - (NSMutableArray *)scListArr {

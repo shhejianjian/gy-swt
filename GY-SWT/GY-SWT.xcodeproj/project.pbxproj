@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E33572F1E5EAFEC003B4830 /* GYBmllModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E33572E1E5EAFEC003B4830 /* GYBmllModel.m */; };
+		1E3357331E5EBB77003B4830 /* GYPCDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3357311E5EBB77003B4830 /* GYPCDetailCell.m */; };
+		1E3357341E5EBB77003B4830 /* GYPCDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3357321E5EBB77003B4830 /* GYPCDetailCell.xib */; };
+		1E33573C1E5EC947003B4830 /* GYCourtListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E33573B1E5EC947003B4830 /* GYCourtListModel.m */; };
 		1E580F441E5BFE6C0086C2AD /* GYNPDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E580F431E5BFE6C0086C2AD /* GYNPDetailModel.m */; };
 		1E580F471E5C0A2A0086C2AD /* GYSWHModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E580F461E5C0A2A0086C2AD /* GYSWHModel.m */; };
 		1E580F4A1E5C14A30086C2AD /* GYBmznModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E580F491E5C14A30086C2AD /* GYBmznModel.m */; };
@@ -86,6 +90,22 @@
 		1EAC05D61E4AF150007E6CE2 /* GYNoticePublicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAC05D41E4AF150007E6CE2 /* GYNoticePublicVC.xib */; };
 		1EAC05EF1E4AFAC9007E6CE2 /* XFSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAC05EE1E4AFAC9007E6CE2 /* XFSegmentView.m */; };
 		1EAC05F21E4B0436007E6CE2 /* LGLSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAC05F11E4B0436007E6CE2 /* LGLSearchBar.m */; };
+		1EAD7F731E5E792A001274F5 /* GYSCZXTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD7F721E5E792A001274F5 /* GYSCZXTabbarVC.m */; };
+		1EAD7F771E5E797B001274F5 /* GYSCZXDetailFirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD7F751E5E797B001274F5 /* GYSCZXDetailFirstVC.m */; };
+		1EAD7F781E5E797B001274F5 /* GYSCZXDetailFirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAD7F761E5E797B001274F5 /* GYSCZXDetailFirstVC.xib */; };
+		1EAD7F7C1E5E7987001274F5 /* GYSCZXDetailSecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD7F7A1E5E7987001274F5 /* GYSCZXDetailSecondVC.m */; };
+		1EAD7F7D1E5E7987001274F5 /* GYSCZXDetailSecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAD7F7B1E5E7987001274F5 /* GYSCZXDetailSecondVC.xib */; };
+		1EAD7F811E5E7994001274F5 /* GYSCZXDetailFourthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD7F7F1E5E7994001274F5 /* GYSCZXDetailFourthVC.m */; };
+		1EAD7F821E5E7994001274F5 /* GYSCZXDetailFourthVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAD7F801E5E7994001274F5 /* GYSCZXDetailFourthVC.xib */; };
+		1EAD7F861E5E79A4001274F5 /* GYSCZXDetailThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD7F841E5E79A4001274F5 /* GYSCZXDetailThirdVC.m */; };
+		1EAD7F871E5E79A4001274F5 /* GYSCZXDetailThirdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAD7F851E5E79A4001274F5 /* GYSCZXDetailThirdVC.xib */; };
+		1EAD7F8A1E5E8150001274F5 /* GYSCSpDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD7F891E5E8150001274F5 /* GYSCSpDetailModel.m */; };
+		1EAD7F8E1E5E8933001274F5 /* GYSpDsrXxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD7F8C1E5E8933001274F5 /* GYSpDsrXxCell.m */; };
+		1EAD7F8F1E5E8933001274F5 /* GYSpDsrXxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAD7F8D1E5E8933001274F5 /* GYSpDsrXxCell.xib */; };
+		1EAD7F921E5E9A34001274F5 /* GYSPDsrModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD7F911E5E9A34001274F5 /* GYSPDsrModel.m */; };
+		1EAD7F951E5EA88C001274F5 /* GYZXSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD7F941E5EA88C001274F5 /* GYZXSegmentView.m */; };
+		1EAD7F991E5EAB87001274F5 /* GYZxFourthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD7F971E5EAB87001274F5 /* GYZxFourthCell.m */; };
+		1EAD7F9A1E5EAB87001274F5 /* GYZxFourthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAD7F981E5EAB87001274F5 /* GYZxFourthCell.xib */; };
 		1EBCFF9A1E55684D006BB80A /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBCFF991E55684D006BB80A /* Foundation+Log.m */; };
 		1EC4F8861E5BDFBA003CF968 /* GYNPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC4F8851E5BDFBA003CF968 /* GYNPModel.m */; };
 		1EC626E31E4C0612006A8BC2 /* GYNoticePucCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC626E11E4C0612006A8BC2 /* GYNoticePucCell.m */; };
@@ -151,6 +171,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E33572D1E5EAFEC003B4830 /* GYBmllModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYBmllModel.h; sourceTree = "<group>"; };
+		1E33572E1E5EAFEC003B4830 /* GYBmllModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYBmllModel.m; sourceTree = "<group>"; };
+		1E3357301E5EBB77003B4830 /* GYPCDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYPCDetailCell.h; sourceTree = "<group>"; };
+		1E3357311E5EBB77003B4830 /* GYPCDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYPCDetailCell.m; sourceTree = "<group>"; };
+		1E3357321E5EBB77003B4830 /* GYPCDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYPCDetailCell.xib; sourceTree = "<group>"; };
+		1E33573A1E5EC947003B4830 /* GYCourtListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYCourtListModel.h; sourceTree = "<group>"; };
+		1E33573B1E5EC947003B4830 /* GYCourtListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYCourtListModel.m; sourceTree = "<group>"; };
 		1E580F421E5BFE6C0086C2AD /* GYNPDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYNPDetailModel.h; sourceTree = "<group>"; };
 		1E580F431E5BFE6C0086C2AD /* GYNPDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYNPDetailModel.m; sourceTree = "<group>"; };
 		1E580F451E5C0A2A0086C2AD /* GYSWHModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSWHModel.h; sourceTree = "<group>"; };
@@ -297,6 +324,32 @@
 		1EAC05EE1E4AFAC9007E6CE2 /* XFSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFSegmentView.m; sourceTree = "<group>"; };
 		1EAC05F01E4B0436007E6CE2 /* LGLSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGLSearchBar.h; sourceTree = "<group>"; };
 		1EAC05F11E4B0436007E6CE2 /* LGLSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGLSearchBar.m; sourceTree = "<group>"; };
+		1EAD7F711E5E792A001274F5 /* GYSCZXTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSCZXTabbarVC.h; sourceTree = "<group>"; };
+		1EAD7F721E5E792A001274F5 /* GYSCZXTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSCZXTabbarVC.m; sourceTree = "<group>"; };
+		1EAD7F741E5E797B001274F5 /* GYSCZXDetailFirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSCZXDetailFirstVC.h; sourceTree = "<group>"; };
+		1EAD7F751E5E797B001274F5 /* GYSCZXDetailFirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSCZXDetailFirstVC.m; sourceTree = "<group>"; };
+		1EAD7F761E5E797B001274F5 /* GYSCZXDetailFirstVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYSCZXDetailFirstVC.xib; sourceTree = "<group>"; };
+		1EAD7F791E5E7987001274F5 /* GYSCZXDetailSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSCZXDetailSecondVC.h; sourceTree = "<group>"; };
+		1EAD7F7A1E5E7987001274F5 /* GYSCZXDetailSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSCZXDetailSecondVC.m; sourceTree = "<group>"; };
+		1EAD7F7B1E5E7987001274F5 /* GYSCZXDetailSecondVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYSCZXDetailSecondVC.xib; sourceTree = "<group>"; };
+		1EAD7F7E1E5E7994001274F5 /* GYSCZXDetailFourthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSCZXDetailFourthVC.h; sourceTree = "<group>"; };
+		1EAD7F7F1E5E7994001274F5 /* GYSCZXDetailFourthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSCZXDetailFourthVC.m; sourceTree = "<group>"; };
+		1EAD7F801E5E7994001274F5 /* GYSCZXDetailFourthVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYSCZXDetailFourthVC.xib; sourceTree = "<group>"; };
+		1EAD7F831E5E79A4001274F5 /* GYSCZXDetailThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSCZXDetailThirdVC.h; sourceTree = "<group>"; };
+		1EAD7F841E5E79A4001274F5 /* GYSCZXDetailThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSCZXDetailThirdVC.m; sourceTree = "<group>"; };
+		1EAD7F851E5E79A4001274F5 /* GYSCZXDetailThirdVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYSCZXDetailThirdVC.xib; sourceTree = "<group>"; };
+		1EAD7F881E5E8150001274F5 /* GYSCSpDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSCSpDetailModel.h; sourceTree = "<group>"; };
+		1EAD7F891E5E8150001274F5 /* GYSCSpDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSCSpDetailModel.m; sourceTree = "<group>"; };
+		1EAD7F8B1E5E8933001274F5 /* GYSpDsrXxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSpDsrXxCell.h; sourceTree = "<group>"; };
+		1EAD7F8C1E5E8933001274F5 /* GYSpDsrXxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSpDsrXxCell.m; sourceTree = "<group>"; };
+		1EAD7F8D1E5E8933001274F5 /* GYSpDsrXxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYSpDsrXxCell.xib; sourceTree = "<group>"; };
+		1EAD7F901E5E9A34001274F5 /* GYSPDsrModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSPDsrModel.h; sourceTree = "<group>"; };
+		1EAD7F911E5E9A34001274F5 /* GYSPDsrModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSPDsrModel.m; sourceTree = "<group>"; };
+		1EAD7F931E5EA88C001274F5 /* GYZXSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZXSegmentView.h; sourceTree = "<group>"; };
+		1EAD7F941E5EA88C001274F5 /* GYZXSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYZXSegmentView.m; sourceTree = "<group>"; };
+		1EAD7F961E5EAB87001274F5 /* GYZxFourthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZxFourthCell.h; sourceTree = "<group>"; };
+		1EAD7F971E5EAB87001274F5 /* GYZxFourthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYZxFourthCell.m; sourceTree = "<group>"; };
+		1EAD7F981E5EAB87001274F5 /* GYZxFourthCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYZxFourthCell.xib; sourceTree = "<group>"; };
 		1EBCFF991E55684D006BB80A /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		1EC4F8841E5BDFBA003CF968 /* GYNPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYNPModel.h; sourceTree = "<group>"; };
 		1EC4F8851E5BDFBA003CF968 /* GYNPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYNPModel.m; sourceTree = "<group>"; };
@@ -642,6 +695,8 @@
 		1E7E1E201E496C4200184531 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1E33573A1E5EC947003B4830 /* GYCourtListModel.h */,
+				1E33573B1E5EC947003B4830 /* GYCourtListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -806,6 +861,8 @@
 		1E7E1E2F1E496C4200184531 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1E33572D1E5EAFEC003B4830 /* GYBmllModel.h */,
+				1E33572E1E5EAFEC003B4830 /* GYBmllModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -813,6 +870,9 @@
 		1E7E1E301E496C4200184531 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1E3357301E5EBB77003B4830 /* GYPCDetailCell.h */,
+				1E3357311E5EBB77003B4830 /* GYPCDetailCell.m */,
+				1E3357321E5EBB77003B4830 /* GYPCDetailCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -884,6 +944,22 @@
 				1E580F991E5D70100086C2AD /* GYSCDetailFourthVC.xib */,
 				1E580F9C1E5D70490086C2AD /* GYSCTabbarVC.h */,
 				1E580F9D1E5D70490086C2AD /* GYSCTabbarVC.m */,
+				1EAD7F711E5E792A001274F5 /* GYSCZXTabbarVC.h */,
+				1EAD7F721E5E792A001274F5 /* GYSCZXTabbarVC.m */,
+				1EAD7F741E5E797B001274F5 /* GYSCZXDetailFirstVC.h */,
+				1EAD7F751E5E797B001274F5 /* GYSCZXDetailFirstVC.m */,
+				1EAD7F761E5E797B001274F5 /* GYSCZXDetailFirstVC.xib */,
+				1EAD7F791E5E7987001274F5 /* GYSCZXDetailSecondVC.h */,
+				1EAD7F7A1E5E7987001274F5 /* GYSCZXDetailSecondVC.m */,
+				1EAD7F7B1E5E7987001274F5 /* GYSCZXDetailSecondVC.xib */,
+				1EAD7F7E1E5E7994001274F5 /* GYSCZXDetailFourthVC.h */,
+				1EAD7F7F1E5E7994001274F5 /* GYSCZXDetailFourthVC.m */,
+				1EAD7F801E5E7994001274F5 /* GYSCZXDetailFourthVC.xib */,
+				1EAD7F831E5E79A4001274F5 /* GYSCZXDetailThirdVC.h */,
+				1EAD7F841E5E79A4001274F5 /* GYSCZXDetailThirdVC.m */,
+				1EAD7F851E5E79A4001274F5 /* GYSCZXDetailThirdVC.xib */,
+				1EAD7F931E5EA88C001274F5 /* GYZXSegmentView.h */,
+				1EAD7F941E5EA88C001274F5 /* GYZXSegmentView.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -893,6 +969,10 @@
 			children = (
 				1E580F801E5D5A430086C2AD /* GYSCListModel.h */,
 				1E580F811E5D5A430086C2AD /* GYSCListModel.m */,
+				1EAD7F881E5E8150001274F5 /* GYSCSpDetailModel.h */,
+				1EAD7F891E5E8150001274F5 /* GYSCSpDetailModel.m */,
+				1EAD7F901E5E9A34001274F5 /* GYSPDsrModel.h */,
+				1EAD7F911E5E9A34001274F5 /* GYSPDsrModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -900,6 +980,12 @@
 		1E7E1E381E496C4200184531 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1EAD7F8B1E5E8933001274F5 /* GYSpDsrXxCell.h */,
+				1EAD7F8C1E5E8933001274F5 /* GYSpDsrXxCell.m */,
+				1EAD7F8D1E5E8933001274F5 /* GYSpDsrXxCell.xib */,
+				1EAD7F961E5EAB87001274F5 /* GYZxFourthCell.h */,
+				1EAD7F971E5EAB87001274F5 /* GYZxFourthCell.m */,
+				1EAD7F981E5EAB87001274F5 /* GYZxFourthCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1264,13 +1350,17 @@
 				1E580F6A1E5D2C3B0086C2AD /* GYNRDsrXxCell.xib in Resources */,
 				1EA5DA641E5A950C00D5FB47 /* icon.png in Resources */,
 				1EA5DA621E5A91F100D5FB47 /* GYPTMainVC.xib in Resources */,
+				1EAD7F781E5E797B001274F5 /* GYSCZXDetailFirstVC.xib in Resources */,
+				1EAD7F7D1E5E7987001274F5 /* GYSCZXDetailSecondVC.xib in Resources */,
 				1ED1AE381E51591400B8C8A5 /* fx12@2x.png in Resources */,
 				1E7E1DE91E49695900184531 /* LaunchScreen.storyboard in Resources */,
+				1EAD7F871E5E79A4001274F5 /* GYSCZXDetailThirdVC.xib in Resources */,
 				1E580F611E5C2EB80086C2AD /* MBProgressHUD.bundle in Resources */,
 				1ED1AE371E51591400B8C8A5 /* fx11@2x.png in Resources */,
 				1EAC05CA1E4ADD40007E6CE2 /* GYRegistVC.xib in Resources */,
 				1ED1AE141E514CA700B8C8A5 /* GYNRHomeCell.xib in Resources */,
 				1E7E1DE61E49695900184531 /* Assets.xcassets in Resources */,
+				1EAD7F8F1E5E8933001274F5 /* GYSpDsrXxCell.xib in Resources */,
 				1ED1AE3E1E51591400B8C8A5 /* wd13@2x.png in Resources */,
 				1ED1AE231E5157EE00B8C8A5 /* GYNRDetailThirdVC.xib in Resources */,
 				1ED1AE3C1E51591400B8C8A5 /* sy11@2x.png in Resources */,
@@ -1283,8 +1373,10 @@
 				1EC626E91E4C0FA5006A8BC2 /* GYCourtDetailMainVC.xib in Resources */,
 				1ECB76251E52D40A0077FDC3 /* GYPeopleContactVC.xib in Resources */,
 				1E580F6F1E5D382D0086C2AD /* GYNRDlrXxCell.xib in Resources */,
+				1E3357341E5EBB77003B4830 /* GYPCDetailCell.xib in Resources */,
 				1E580F9B1E5D70100086C2AD /* GYSCDetailFourthVC.xib in Resources */,
 				1E580F911E5D6FF40086C2AD /* GYSCDetailSecondVC.xib in Resources */,
+				1EAD7F821E5E7994001274F5 /* GYSCZXDetailFourthVC.xib in Resources */,
 				1EC6271D1E4C55DE006A8BC2 /* GYCDSecondCell.xib in Resources */,
 				1E580F8C1E5D6FE40086C2AD /* GYSCDetailFirstVC.xib in Resources */,
 				1EAC05C51E4ABCD3007E6CE2 /* GYLoginVC.xib in Resources */,
@@ -1303,6 +1395,7 @@
 				1E580F961E5D70010086C2AD /* GYSCDetailThirdVC.xib in Resources */,
 				1EC626E41E4C0612006A8BC2 /* GYNoticePucCell.xib in Resources */,
 				1ED1AE361E51591400B8C8A5 /* fx10@2x.png in Resources */,
+				1EAD7F9A1E5EAB87001274F5 /* GYZxFourthCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1376,10 +1469,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EC627211E4C55EB006A8BC2 /* GYCDThirdCell.m in Sources */,
+				1E33573C1E5EC947003B4830 /* GYCourtListModel.m in Sources */,
 				1E580F8B1E5D6FE40086C2AD /* GYSCDetailFirstVC.m in Sources */,
 				1E7E1E691E496D3000184531 /* IQKeyboardManager.m in Sources */,
 				1ECB76241E52D40A0077FDC3 /* GYPeopleContactVC.m in Sources */,
 				1E7E1EB71E49730400184531 /* NSString+Add.m in Sources */,
+				1EAD7F991E5EAB87001274F5 /* GYZxFourthCell.m in Sources */,
+				1E33572F1E5EAFEC003B4830 /* GYBmllModel.m in Sources */,
 				1ED1AE271E5157FD00B8C8A5 /* GYNRDetailFourthVC.m in Sources */,
 				1E7E1EB21E49730400184531 /* MXBarButtonItem.m in Sources */,
 				1E580F441E5BFE6C0086C2AD /* GYNPDetailModel.m in Sources */,
@@ -1393,6 +1489,7 @@
 				1ED1AE1D1E5157D300B8C8A5 /* GYNRDetailSecondVC.m in Sources */,
 				1E7E1E6B1E496D3000184531 /* IQTextView.m in Sources */,
 				1E580F6E1E5D382D0086C2AD /* GYNRDlrXxCell.m in Sources */,
+				1EAD7F7C1E5E7987001274F5 /* GYSCZXDetailSecondVC.m in Sources */,
 				1E7E1E6F1E496D3000184531 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				1E580F4D1E5C23F50086C2AD /* GYLoginModel.m in Sources */,
 				1EC626E31E4C0612006A8BC2 /* GYNoticePucCell.m in Sources */,
@@ -1400,6 +1497,7 @@
 				1E580F501E5C2A090086C2AD /* GYNetRegistModel.m in Sources */,
 				1E580F471E5C0A2A0086C2AD /* GYSWHModel.m in Sources */,
 				1E7E1EC51E49963500184531 /* UIView+WJExtension.m in Sources */,
+				1EAD7F951E5EA88C001274F5 /* GYZXSegmentView.m in Sources */,
 				1ED1AE181E5157C300B8C8A5 /* GYNRDetailFirstVC.m in Sources */,
 				1EAC05C91E4ADD40007E6CE2 /* GYRegistVC.m in Sources */,
 				1E7E1EC21E49963500184531 /* CustomerScrollView.m in Sources */,
@@ -1421,11 +1519,13 @@
 				1E7E1E9D1E496F0900184531 /* GYHomeVC.m in Sources */,
 				1E7E1E771E496D3A00184531 /* JPullDownMenu.m in Sources */,
 				1E7E1EC91E499ECE00184531 /* GYHomeCell.m in Sources */,
+				1EAD7F811E5E7994001274F5 /* GYSCZXDetailFourthVC.m in Sources */,
 				1E7E1E6E1E496D3000184531 /* IQToolbar.m in Sources */,
 				1E7E1E7B1E496D4100184531 /* CZZCarouselView.m in Sources */,
 				1E580F9E1E5D70490086C2AD /* GYSCTabbarVC.m in Sources */,
 				1E7E1E631E496D3000184531 /* IQNSArray+Sort.m in Sources */,
 				1EBCFF9A1E55684D006BB80A /* Foundation+Log.m in Sources */,
+				1EAD7F861E5E79A4001274F5 /* GYSCZXDetailThirdVC.m in Sources */,
 				1E7E1E671E496D3000184531 /* IQUIViewController+Additions.m in Sources */,
 				1E7E1E681E496D3000184531 /* IQUIWindow+Hierarchy.m in Sources */,
 				1E580F721E5D3A4A0086C2AD /* GYNRDlrXxModel.m in Sources */,
@@ -1435,12 +1535,17 @@
 				1ED1AE2B1E51580B00B8C8A5 /* CustomTabbarController.m in Sources */,
 				1E7E1E991E496D9A00184531 /* GYConst.m in Sources */,
 				1EC627261E4C55FB006A8BC2 /* GYCDFourthCell.m in Sources */,
+				1EAD7F8A1E5E8150001274F5 /* GYSCSpDetailModel.m in Sources */,
+				1EAD7F771E5E797B001274F5 /* GYSCZXDetailFirstVC.m in Sources */,
 				1ED1AE221E5157EE00B8C8A5 /* GYNRDetailThirdVC.m in Sources */,
 				1E580FA11E5D88A20086C2AD /* ZoomImageView.m in Sources */,
+				1EAD7F8E1E5E8933001274F5 /* GYSpDsrXxCell.m in Sources */,
+				1E3357331E5EBB77003B4830 /* GYPCDetailCell.m in Sources */,
 				1E580F791E5D55A40086C2AD /* GYSearchCaseListVC.m in Sources */,
 				1E7E1DDB1E49695900184531 /* main.m in Sources */,
 				1EC626E81E4C0FA5006A8BC2 /* GYCourtDetailMainVC.m in Sources */,
 				1E580F951E5D70010086C2AD /* GYSCDetailThirdVC.m in Sources */,
+				1EAD7F731E5E792A001274F5 /* GYSCZXTabbarVC.m in Sources */,
 				1E580F821E5D5A430086C2AD /* GYSCListModel.m in Sources */,
 				1E7E1EB91E49730400184531 /* UIViewController+MXNavigation.m in Sources */,
 				1E7E1E701E496D3000184531 /* NSString+LoveData.m in Sources */,
@@ -1448,6 +1553,7 @@
 				1E7E1EC41E49963500184531 /* NSString+WJExtension.m in Sources */,
 				1E7E1E3A1E496C4200184531 /* AppDelegate.m in Sources */,
 				1EAC05D51E4AF150007E6CE2 /* GYNoticePublicVC.m in Sources */,
+				1EAD7F921E5E9A34001274F5 /* GYSPDsrModel.m in Sources */,
 				1E580F751E5D4E5C0086C2AD /* GYClxxModel.m in Sources */,
 				1E7E1EB61E49730400184531 /* MXTabBarController.m in Sources */,
 				1E580F901E5D6FF40086C2AD /* GYSCDetailSecondVC.m in Sources */,

@@ -54,6 +54,7 @@
             [MBProgressHUD showSuccess:loginModel.msg];
             [[NSUserDefaults standardUserDefaults] setObject:loginModel.ticket forKey:@"ajcx_loginTicket"];
             GYSearchCaseListVC *scLiftVC = [[GYSearchCaseListVC alloc]init];
+            scLiftVC.ajTypeStr = ajType;
             [self.navigationController pushViewController:scLiftVC animated:YES];
         } else {
             [MBProgressHUD showError:loginModel.msg];

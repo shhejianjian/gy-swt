@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYSCDetailFourthVC">
             <connections>
+                <outlet property="detailView" destination="xN6-mJ-krG" id="uof-er-PZK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,6 +23,10 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="TfO-g6-M9H">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xN6-mJ-krG">
+                    <rect key="frame" x="10" y="114" width="355" height="483"/>
+                    <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -29,6 +34,10 @@
                 <constraint firstItem="TfO-g6-M9H" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GB9-NL-QHM"/>
                 <constraint firstAttribute="trailing" secondItem="TfO-g6-M9H" secondAttribute="trailing" id="K7q-lr-Kdj"/>
                 <constraint firstItem="TfO-g6-M9H" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Sj2-VV-LGH"/>
+                <constraint firstItem="xN6-mJ-krG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="114" id="VBh-dn-wp6"/>
+                <constraint firstAttribute="trailing" secondItem="xN6-mJ-krG" secondAttribute="trailing" constant="10" id="gD1-AJ-wJg"/>
+                <constraint firstAttribute="bottom" secondItem="xN6-mJ-krG" secondAttribute="bottom" constant="70" id="qCT-5S-ho2"/>
+                <constraint firstItem="xN6-mJ-krG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="zXv-0u-Seq"/>
             </constraints>
         </view>
     </objects>

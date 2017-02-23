@@ -9,6 +9,7 @@
 #import "GYSCDetailThirdVC.h"
 
 @interface GYSCDetailThirdVC ()
+@property (strong, nonatomic) IBOutlet UIView *detailView;
 
 @end
 
@@ -16,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.detailView.layer.cornerRadius = 5;
+    self.detailView.layer.masksToBounds = YES;
     // Do any additional setup after loading the view from its nib.
 }
 

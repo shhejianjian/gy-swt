@@ -11,7 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYPeopleContactVC">
             <connections>
+                <outlet property="backBtn" destination="6Ha-8W-B0h" id="Rba-gR-Pr7"/>
+                <outlet property="detailTableView" destination="Z1w-zf-3zl" id="DId-TN-WCt"/>
                 <outlet property="detailView" destination="Gzk-Sq-ujg" id="gCC-X4-3HV"/>
+                <outlet property="myTableView" destination="NrB-2L-upj" id="cGi-lT-k1m"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,25 +28,55 @@
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzk-Sq-ujg">
                     <rect key="frame" x="10" y="74" width="355" height="583"/>
+                    <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1w-zf-3zl">
+                    <rect key="frame" x="10" y="74" width="355" height="583"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5H-qr-reN">
-                            <rect key="frame" x="44" y="99" width="186" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ha-8W-B0h">
+                            <rect key="frame" x="118" y="533" width="120" height="30"/>
                             <color key="backgroundColor" red="0.81960784310000001" green="0.16862745100000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="贵阳市南明区市府路16号">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="3gW-jk-C6A"/>
+                                <constraint firstAttribute="height" constant="30" id="9Ul-Q5-vzz"/>
+                            </constraints>
+                            <state key="normal" title="选择街道">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="backBtnClick:" destination="-1" eventType="touchUpInside" id="Zir-Il-T0r"/>
+                            </connections>
                         </button>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NrB-2L-upj">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="523"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="gii-J3-iRH"/>
+                                <outlet property="delegate" destination="-1" id="uX5-GI-6Ok"/>
+                            </connections>
+                        </tableView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="6Ha-8W-B0h" firstAttribute="centerX" secondItem="Z1w-zf-3zl" secondAttribute="centerX" id="3Kn-L1-56V"/>
+                        <constraint firstItem="6Ha-8W-B0h" firstAttribute="top" secondItem="NrB-2L-upj" secondAttribute="bottom" constant="10" id="bEO-Db-bYt"/>
+                        <constraint firstAttribute="bottom" secondItem="6Ha-8W-B0h" secondAttribute="bottom" constant="20" id="kbf-13-e3e"/>
+                        <constraint firstItem="NrB-2L-upj" firstAttribute="leading" secondItem="Z1w-zf-3zl" secondAttribute="leading" id="smC-kp-gbt"/>
+                        <constraint firstItem="NrB-2L-upj" firstAttribute="top" secondItem="Z1w-zf-3zl" secondAttribute="top" id="syh-P8-cQn"/>
+                        <constraint firstAttribute="trailing" secondItem="NrB-2L-upj" secondAttribute="trailing" id="vgE-NN-Saw"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Z1w-zf-3zl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="1Io-5e-v5F"/>
                 <constraint firstAttribute="bottom" secondItem="xUb-Bd-GGI" secondAttribute="bottom" id="7J5-Yf-vuH"/>
                 <constraint firstItem="Gzk-Sq-ujg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="7ZG-5H-Vru"/>
+                <constraint firstAttribute="trailing" secondItem="Z1w-zf-3zl" secondAttribute="trailing" constant="10" id="D9o-tu-yZR"/>
+                <constraint firstAttribute="bottom" secondItem="Z1w-zf-3zl" secondAttribute="bottom" constant="10" id="NfC-Ma-Iau"/>
                 <constraint firstItem="xUb-Bd-GGI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ow5-39-SOb"/>
                 <constraint firstAttribute="bottom" secondItem="Gzk-Sq-ujg" secondAttribute="bottom" constant="10" id="Ug5-WG-mUu"/>
+                <constraint firstItem="Z1w-zf-3zl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="dhK-C5-9vK"/>
                 <constraint firstItem="xUb-Bd-GGI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gwu-hy-Ni3"/>
                 <constraint firstAttribute="trailing" secondItem="Gzk-Sq-ujg" secondAttribute="trailing" constant="10" id="jPJ-ex-ghi"/>
                 <constraint firstItem="Gzk-Sq-ujg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="lW5-dA-dH7"/>

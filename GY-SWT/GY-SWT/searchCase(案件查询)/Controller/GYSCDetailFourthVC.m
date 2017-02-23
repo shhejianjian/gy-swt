@@ -7,8 +7,13 @@
 //
 
 #import "GYSCDetailFourthVC.h"
+#import "MXConstant.h"
+#import "XFSegmentView.h"
 
-@interface GYSCDetailFourthVC ()
+
+
+@interface GYSCDetailFourthVC ()<XFSegmentViewDelegate>
+@property (strong, nonatomic) IBOutlet UIView *detailView;
 
 @end
 
@@ -16,22 +21,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.detailView.layer.cornerRadius = 5;
+    self.detailView.layer.masksToBounds = YES;
+    
+    XFSegmentView *segView=[[XFSegmentView alloc]initWithFrame:Frame(0, 64, SCREEN_WIDTH, WH(40))];
+    [self.view addSubview:segView];
+    segView.delegate = self;
+    segView.titles = @[@"庭审信息",@"审限变更",@"程序变更"];
+    segView.titleFont = Font(15);
+    
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)segmentView:(XFSegmentView *)segmentView didSelectIndex:(NSInteger)index{
+    NSLog(@"%ld",(long)index);
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

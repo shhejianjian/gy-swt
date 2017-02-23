@@ -27,6 +27,7 @@ PODS:
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
   - SVProgressHUD (2.0.3)
+  - WHC_AutoLayoutKit (2.1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - MJRefresh (~> 2.5.0)
   - SDWebImage
   - SVProgressHUD
+  - WHC_AutoLayoutKit
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -43,5 +45,6 @@ SPEC CHECKSUMS:
   MJRefresh: 4bce3b592ae052ff89473b2907278bf8a80abdd3
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  WHC_AutoLayoutKit: 71d35834ce3b0f51fd98670f4f99d4530b834bcc
 
 COCOAPODS: 0.39.0

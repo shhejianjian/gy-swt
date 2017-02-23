@@ -4,9 +4,9 @@
 //
 //  Copyright © 2016年 BigFly. All rights reserved.
 //
-#define BTag 10000
-#import "XFSegmentView.h"
 
+#import "XFSegmentView.h"
+#define BTag 10000
 @interface XFSegmentView (){
     NSMutableArray *buttons;
     float wid;

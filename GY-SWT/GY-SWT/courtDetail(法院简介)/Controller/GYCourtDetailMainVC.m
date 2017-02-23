@@ -76,7 +76,8 @@ static NSString *ID5=@"GYCDFIfthCell";
     self.thirdView.layer.masksToBounds = YES;
     self.fourthView.layer.masksToBounds = YES;
     self.fifthView.layer.masksToBounds = YES;
-    NSURL *url = [[NSURL alloc]initWithString:@"http://202.101.70.125:8080/bs/fyjj/getFyjjDetial.shtml?fydm=O10"];
+    NSString *courtDm = [[NSUserDefaults standardUserDefaults]objectForKey:@"chooseCourt_dm"];
+    NSURL *url = [[NSURL alloc]initWithString:[NSString stringWithFormat:@"http://202.101.70.125:8080/bs/fyjj/getFyjjDetial.shtml?fydm=%@",courtDm]];
     [self.firstView loadRequest:[NSURLRequest requestWithURL:url]];
     self.firstView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
     
@@ -95,8 +96,9 @@ static NSString *ID5=@"GYCDFIfthCell";
     [self.xgmcListArr removeAllObjects];
     [MBProgressHUD showMessage:@"正在加载" toView:self.view];
 //    [SVProgressHUD showWithStatus:@"正在加载"];
+    NSString *courtDm = [[NSUserDefaults standardUserDefaults]objectForKey:@"chooseCourt_dm"];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"fydm"] = @"O10";
+    params[@"fydm"] = courtDm;
     params[@"lx"] = type;
     params[@"page"] = @"1";
     params[@"pageSize"] = @"10";
@@ -128,8 +130,9 @@ static NSString *ID5=@"GYCDFIfthCell";
 - (void)loadBmznListInfo {
     [self.xgmcListArr removeAllObjects];
     [MBProgressHUD showMessage:@"正在加载" toView:self.view];
+    NSString *courtDm = [[NSUserDefaults standardUserDefaults]objectForKey:@"chooseCourt_dm"];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"fydm"] = @"O10";
+    params[@"fydm"] = courtDm;
     params[@"page"] = @"1";
     params[@"pageSize"] = @"10";
     [GYHttpTool post:bmzn_listInfoUrl ticket:@"" params:params success:^(id json) {

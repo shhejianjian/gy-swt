@@ -39,25 +39,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>WHC_AutoLayoutKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1A4605BF99F34C8C34F325DC5E9BFA50</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>69B1A1714C96A59ED19055B75088FD35</key>
+		<key>4A7065BAEDFBE9DDFC89FA8886CDF477</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>81DE3E4B8AABD4D8136DF7915680B485</key>
+		<key>75132C525A26B536F3F12C3E42BDA319</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -68,6 +68,16 @@
 			<true/>
 		</dict>
 		<key>9EAB3E42EF957541E6C3C76D35FD008E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A895D091E513F40A6258CBA3D739FA5C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F5F4B43BAD24F492EB5B31FD9CC12958</key>
 		<dict>
 			<key>primary</key>
 			<true/>

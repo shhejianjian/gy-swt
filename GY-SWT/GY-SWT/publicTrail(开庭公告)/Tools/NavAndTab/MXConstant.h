@@ -18,6 +18,8 @@
 #define KScreenH [[UIScreen mainScreen]bounds].size.height
 #define LBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define bottonBtnColor LBColor(12,59,79)
+#define bottonBackgroundColor LBColor(209,43,64)
+#define bottonBackgroundBlueColor LBColor(49,161,213)
 #define LBRandomColor LBColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 #define NAVH 64.0
 //#import "UIView+Frame.h"

@@ -26,12 +26,8 @@ NSString *const wsla_ajxx_detailDsrInfoUrl = @"dsr_listInfo";
 NSString *const wsla_ajxx_detailDlrInfoUrl = @"dlr_listInfo";
 NSString *const wsla_ajxx_detailClxxInfoUrl = @"jz_listInfo";
 NSString *const wsla_ajxx_detailClxxImageInfoUrl = @"jz_file_getInfo";
-
-
-
 NSString *const ajxcLoginUrl = @"ajcxLogin";
 NSString *const ajxcListUrl = @"ajcx_listInfo";
 NSString *const spajcxDetailUrl = @"spAjcx_getInfo";
-
-
+NSString *const bmll_ListInfoUrl = @"bmll_listInfo";
 

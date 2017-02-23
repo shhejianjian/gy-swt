@@ -33,14 +33,6 @@
     
     homeC.title = @"首页";
     
-//    HGContactMainVC *messageC = [[HGContactMainVC alloc] init];
-//    MXNavigationController *messageNaC = [[MXNavigationController alloc] initWithRootViewController:messageC];
-//    messageC.title = @"联系人";
-//    
-//    HGMyCenterMainVC *meC = [[HGMyCenterMainVC alloc] init];
-//    MXNavigationController *meNaC = [[MXNavigationController alloc] initWithRootViewController:meC];
-//    meC.title = @"我";
-    
     self.viewControllers = @[firstNaC];
 }
 
