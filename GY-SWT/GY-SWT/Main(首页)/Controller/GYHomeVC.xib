@@ -13,7 +13,9 @@
             <connections>
                 <outlet property="courtView" destination="aJL-uO-ULZ" id="aKP-2X-1Cy"/>
                 <outlet property="courtViewBackBtn" destination="0Ra-MQ-XGO" id="liy-3s-dqK"/>
+                <outlet property="funKeyBoardConstraint" destination="pKz-xr-heH" id="o6c-hu-60e"/>
                 <outlet property="homeDetailView" destination="vAB-LO-g0u" id="rza-4g-Ec0"/>
+                <outlet property="labelTopConstraint" destination="U3p-lZ-4ve" id="CMr-LU-X61"/>
                 <outlet property="myFunKeboardView" destination="cXH-YI-SJQ" id="fEJ-mD-2qj"/>
                 <outlet property="myTableView" destination="svo-35-lbU" id="Xfw-PU-LoB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

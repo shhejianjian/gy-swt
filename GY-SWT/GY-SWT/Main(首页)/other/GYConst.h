@@ -38,7 +38,12 @@ extern NSString *const ajxcListUrl;
 extern NSString *const spajcxDetailUrl;
 extern NSString *const wsla_ajxx_detailClxxImageInfoUrl;
 extern NSString *const bmll_ListInfoUrl;
-
-
+extern NSString *const news_tjInfoUrl;
+extern NSString *const news_top2InfoUrl;
+extern NSString *const news_allListUrl;
+extern NSString *const news_typeListUrl;
+extern NSString *const news_ListByTypeIdUrl;
+extern NSString *const news_detailUrl;
+extern NSString *const wsla_dsrRegistUrl;
 
 

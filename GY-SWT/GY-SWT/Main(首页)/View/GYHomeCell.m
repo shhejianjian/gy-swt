@@ -7,12 +7,28 @@
 //
 
 #import "GYHomeCell.h"
+#import "UIImageView+WebCache.h"
+
+@interface GYHomeCell ()
+
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+
+@end
 
 @implementation GYHomeCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+}
+
+- (void)setNewsModel:(GYTop2NewsModel *)newsModel {
+    _newsModel = newsModel;
+    self.titleLabel.text = newsModel.title;
+    self.dateLabel.text = newsModel.pubdate;
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",self.imageFileUrl,newsModel.imageurl]]placeholderImage:[UIImage imageNamed:@"加载"]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

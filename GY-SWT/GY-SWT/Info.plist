@@ -7,6 +7,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>亲，我们需要访问您的摄像头，可以吗？</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>亲，我们需要访问您的相册，可以吗？</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

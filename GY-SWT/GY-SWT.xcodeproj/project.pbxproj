@@ -11,6 +11,7 @@
 		1E3357331E5EBB77003B4830 /* GYPCDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3357311E5EBB77003B4830 /* GYPCDetailCell.m */; };
 		1E3357341E5EBB77003B4830 /* GYPCDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3357321E5EBB77003B4830 /* GYPCDetailCell.xib */; };
 		1E33573C1E5EC947003B4830 /* GYCourtListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E33573B1E5EC947003B4830 /* GYCourtListModel.m */; };
+		1E33573F1E5EE12A003B4830 /* GYTop2NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E33573E1E5EE12A003B4830 /* GYTop2NewsModel.m */; };
 		1E580F441E5BFE6C0086C2AD /* GYNPDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E580F431E5BFE6C0086C2AD /* GYNPDetailModel.m */; };
 		1E580F471E5C0A2A0086C2AD /* GYSWHModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E580F461E5C0A2A0086C2AD /* GYSWHModel.m */; };
 		1E580F4A1E5C14A30086C2AD /* GYBmznModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E580F491E5C14A30086C2AD /* GYBmznModel.m */; };
@@ -82,6 +83,25 @@
 		1EA5DA611E5A91F100D5FB47 /* GYPTMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5DA5F1E5A91F100D5FB47 /* GYPTMainVC.m */; };
 		1EA5DA621E5A91F100D5FB47 /* GYPTMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA5DA601E5A91F100D5FB47 /* GYPTMainVC.xib */; };
 		1EA5DA641E5A950C00D5FB47 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EA5DA631E5A950C00D5FB47 /* icon.png */; };
+		1EAAD48D1E5FC959003D1EA6 /* TopMenuSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAD48B1E5FC959003D1EA6 /* TopMenuSelectViewController.m */; };
+		1EAAD48E1E5FC959003D1EA6 /* TopMenuSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAAD48C1E5FC959003D1EA6 /* TopMenuSelectViewController.xib */; };
+		1EAAD4911E5FCCE4003D1EA6 /* GYNewsTypeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAD4901E5FCCE4003D1EA6 /* GYNewsTypeListModel.m */; };
+		1EAAD4941E5FDEE1003D1EA6 /* GYNewsInfoListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAD4931E5FDEE1003D1EA6 /* GYNewsInfoListModel.m */; };
+		1EAAD4981E5FEE82003D1EA6 /* GYNewsInfoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAD4961E5FEE82003D1EA6 /* GYNewsInfoListCell.m */; };
+		1EAAD4991E5FEE82003D1EA6 /* GYNewsInfoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAAD4971E5FEE82003D1EA6 /* GYNewsInfoListCell.xib */; };
+		1EAAD49D1E5FF9A2003D1EA6 /* GYNewsRealDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAD49B1E5FF9A2003D1EA6 /* GYNewsRealDetailVC.m */; };
+		1EAAD49E1E5FF9A2003D1EA6 /* GYNewsRealDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAAD49C1E5FF9A2003D1EA6 /* GYNewsRealDetailVC.xib */; };
+		1EAAD4A21E5FF9BC003D1EA6 /* GYNewsNoDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAD4A01E5FF9BC003D1EA6 /* GYNewsNoDetailVC.m */; };
+		1EAAD4A31E5FF9BC003D1EA6 /* GYNewsNoDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAAD4A11E5FF9BC003D1EA6 /* GYNewsNoDetailVC.xib */; };
+		1EAAD4A71E600C90003D1EA6 /* GYImageNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAD4A51E600C90003D1EA6 /* GYImageNewsCell.m */; };
+		1EAAD4A81E600C90003D1EA6 /* GYImageNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAAD4A61E600C90003D1EA6 /* GYImageNewsCell.xib */; };
+		1EAAD4AB1E600D07003D1EA6 /* GYImageNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAD4AA1E600D07003D1EA6 /* GYImageNewsModel.m */; };
+		1EAAD4B11E60170E003D1EA6 /* GYCheckInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAD4B01E60170E003D1EA6 /* GYCheckInfoTool.m */; };
+		1EAAD4B51E601FFE003D1EA6 /* GYRegUploadCardIDFirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAD4B31E601FFE003D1EA6 /* GYRegUploadCardIDFirstVC.m */; };
+		1EAAD4B61E601FFE003D1EA6 /* GYRegUploadCardIDFirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAAD4B41E601FFE003D1EA6 /* GYRegUploadCardIDFirstVC.xib */; };
+		1EAAD4D01E602C1E003D1EA6 /* LDActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAD4CA1E602C1E003D1EA6 /* LDActionSheet.m */; };
+		1EAAD4D11E602C1E003D1EA6 /* LDImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAD4CD1E602C1E003D1EA6 /* LDImagePicker.m */; };
+		1EAAD4D21E602C1E003D1EA6 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAD4CF1E602C1E003D1EA6 /* VPImageCropperViewController.m */; };
 		1EAC05C41E4ABCD3007E6CE2 /* GYLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAC05C21E4ABCD3007E6CE2 /* GYLoginVC.m */; };
 		1EAC05C51E4ABCD3007E6CE2 /* GYLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAC05C31E4ABCD3007E6CE2 /* GYLoginVC.xib */; };
 		1EAC05C91E4ADD40007E6CE2 /* GYRegistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAC05C71E4ADD40007E6CE2 /* GYRegistVC.m */; };
@@ -178,6 +198,8 @@
 		1E3357321E5EBB77003B4830 /* GYPCDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYPCDetailCell.xib; sourceTree = "<group>"; };
 		1E33573A1E5EC947003B4830 /* GYCourtListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYCourtListModel.h; sourceTree = "<group>"; };
 		1E33573B1E5EC947003B4830 /* GYCourtListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYCourtListModel.m; sourceTree = "<group>"; };
+		1E33573D1E5EE12A003B4830 /* GYTop2NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYTop2NewsModel.h; sourceTree = "<group>"; };
+		1E33573E1E5EE12A003B4830 /* GYTop2NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYTop2NewsModel.m; sourceTree = "<group>"; };
 		1E580F421E5BFE6C0086C2AD /* GYNPDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYNPDetailModel.h; sourceTree = "<group>"; };
 		1E580F431E5BFE6C0086C2AD /* GYNPDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYNPDetailModel.m; sourceTree = "<group>"; };
 		1E580F451E5C0A2A0086C2AD /* GYSWHModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSWHModel.h; sourceTree = "<group>"; };
@@ -311,6 +333,38 @@
 		1EA5DA5F1E5A91F100D5FB47 /* GYPTMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYPTMainVC.m; sourceTree = "<group>"; };
 		1EA5DA601E5A91F100D5FB47 /* GYPTMainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYPTMainVC.xib; sourceTree = "<group>"; };
 		1EA5DA631E5A950C00D5FB47 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		1EAAD48A1E5FC959003D1EA6 /* TopMenuSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopMenuSelectViewController.h; sourceTree = "<group>"; };
+		1EAAD48B1E5FC959003D1EA6 /* TopMenuSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopMenuSelectViewController.m; sourceTree = "<group>"; };
+		1EAAD48C1E5FC959003D1EA6 /* TopMenuSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopMenuSelectViewController.xib; sourceTree = "<group>"; };
+		1EAAD48F1E5FCCE4003D1EA6 /* GYNewsTypeListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYNewsTypeListModel.h; sourceTree = "<group>"; };
+		1EAAD4901E5FCCE4003D1EA6 /* GYNewsTypeListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYNewsTypeListModel.m; sourceTree = "<group>"; };
+		1EAAD4921E5FDEE1003D1EA6 /* GYNewsInfoListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYNewsInfoListModel.h; sourceTree = "<group>"; };
+		1EAAD4931E5FDEE1003D1EA6 /* GYNewsInfoListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYNewsInfoListModel.m; sourceTree = "<group>"; };
+		1EAAD4951E5FEE82003D1EA6 /* GYNewsInfoListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYNewsInfoListCell.h; sourceTree = "<group>"; };
+		1EAAD4961E5FEE82003D1EA6 /* GYNewsInfoListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYNewsInfoListCell.m; sourceTree = "<group>"; };
+		1EAAD4971E5FEE82003D1EA6 /* GYNewsInfoListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYNewsInfoListCell.xib; sourceTree = "<group>"; };
+		1EAAD49A1E5FF9A2003D1EA6 /* GYNewsRealDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYNewsRealDetailVC.h; sourceTree = "<group>"; };
+		1EAAD49B1E5FF9A2003D1EA6 /* GYNewsRealDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYNewsRealDetailVC.m; sourceTree = "<group>"; };
+		1EAAD49C1E5FF9A2003D1EA6 /* GYNewsRealDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYNewsRealDetailVC.xib; sourceTree = "<group>"; };
+		1EAAD49F1E5FF9BC003D1EA6 /* GYNewsNoDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYNewsNoDetailVC.h; sourceTree = "<group>"; };
+		1EAAD4A01E5FF9BC003D1EA6 /* GYNewsNoDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYNewsNoDetailVC.m; sourceTree = "<group>"; };
+		1EAAD4A11E5FF9BC003D1EA6 /* GYNewsNoDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYNewsNoDetailVC.xib; sourceTree = "<group>"; };
+		1EAAD4A41E600C90003D1EA6 /* GYImageNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYImageNewsCell.h; sourceTree = "<group>"; };
+		1EAAD4A51E600C90003D1EA6 /* GYImageNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYImageNewsCell.m; sourceTree = "<group>"; };
+		1EAAD4A61E600C90003D1EA6 /* GYImageNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYImageNewsCell.xib; sourceTree = "<group>"; };
+		1EAAD4A91E600D07003D1EA6 /* GYImageNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYImageNewsModel.h; sourceTree = "<group>"; };
+		1EAAD4AA1E600D07003D1EA6 /* GYImageNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYImageNewsModel.m; sourceTree = "<group>"; };
+		1EAAD4AF1E60170E003D1EA6 /* GYCheckInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYCheckInfoTool.h; sourceTree = "<group>"; };
+		1EAAD4B01E60170E003D1EA6 /* GYCheckInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYCheckInfoTool.m; sourceTree = "<group>"; };
+		1EAAD4B21E601FFE003D1EA6 /* GYRegUploadCardIDFirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYRegUploadCardIDFirstVC.h; sourceTree = "<group>"; };
+		1EAAD4B31E601FFE003D1EA6 /* GYRegUploadCardIDFirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYRegUploadCardIDFirstVC.m; sourceTree = "<group>"; };
+		1EAAD4B41E601FFE003D1EA6 /* GYRegUploadCardIDFirstVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYRegUploadCardIDFirstVC.xib; sourceTree = "<group>"; };
+		1EAAD4C91E602C1E003D1EA6 /* LDActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDActionSheet.h; sourceTree = "<group>"; };
+		1EAAD4CA1E602C1E003D1EA6 /* LDActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDActionSheet.m; sourceTree = "<group>"; };
+		1EAAD4CC1E602C1E003D1EA6 /* LDImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDImagePicker.h; sourceTree = "<group>"; };
+		1EAAD4CD1E602C1E003D1EA6 /* LDImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDImagePicker.m; sourceTree = "<group>"; };
+		1EAAD4CE1E602C1E003D1EA6 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
+		1EAAD4CF1E602C1E003D1EA6 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
 		1EAC05C11E4ABCD3007E6CE2 /* GYLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYLoginVC.h; sourceTree = "<group>"; };
 		1EAC05C21E4ABCD3007E6CE2 /* GYLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYLoginVC.m; sourceTree = "<group>"; };
 		1EAC05C31E4ABCD3007E6CE2 /* GYLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYLoginVC.xib; sourceTree = "<group>"; };
@@ -653,6 +707,15 @@
 		1E7E1E191E496C4200184531 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1EAAD48A1E5FC959003D1EA6 /* TopMenuSelectViewController.h */,
+				1EAAD48B1E5FC959003D1EA6 /* TopMenuSelectViewController.m */,
+				1EAAD48C1E5FC959003D1EA6 /* TopMenuSelectViewController.xib */,
+				1EAAD49A1E5FF9A2003D1EA6 /* GYNewsRealDetailVC.h */,
+				1EAAD49B1E5FF9A2003D1EA6 /* GYNewsRealDetailVC.m */,
+				1EAAD49C1E5FF9A2003D1EA6 /* GYNewsRealDetailVC.xib */,
+				1EAAD49F1E5FF9BC003D1EA6 /* GYNewsNoDetailVC.h */,
+				1EAAD4A01E5FF9BC003D1EA6 /* GYNewsNoDetailVC.m */,
+				1EAAD4A11E5FF9BC003D1EA6 /* GYNewsNoDetailVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -660,6 +723,12 @@
 		1E7E1E1A1E496C4200184531 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1EAAD48F1E5FCCE4003D1EA6 /* GYNewsTypeListModel.h */,
+				1EAAD4901E5FCCE4003D1EA6 /* GYNewsTypeListModel.m */,
+				1EAAD4921E5FDEE1003D1EA6 /* GYNewsInfoListModel.h */,
+				1EAAD4931E5FDEE1003D1EA6 /* GYNewsInfoListModel.m */,
+				1EAAD4A91E600D07003D1EA6 /* GYImageNewsModel.h */,
+				1EAAD4AA1E600D07003D1EA6 /* GYImageNewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -667,6 +736,12 @@
 		1E7E1E1B1E496C4200184531 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1EAAD4951E5FEE82003D1EA6 /* GYNewsInfoListCell.h */,
+				1EAAD4961E5FEE82003D1EA6 /* GYNewsInfoListCell.m */,
+				1EAAD4971E5FEE82003D1EA6 /* GYNewsInfoListCell.xib */,
+				1EAAD4A41E600C90003D1EA6 /* GYImageNewsCell.h */,
+				1EAAD4A51E600C90003D1EA6 /* GYImageNewsCell.m */,
+				1EAAD4A61E600C90003D1EA6 /* GYImageNewsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -697,6 +772,8 @@
 			children = (
 				1E33573A1E5EC947003B4830 /* GYCourtListModel.h */,
 				1E33573B1E5EC947003B4830 /* GYCourtListModel.m */,
+				1E33573D1E5EE12A003B4830 /* GYTop2NewsModel.h */,
+				1E33573E1E5EE12A003B4830 /* GYTop2NewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -711,6 +788,8 @@
 				1E7E1E981E496D9A00184531 /* GYConst.m */,
 				1ECB76261E52E36A0077FDC3 /* GYHttpTool.h */,
 				1ECB76271E52E36A0077FDC3 /* GYHttpTool.m */,
+				1EAAD4AF1E60170E003D1EA6 /* GYCheckInfoTool.h */,
+				1EAAD4B01E60170E003D1EA6 /* GYCheckInfoTool.m */,
 				1EBCFF991E55684D006BB80A /* Foundation+Log.m */,
 			);
 			path = other;
@@ -1002,6 +1081,8 @@
 		1E7E1E3C1E496D1000184531 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1EAAD4C81E602C1E003D1EA6 /* LDActionSheet */,
+				1EAAD4CB1E602C1E003D1EA6 /* LDImagePicker */,
 				1E580F9F1E5D88A20086C2AD /* ZoomImageView.h */,
 				1E580FA01E5D88A20086C2AD /* ZoomImageView.m */,
 				1EC627121E4C47A1006A8BC2 /* centerBtn */,
@@ -1152,6 +1233,26 @@
 			path = ScrollViewButton;
 			sourceTree = "<group>";
 		};
+		1EAAD4C81E602C1E003D1EA6 /* LDActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				1EAAD4C91E602C1E003D1EA6 /* LDActionSheet.h */,
+				1EAAD4CA1E602C1E003D1EA6 /* LDActionSheet.m */,
+			);
+			path = LDActionSheet;
+			sourceTree = "<group>";
+		};
+		1EAAD4CB1E602C1E003D1EA6 /* LDImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				1EAAD4CC1E602C1E003D1EA6 /* LDImagePicker.h */,
+				1EAAD4CD1E602C1E003D1EA6 /* LDImagePicker.m */,
+				1EAAD4CE1E602C1E003D1EA6 /* VPImageCropperViewController.h */,
+				1EAAD4CF1E602C1E003D1EA6 /* VPImageCropperViewController.m */,
+			);
+			path = LDImagePicker;
+			sourceTree = "<group>";
+		};
 		1EAC05BD1E4ABCB4007E6CE2 /* Login(登录) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1171,6 +1272,9 @@
 				1EAC05C61E4ADD40007E6CE2 /* GYRegistVC.h */,
 				1EAC05C71E4ADD40007E6CE2 /* GYRegistVC.m */,
 				1EAC05C81E4ADD40007E6CE2 /* GYRegistVC.xib */,
+				1EAAD4B21E601FFE003D1EA6 /* GYRegUploadCardIDFirstVC.h */,
+				1EAAD4B31E601FFE003D1EA6 /* GYRegUploadCardIDFirstVC.m */,
+				1EAAD4B41E601FFE003D1EA6 /* GYRegUploadCardIDFirstVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1348,17 +1452,20 @@
 			files = (
 				1E7E1ECA1E499ECE00184531 /* GYHomeCell.xib in Resources */,
 				1E580F6A1E5D2C3B0086C2AD /* GYNRDsrXxCell.xib in Resources */,
+				1EAAD4A81E600C90003D1EA6 /* GYImageNewsCell.xib in Resources */,
 				1EA5DA641E5A950C00D5FB47 /* icon.png in Resources */,
 				1EA5DA621E5A91F100D5FB47 /* GYPTMainVC.xib in Resources */,
 				1EAD7F781E5E797B001274F5 /* GYSCZXDetailFirstVC.xib in Resources */,
 				1EAD7F7D1E5E7987001274F5 /* GYSCZXDetailSecondVC.xib in Resources */,
 				1ED1AE381E51591400B8C8A5 /* fx12@2x.png in Resources */,
+				1EAAD4A31E5FF9BC003D1EA6 /* GYNewsNoDetailVC.xib in Resources */,
 				1E7E1DE91E49695900184531 /* LaunchScreen.storyboard in Resources */,
 				1EAD7F871E5E79A4001274F5 /* GYSCZXDetailThirdVC.xib in Resources */,
 				1E580F611E5C2EB80086C2AD /* MBProgressHUD.bundle in Resources */,
 				1ED1AE371E51591400B8C8A5 /* fx11@2x.png in Resources */,
 				1EAC05CA1E4ADD40007E6CE2 /* GYRegistVC.xib in Resources */,
 				1ED1AE141E514CA700B8C8A5 /* GYNRHomeCell.xib in Resources */,
+				1EAAD49E1E5FF9A2003D1EA6 /* GYNewsRealDetailVC.xib in Resources */,
 				1E7E1DE61E49695900184531 /* Assets.xcassets in Resources */,
 				1EAD7F8F1E5E8933001274F5 /* GYSpDsrXxCell.xib in Resources */,
 				1ED1AE3E1E51591400B8C8A5 /* wd13@2x.png in Resources */,
@@ -1383,16 +1490,19 @@
 				1E580F7A1E5D55A40086C2AD /* GYSearchCaseListVC.xib in Resources */,
 				1ED1AE0F1E514AED00B8C8A5 /* GYNetRegistVC.xib in Resources */,
 				1ED1AE281E5157FD00B8C8A5 /* GYNRDetailFourthVC.xib in Resources */,
+				1EAAD4B61E601FFE003D1EA6 /* GYRegUploadCardIDFirstVC.xib in Resources */,
 				1EC6272C1E4C560D006A8BC2 /* GYCDFIfthCell.xib in Resources */,
 				1EC627271E4C55FB006A8BC2 /* GYCDFourthCell.xib in Resources */,
 				1ED1AE3B1E51591400B8C8A5 /* gd9@2x.png in Resources */,
 				1ED1AE0A1E4D5C3400B8C8A5 /* GYSearchCaseLoginVC.xib in Resources */,
 				1E7E1E711E496D3000184531 /* IQKeyboardManager.bundle in Resources */,
 				1E7E1E761E496D3A00184531 /* JPullDown.bundle in Resources */,
+				1EAAD48E1E5FC959003D1EA6 /* TopMenuSelectViewController.xib in Resources */,
 				1EAC05D61E4AF150007E6CE2 /* GYNoticePublicVC.xib in Resources */,
 				1ED1AE191E5157C300B8C8A5 /* GYNRDetailFirstVC.xib in Resources */,
 				1ED1AE3A1E51591400B8C8A5 /* gd11@2x.png in Resources */,
 				1E580F961E5D70010086C2AD /* GYSCDetailThirdVC.xib in Resources */,
+				1EAAD4991E5FEE82003D1EA6 /* GYNewsInfoListCell.xib in Resources */,
 				1EC626E41E4C0612006A8BC2 /* GYNoticePucCell.xib in Resources */,
 				1ED1AE361E51591400B8C8A5 /* fx10@2x.png in Resources */,
 				1EAD7F9A1E5EAB87001274F5 /* GYZxFourthCell.xib in Resources */,
@@ -1475,6 +1585,8 @@
 				1ECB76241E52D40A0077FDC3 /* GYPeopleContactVC.m in Sources */,
 				1E7E1EB71E49730400184531 /* NSString+Add.m in Sources */,
 				1EAD7F991E5EAB87001274F5 /* GYZxFourthCell.m in Sources */,
+				1E33573F1E5EE12A003B4830 /* GYTop2NewsModel.m in Sources */,
+				1EAAD4D11E602C1E003D1EA6 /* LDImagePicker.m in Sources */,
 				1E33572F1E5EAFEC003B4830 /* GYBmllModel.m in Sources */,
 				1ED1AE271E5157FD00B8C8A5 /* GYNRDetailFourthVC.m in Sources */,
 				1E7E1EB21E49730400184531 /* MXBarButtonItem.m in Sources */,
@@ -1485,9 +1597,12 @@
 				1E7E1EB81E49730400184531 /* UIView+Add.m in Sources */,
 				1ECB76201E52A95F0077FDC3 /* GYNRSegmentView.m in Sources */,
 				1E7E1EB41E49730400184531 /* MXNavigationController.m in Sources */,
+				1EAAD4911E5FCCE4003D1EA6 /* GYNewsTypeListModel.m in Sources */,
 				1EAC05EF1E4AFAC9007E6CE2 /* XFSegmentView.m in Sources */,
 				1ED1AE1D1E5157D300B8C8A5 /* GYNRDetailSecondVC.m in Sources */,
 				1E7E1E6B1E496D3000184531 /* IQTextView.m in Sources */,
+				1EAAD4AB1E600D07003D1EA6 /* GYImageNewsModel.m in Sources */,
+				1EAAD4B11E60170E003D1EA6 /* GYCheckInfoTool.m in Sources */,
 				1E580F6E1E5D382D0086C2AD /* GYNRDlrXxCell.m in Sources */,
 				1EAD7F7C1E5E7987001274F5 /* GYSCZXDetailSecondVC.m in Sources */,
 				1E7E1E6F1E496D3000184531 /* IQUIView+IQKeyboardToolbar.m in Sources */,
@@ -1495,6 +1610,7 @@
 				1EC626E31E4C0612006A8BC2 /* GYNoticePucCell.m in Sources */,
 				1E7E1E651E496D3000184531 /* IQUITextFieldView+Additions.m in Sources */,
 				1E580F501E5C2A090086C2AD /* GYNetRegistModel.m in Sources */,
+				1EAAD4A71E600C90003D1EA6 /* GYImageNewsCell.m in Sources */,
 				1E580F471E5C0A2A0086C2AD /* GYSWHModel.m in Sources */,
 				1E7E1EC51E49963500184531 /* UIView+WJExtension.m in Sources */,
 				1EAD7F951E5EA88C001274F5 /* GYZXSegmentView.m in Sources */,
@@ -1505,6 +1621,7 @@
 				1ECB762A1E52E4D70077FDC3 /* GYHttpTool.m in Sources */,
 				1E7E1EB31E49730400184531 /* MXNavigationBar.m in Sources */,
 				1E580F4A1E5C14A30086C2AD /* GYBmznModel.m in Sources */,
+				1EAAD4B51E601FFE003D1EA6 /* GYRegUploadCardIDFirstVC.m in Sources */,
 				1EAC05F21E4B0436007E6CE2 /* LGLSearchBar.m in Sources */,
 				1E580F9A1E5D70100086C2AD /* GYSCDetailFourthVC.m in Sources */,
 				1ED1AE131E514CA700B8C8A5 /* GYNRHomeCell.m in Sources */,
@@ -1518,18 +1635,23 @@
 				1EC627181E4C47F9006A8BC2 /* UIView+Extension.m in Sources */,
 				1E7E1E9D1E496F0900184531 /* GYHomeVC.m in Sources */,
 				1E7E1E771E496D3A00184531 /* JPullDownMenu.m in Sources */,
+				1EAAD4D01E602C1E003D1EA6 /* LDActionSheet.m in Sources */,
+				1EAAD4981E5FEE82003D1EA6 /* GYNewsInfoListCell.m in Sources */,
 				1E7E1EC91E499ECE00184531 /* GYHomeCell.m in Sources */,
 				1EAD7F811E5E7994001274F5 /* GYSCZXDetailFourthVC.m in Sources */,
 				1E7E1E6E1E496D3000184531 /* IQToolbar.m in Sources */,
 				1E7E1E7B1E496D4100184531 /* CZZCarouselView.m in Sources */,
 				1E580F9E1E5D70490086C2AD /* GYSCTabbarVC.m in Sources */,
+				1EAAD4941E5FDEE1003D1EA6 /* GYNewsInfoListModel.m in Sources */,
 				1E7E1E631E496D3000184531 /* IQNSArray+Sort.m in Sources */,
 				1EBCFF9A1E55684D006BB80A /* Foundation+Log.m in Sources */,
 				1EAD7F861E5E79A4001274F5 /* GYSCZXDetailThirdVC.m in Sources */,
 				1E7E1E671E496D3000184531 /* IQUIViewController+Additions.m in Sources */,
+				1EAAD4A21E5FF9BC003D1EA6 /* GYNewsNoDetailVC.m in Sources */,
 				1E7E1E681E496D3000184531 /* IQUIWindow+Hierarchy.m in Sources */,
 				1E580F721E5D3A4A0086C2AD /* GYNRDlrXxModel.m in Sources */,
 				1E7E1E6C1E496D3000184531 /* IQBarButtonItem.m in Sources */,
+				1EAAD4D21E602C1E003D1EA6 /* VPImageCropperViewController.m in Sources */,
 				1E7E1E641E496D3000184531 /* IQUIScrollView+Additions.m in Sources */,
 				1E580F691E5D2C3B0086C2AD /* GYNRDsrXxCell.m in Sources */,
 				1ED1AE2B1E51580B00B8C8A5 /* CustomTabbarController.m in Sources */,
@@ -1553,8 +1675,10 @@
 				1E7E1EC41E49963500184531 /* NSString+WJExtension.m in Sources */,
 				1E7E1E3A1E496C4200184531 /* AppDelegate.m in Sources */,
 				1EAC05D51E4AF150007E6CE2 /* GYNoticePublicVC.m in Sources */,
+				1EAAD49D1E5FF9A2003D1EA6 /* GYNewsRealDetailVC.m in Sources */,
 				1EAD7F921E5E9A34001274F5 /* GYSPDsrModel.m in Sources */,
 				1E580F751E5D4E5C0086C2AD /* GYClxxModel.m in Sources */,
+				1EAAD48D1E5FC959003D1EA6 /* TopMenuSelectViewController.m in Sources */,
 				1E7E1EB61E49730400184531 /* MXTabBarController.m in Sources */,
 				1E580F901E5D6FF40086C2AD /* GYSCDetailSecondVC.m in Sources */,
 				1E7E1E661E496D3000184531 /* IQUIView+Hierarchy.m in Sources */,

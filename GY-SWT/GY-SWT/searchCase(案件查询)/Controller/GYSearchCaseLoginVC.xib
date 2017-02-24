@@ -83,7 +83,7 @@
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_密码" translatesAutoresizingMaskIntoConstraints="NO" id="0uj-gC-gQf">
                     <rect key="frame" x="20" y="335" width="28" height="30"/>

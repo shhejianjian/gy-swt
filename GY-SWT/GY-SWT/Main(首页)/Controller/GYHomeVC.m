@@ -20,12 +20,19 @@
 #import "GYPTMainVC.h"
 #import "GYCourtListModel.h"
 #import "GYHttpTool.h"
-
-
+#import "GYTop2NewsModel.h"
+#import "TopMenuSelectViewController.h"
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
-#define ViewH 210
+//#define ViewH 210
+
+#define carouselViewHeight (kScreenIphone5 == 0)? 150: 180
+#define labelTopConstraintHeight (kScreenIphone5 == 0)? 220: 250
+#define ViewH (kScreenIphone5 == 0)? 185: 210
+
+
+
 static NSString *ID=@"homeCell";
 
 
@@ -44,6 +51,17 @@ static NSString *ID=@"homeCell";
 @property (nonatomic, strong) NSMutableArray *courtListArr;
 @property (nonatomic, strong) NSMutableArray *courtNameArr;
 
+@property (nonatomic, strong) NSMutableArray *top2NewsArr;
+@property (nonatomic, copy) NSString *imageFileUrl;
+
+@property (nonatomic, strong) NSMutableArray *lunboNewsArr;
+@property (nonatomic, copy) NSString *lunboImageFileUrl;
+@property (nonatomic, strong) NSMutableArray *lunboTitleArr;
+@property (nonatomic, strong) NSMutableArray *lunboImageArr;
+
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *labelTopConstraint;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *funKeyBoardConstraint;
+
 
 @end
 
@@ -51,7 +69,6 @@ static NSString *ID=@"homeCell";
 
 - (void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = YES;
-    
     NSString *courtDm = [[NSUserDefaults standardUserDefaults]objectForKey:@"chooseCourt_dm"];
     if (courtDm) {
         self.mxNavigationBar.hidden = NO;
@@ -67,15 +84,13 @@ static NSString *ID=@"homeCell";
     
 }
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self loadCourtData];
-    
-    NSLog(@"%f--%f",SCREEN_WIDTH,SCREEN_HEIGHT);
-    
+
+    self.labelTopConstraint.constant = labelTopConstraintHeight;
+    self.funKeyBoardConstraint.constant = ViewH;
     NSString *homeDir = NSHomeDirectory();
     NSLog(@"%@",homeDir);
     
@@ -89,13 +104,60 @@ static NSString *ID=@"homeCell";
     [titleImage setContentMode:UIViewContentModeScaleToFill];
     titleImage.frame = CGRectMake(70, 32, 20, 20);
     self.mxNavigationItem.titleView = titleImage;
+    
+    [self loadLunBoNewsInfo];
+    [self.myFunKeboardView addSubview:self.btnScrollView];
+    [self loadTop2NewsInfo];
+}
+
+
+- (void)loadTop2NewsInfo {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    [GYHttpTool post:news_top2InfoUrl ticket:@"" params:params success:^(id json) {
+        NSLog(@"news==%@",json);
+        NSArray *arr = [GYTop2NewsModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
+        for (GYTop2NewsModel *top2NewsModel in arr) {
+            [self.top2NewsArr addObject:top2NewsModel];
+        }
+        GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
+        self.imageFileUrl = loginModel.imageServiceUrl;
+        [self.myTableView reloadData];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+- (void)loadLunBoNewsInfo {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    [GYHttpTool post:news_tjInfoUrl ticket:@"" params:params success:^(id json) {
+        NSLog(@"newstj==%@",json);
+        NSArray *arr = [GYTop2NewsModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
+        
+        GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
+        self.lunboImageFileUrl = loginModel.imageServiceUrl;
+        for (GYTop2NewsModel *top2NewsModel in arr) {
+            [self.lunboNewsArr addObject:top2NewsModel];
+            [self.lunboTitleArr addObject:top2NewsModel.title];
+            [self.lunboImageArr addObject:[NSString stringWithFormat:@"%@%@",self.lunboImageFileUrl,top2NewsModel.imageurl]];
+        }
+        [self loadLunboViewWithTitleArr:self.lunboTitleArr AndImageArr:self.lunboImageArr];
+        
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+- (void)loadLunboViewWithTitleArr:(NSArray *)titleArr AndImageArr:(NSArray *)imageArr {
     //  混合图片
-    NSArray *maxImageArray = @[@"http://file27.mafengwo.net/M00/B2/12/wKgB6lO0ahWAMhL8AAV1yBFJDJw20.jpeg",[UIImage imageNamed:@"1.jpg"],@"http://file27.mafengwo.net/M00/52/F2/wKgB6lO_PTyAKKPBACID2dURuk410.jpeg",[UIImage imageNamed:@"1.jpg"]];
+    NSArray *maxImageArray = imageArr;
     //  图片描述数组
-    NSArray *describleArray = @[@"图片标题1",@"图片标题2",@"图片标题3",@"图片标题4"];
+    NSArray *describleArray = titleArr;
     self.carouselView = [CZZCarouselView carouselViewWithImageArray:maxImageArray describeArray:describleArray];
     //  设置frame
-    self.carouselView.frame = CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 180);
+    self.carouselView.frame = CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, carouselViewHeight);
     //  用block处理图片点击
     self.carouselView.imageClickBlock = ^(NSInteger index){
         NSLog(@"点击了第%ld张图片",index);
@@ -117,11 +179,10 @@ static NSString *ID=@"homeCell";
     _carouselView.desLabelFont = [UIFont systemFontOfSize:14];
     //  设置文字颜色，默认为白色
     _carouselView.desLabelColor = [UIColor whiteColor];
-    _carouselView.backgroundColor = [UIColor blackColor];
+    _carouselView.backgroundColor = [UIColor whiteColor];
     [self.homeDetailView addSubview:_carouselView];
-    [self.myFunKeboardView addSubview:self.btnScrollView];
-    // Do any additional setup after loading the view from its nib.
 }
+
 
 #pragma mark - CZZCarouseViewDelagate  方法
 -(void)carouselView:(CZZCarouselView *)carouselView didClickImage:(NSInteger)index
@@ -183,7 +244,8 @@ static NSString *ID=@"homeCell";
             
             break;
         case 8:{
-            
+            TopMenuSelectViewController *newsVC = [[TopMenuSelectViewController alloc]init];
+            [self.navigationController pushViewController:newsVC animated:YES];
         }
             
             break;
@@ -220,7 +282,7 @@ static NSString *ID=@"homeCell";
 
 {
     
-    return 2;
+    return self.top2NewsArr.count;
     
 }
 
@@ -236,6 +298,8 @@ static NSString *ID=@"homeCell";
         cell=[[GYHomeCell alloc]init];
         
     }
+    cell.imageFileUrl = self.imageFileUrl;
+    cell.newsModel = self.top2NewsArr[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
     
@@ -253,7 +317,7 @@ static NSString *ID=@"homeCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+
     
 }
 
@@ -288,8 +352,6 @@ static NSString *ID=@"homeCell";
         button.layer.cornerRadius = 5;
         button.layer.masksToBounds = YES;
         NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15]};
-        
-//        CGFloat length = [arr[i] boundingRectWithSize:CGSizeMake(320, 2000) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size.width;
         //为button赋值
         [button setTitle:arr[i] forState:UIControlStateNormal];
         //设置button的frame
@@ -333,6 +395,34 @@ static NSString *ID=@"homeCell";
 		_courtNameArr = [[NSMutableArray alloc] init];
 	}
 	return _courtNameArr;
+}
+
+- (NSMutableArray *)top2NewsArr {
+	if(_top2NewsArr == nil) {
+		_top2NewsArr = [[NSMutableArray alloc] init];
+	}
+	return _top2NewsArr;
+}
+
+- (NSMutableArray *)lunboNewsArr {
+	if(_lunboNewsArr == nil) {
+		_lunboNewsArr = [[NSMutableArray alloc] init];
+	}
+	return _lunboNewsArr;
+}
+
+- (NSMutableArray *)lunboTitleArr {
+	if(_lunboTitleArr == nil) {
+		_lunboTitleArr = [[NSMutableArray alloc] init];
+	}
+	return _lunboTitleArr;
+}
+
+- (NSMutableArray *)lunboImageArr {
+	if(_lunboImageArr == nil) {
+		_lunboImageArr = [[NSMutableArray alloc] init];
+	}
+	return _lunboImageArr;
 }
 
 @end

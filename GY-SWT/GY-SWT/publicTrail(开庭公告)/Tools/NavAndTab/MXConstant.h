@@ -20,6 +20,7 @@
 #define bottonBtnColor LBColor(12,59,79)
 #define bottonBackgroundColor LBColor(209,43,64)
 #define bottonBackgroundBlueColor LBColor(49,161,213)
+#define newsSelectBackColor LBColor(44,137,192)
 #define LBRandomColor LBColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 #define NAVH 64.0
 //#import "UIView+Frame.h"
@@ -36,7 +37,8 @@
 #import "MBProgressHUD+MJ.h"
 #import "AFNetworking.h"
 #import "GYLoginModel.h"
-
+#import "UIView+Extension.h"
+#import "GYCheckInfoTool.h"
 #import "UIViewController+MXNavigation.h"
 #import "MXNavigationItem.h"
 #import "MXBarButtonItem.h"

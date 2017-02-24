@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GYTop2NewsModel.h"
 @interface GYHomeCell : UITableViewCell
-
+@property (nonatomic, strong) GYTop2NewsModel *newsModel;
+@property (nonatomic, copy) NSString *imageFileUrl;
 @end

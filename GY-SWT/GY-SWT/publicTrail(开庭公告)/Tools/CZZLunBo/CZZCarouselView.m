@@ -191,7 +191,7 @@ typedef enum{
         if ([imageArray[i] isKindOfClass:[UIImage class]]) {
             [_images addObject:imageArray[i]];
         } else if ([imageArray[i] isKindOfClass:[NSString class]]){
-            [_images addObject:[UIImage imageNamed:@"placeholder"]];
+            [_images addObject:[UIImage imageNamed:@"加载"]];
             [self downloadImages:i];
         }
     }

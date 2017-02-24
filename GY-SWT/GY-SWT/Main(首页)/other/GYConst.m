@@ -31,3 +31,16 @@ NSString *const ajxcListUrl = @"ajcx_listInfo";
 NSString *const spajcxDetailUrl = @"spAjcx_getInfo";
 NSString *const bmll_ListInfoUrl = @"bmll_listInfo";
 
+
+NSString *const news_tjInfoUrl = @"xwtj_listInfo";
+NSString *const news_top2InfoUrl = @"xwTop2_listInfo";
+NSString *const news_allListUrl = @"xw_listInfo";
+NSString *const news_typeListUrl = @"xwTypeList";
+NSString *const news_ListByTypeIdUrl = @"xwListByTypeId";
+NSString *const news_detailUrl = @"xwImage_listInfo";
+
+NSString *const wsla_dsrRegistUrl = @"wsla_wslaAppRegister";
+
+
+
+

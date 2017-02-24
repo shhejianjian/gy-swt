@@ -84,7 +84,7 @@
 
     // 添加pageControl
     UIPageControl * pageControl = [[UIPageControl alloc] init];
-    pageControl.frame = CGRectMake(SCREEN_WIDTH/2, self.height-20, 0, 0);
+    pageControl.frame = CGRectMake(SCREEN_WIDTH/2, self.height-10, 0, 0);
     pageControl.pageIndicatorTintColor = [UIColor whiteColor];
     pageControl.currentPageIndicatorTintColor = [UIColor darkGrayColor];
     pageControl.hidesForSinglePage = YES;

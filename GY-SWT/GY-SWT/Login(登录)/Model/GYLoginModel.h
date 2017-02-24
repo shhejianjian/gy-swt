@@ -12,5 +12,8 @@
 @property (nonatomic, copy) NSString *success;
 @property (nonatomic, copy) NSString *ticket;
 @property (nonatomic, copy) NSString *msg;
+@property (nonatomic, copy) NSString *imageServiceUrl;
+@property (nonatomic, copy) NSString *id;
+@property (nonatomic, copy) NSString *loginUserType;
 
 @end

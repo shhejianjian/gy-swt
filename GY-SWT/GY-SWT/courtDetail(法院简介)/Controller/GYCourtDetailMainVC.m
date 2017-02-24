@@ -80,6 +80,8 @@ static NSString *ID5=@"GYCDFIfthCell";
     NSURL *url = [[NSURL alloc]initWithString:[NSString stringWithFormat:@"http://202.101.70.125:8080/bs/fyjj/getFyjjDetial.shtml?fydm=%@",courtDm]];
     [self.firstView loadRequest:[NSURLRequest requestWithURL:url]];
     self.firstView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+    self.firstView.backgroundColor = [UIColor clearColor];
+    self.firstView.opaque = NO;
     
     [self.secondTableView registerNib:[UINib nibWithNibName:@"GYCDSecondCell" bundle:nil] forCellReuseIdentifier:ID2];
     
