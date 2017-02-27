@@ -11,6 +11,21 @@
 		1E08AC251E63EDCC00D71778 /* GYAddNewsCaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E08AC231E63EDCC00D71778 /* GYAddNewsCaseVC.xib */; };
 		1E08AC291E63F8CB00D71778 /* GYAddNewCaseSecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E08AC271E63F8CB00D71778 /* GYAddNewCaseSecondVC.m */; };
 		1E08AC2A1E63F8CB00D71778 /* GYAddNewCaseSecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E08AC281E63F8CB00D71778 /* GYAddNewCaseSecondVC.xib */; };
+		1E08AC2E1E63FD3D00D71778 /* GYAddNCPushVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E08AC2C1E63FD3D00D71778 /* GYAddNCPushVC.m */; };
+		1E08AC2F1E63FD3D00D71778 /* GYAddNCPushVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E08AC2D1E63FD3D00D71778 /* GYAddNCPushVC.xib */; };
+		1E08AC421E6402F900D71778 /* LQXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E08AC411E6402F900D71778 /* LQXSwitch.m */; };
+		1E08AC461E6418D900D71778 /* GYAddNewCaseThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E08AC441E6418D900D71778 /* GYAddNewCaseThirdVC.m */; };
+		1E08AC471E6418D900D71778 /* GYAddNewCaseThirdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E08AC451E6418D900D71778 /* GYAddNewCaseThirdVC.xib */; };
+		1E08AC4B1E641D5000D71778 /* GYAddNCPushSecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E08AC491E641D5000D71778 /* GYAddNCPushSecondVC.m */; };
+		1E08AC4C1E641D5000D71778 /* GYAddNCPushSecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E08AC4A1E641D5000D71778 /* GYAddNCPushSecondVC.xib */; };
+		1E08AC501E641F4F00D71778 /* GYAddNewCaseFourthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E08AC4E1E641F4F00D71778 /* GYAddNewCaseFourthVC.m */; };
+		1E08AC511E641F4F00D71778 /* GYAddNewCaseFourthVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E08AC4F1E641F4F00D71778 /* GYAddNewCaseFourthVC.xib */; };
+		1E08AC551E64228700D71778 /* GYAddNewCaseFifthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E08AC531E64228700D71778 /* GYAddNewCaseFifthVC.m */; };
+		1E08AC561E64228700D71778 /* GYAddNewCaseFifthVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E08AC541E64228700D71778 /* GYAddNewCaseFifthVC.xib */; };
+		1E08AC5A1E6422A400D71778 /* GYAddNewCaseSixthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E08AC581E6422A400D71778 /* GYAddNewCaseSixthVC.m */; };
+		1E08AC5B1E6422A400D71778 /* GYAddNewCaseSixthVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E08AC591E6422A400D71778 /* GYAddNewCaseSixthVC.xib */; };
+		1E08AC5F1E64237D00D71778 /* GYAddNewCaseSeventhVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E08AC5D1E64237D00D71778 /* GYAddNewCaseSeventhVC.m */; };
+		1E08AC601E64237D00D71778 /* GYAddNewCaseSeventhVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E08AC5E1E64237D00D71778 /* GYAddNewCaseSeventhVC.xib */; };
 		1E33572F1E5EAFEC003B4830 /* GYBmllModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E33572E1E5EAFEC003B4830 /* GYBmllModel.m */; };
 		1E3357331E5EBB77003B4830 /* GYPCDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3357311E5EBB77003B4830 /* GYPCDetailCell.m */; };
 		1E3357341E5EBB77003B4830 /* GYPCDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3357321E5EBB77003B4830 /* GYPCDetailCell.xib */; };
@@ -201,6 +216,29 @@
 		1E08AC261E63F8CB00D71778 /* GYAddNewCaseSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYAddNewCaseSecondVC.h; sourceTree = "<group>"; };
 		1E08AC271E63F8CB00D71778 /* GYAddNewCaseSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYAddNewCaseSecondVC.m; sourceTree = "<group>"; };
 		1E08AC281E63F8CB00D71778 /* GYAddNewCaseSecondVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYAddNewCaseSecondVC.xib; sourceTree = "<group>"; };
+		1E08AC2B1E63FD3D00D71778 /* GYAddNCPushVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYAddNCPushVC.h; sourceTree = "<group>"; };
+		1E08AC2C1E63FD3D00D71778 /* GYAddNCPushVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYAddNCPushVC.m; sourceTree = "<group>"; };
+		1E08AC2D1E63FD3D00D71778 /* GYAddNCPushVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYAddNCPushVC.xib; sourceTree = "<group>"; };
+		1E08AC401E6402F900D71778 /* LQXSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQXSwitch.h; sourceTree = "<group>"; };
+		1E08AC411E6402F900D71778 /* LQXSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQXSwitch.m; sourceTree = "<group>"; };
+		1E08AC431E6418D900D71778 /* GYAddNewCaseThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYAddNewCaseThirdVC.h; sourceTree = "<group>"; };
+		1E08AC441E6418D900D71778 /* GYAddNewCaseThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYAddNewCaseThirdVC.m; sourceTree = "<group>"; };
+		1E08AC451E6418D900D71778 /* GYAddNewCaseThirdVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYAddNewCaseThirdVC.xib; sourceTree = "<group>"; };
+		1E08AC481E641D5000D71778 /* GYAddNCPushSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYAddNCPushSecondVC.h; sourceTree = "<group>"; };
+		1E08AC491E641D5000D71778 /* GYAddNCPushSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYAddNCPushSecondVC.m; sourceTree = "<group>"; };
+		1E08AC4A1E641D5000D71778 /* GYAddNCPushSecondVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYAddNCPushSecondVC.xib; sourceTree = "<group>"; };
+		1E08AC4D1E641F4F00D71778 /* GYAddNewCaseFourthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYAddNewCaseFourthVC.h; sourceTree = "<group>"; };
+		1E08AC4E1E641F4F00D71778 /* GYAddNewCaseFourthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYAddNewCaseFourthVC.m; sourceTree = "<group>"; };
+		1E08AC4F1E641F4F00D71778 /* GYAddNewCaseFourthVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYAddNewCaseFourthVC.xib; sourceTree = "<group>"; };
+		1E08AC521E64228700D71778 /* GYAddNewCaseFifthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYAddNewCaseFifthVC.h; sourceTree = "<group>"; };
+		1E08AC531E64228700D71778 /* GYAddNewCaseFifthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYAddNewCaseFifthVC.m; sourceTree = "<group>"; };
+		1E08AC541E64228700D71778 /* GYAddNewCaseFifthVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYAddNewCaseFifthVC.xib; sourceTree = "<group>"; };
+		1E08AC571E6422A400D71778 /* GYAddNewCaseSixthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYAddNewCaseSixthVC.h; sourceTree = "<group>"; };
+		1E08AC581E6422A400D71778 /* GYAddNewCaseSixthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYAddNewCaseSixthVC.m; sourceTree = "<group>"; };
+		1E08AC591E6422A400D71778 /* GYAddNewCaseSixthVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYAddNewCaseSixthVC.xib; sourceTree = "<group>"; };
+		1E08AC5C1E64237D00D71778 /* GYAddNewCaseSeventhVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYAddNewCaseSeventhVC.h; sourceTree = "<group>"; };
+		1E08AC5D1E64237D00D71778 /* GYAddNewCaseSeventhVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYAddNewCaseSeventhVC.m; sourceTree = "<group>"; };
+		1E08AC5E1E64237D00D71778 /* GYAddNewCaseSeventhVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYAddNewCaseSeventhVC.xib; sourceTree = "<group>"; };
 		1E33572D1E5EAFEC003B4830 /* GYBmllModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYBmllModel.h; sourceTree = "<group>"; };
 		1E33572E1E5EAFEC003B4830 /* GYBmllModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYBmllModel.m; sourceTree = "<group>"; };
 		1E3357301E5EBB77003B4830 /* GYPCDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYPCDetailCell.h; sourceTree = "<group>"; };
@@ -509,6 +547,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E08AC3F1E6402F900D71778 /* LQX */ = {
+			isa = PBXGroup;
+			children = (
+				1E08AC401E6402F900D71778 /* LQXSwitch.h */,
+				1E08AC411E6402F900D71778 /* LQXSwitch.m */,
+			);
+			path = LQX;
+			sourceTree = "<group>";
+		};
 		1E580F5A1E5C2EB80086C2AD /* MBProgressHUDFile */ = {
 			isa = PBXGroup;
 			children = (
@@ -853,6 +900,27 @@
 				1E08AC261E63F8CB00D71778 /* GYAddNewCaseSecondVC.h */,
 				1E08AC271E63F8CB00D71778 /* GYAddNewCaseSecondVC.m */,
 				1E08AC281E63F8CB00D71778 /* GYAddNewCaseSecondVC.xib */,
+				1E08AC431E6418D900D71778 /* GYAddNewCaseThirdVC.h */,
+				1E08AC441E6418D900D71778 /* GYAddNewCaseThirdVC.m */,
+				1E08AC451E6418D900D71778 /* GYAddNewCaseThirdVC.xib */,
+				1E08AC4D1E641F4F00D71778 /* GYAddNewCaseFourthVC.h */,
+				1E08AC4E1E641F4F00D71778 /* GYAddNewCaseFourthVC.m */,
+				1E08AC4F1E641F4F00D71778 /* GYAddNewCaseFourthVC.xib */,
+				1E08AC521E64228700D71778 /* GYAddNewCaseFifthVC.h */,
+				1E08AC531E64228700D71778 /* GYAddNewCaseFifthVC.m */,
+				1E08AC541E64228700D71778 /* GYAddNewCaseFifthVC.xib */,
+				1E08AC571E6422A400D71778 /* GYAddNewCaseSixthVC.h */,
+				1E08AC581E6422A400D71778 /* GYAddNewCaseSixthVC.m */,
+				1E08AC591E6422A400D71778 /* GYAddNewCaseSixthVC.xib */,
+				1E08AC5C1E64237D00D71778 /* GYAddNewCaseSeventhVC.h */,
+				1E08AC5D1E64237D00D71778 /* GYAddNewCaseSeventhVC.m */,
+				1E08AC5E1E64237D00D71778 /* GYAddNewCaseSeventhVC.xib */,
+				1E08AC2B1E63FD3D00D71778 /* GYAddNCPushVC.h */,
+				1E08AC2C1E63FD3D00D71778 /* GYAddNCPushVC.m */,
+				1E08AC2D1E63FD3D00D71778 /* GYAddNCPushVC.xib */,
+				1E08AC481E641D5000D71778 /* GYAddNCPushSecondVC.h */,
+				1E08AC491E641D5000D71778 /* GYAddNCPushSecondVC.m */,
+				1E08AC4A1E641D5000D71778 /* GYAddNCPushSecondVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1097,6 +1165,7 @@
 		1E7E1E3C1E496D1000184531 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1E08AC3F1E6402F900D71778 /* LQX */,
 				1EAAD4C81E602C1E003D1EA6 /* LDActionSheet */,
 				1EAAD4CB1E602C1E003D1EA6 /* LDImagePicker */,
 				1E580F9F1E5D88A20086C2AD /* ZoomImageView.h */,
@@ -1466,23 +1535,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E08AC5B1E6422A400D71778 /* GYAddNewCaseSixthVC.xib in Resources */,
 				1E08AC251E63EDCC00D71778 /* GYAddNewsCaseVC.xib in Resources */,
 				1E7E1ECA1E499ECE00184531 /* GYHomeCell.xib in Resources */,
 				1E580F6A1E5D2C3B0086C2AD /* GYNRDsrXxCell.xib in Resources */,
 				1EAAD4A81E600C90003D1EA6 /* GYImageNewsCell.xib in Resources */,
 				1EA5DA641E5A950C00D5FB47 /* icon.png in Resources */,
+				1E08AC4C1E641D5000D71778 /* GYAddNCPushSecondVC.xib in Resources */,
 				1EA5DA621E5A91F100D5FB47 /* GYPTMainVC.xib in Resources */,
 				1EAD7F781E5E797B001274F5 /* GYSCZXDetailFirstVC.xib in Resources */,
 				1EAD7F7D1E5E7987001274F5 /* GYSCZXDetailSecondVC.xib in Resources */,
 				1ED1AE381E51591400B8C8A5 /* fx12@2x.png in Resources */,
 				1EAAD4A31E5FF9BC003D1EA6 /* GYNewsNoDetailVC.xib in Resources */,
 				1E7E1DE91E49695900184531 /* LaunchScreen.storyboard in Resources */,
+				1E08AC471E6418D900D71778 /* GYAddNewCaseThirdVC.xib in Resources */,
 				1EAD7F871E5E79A4001274F5 /* GYSCZXDetailThirdVC.xib in Resources */,
 				1E580F611E5C2EB80086C2AD /* MBProgressHUD.bundle in Resources */,
 				1ED1AE371E51591400B8C8A5 /* fx11@2x.png in Resources */,
 				1EAC05CA1E4ADD40007E6CE2 /* GYRegistVC.xib in Resources */,
 				1ED1AE141E514CA700B8C8A5 /* GYNRHomeCell.xib in Resources */,
 				1EAAD49E1E5FF9A2003D1EA6 /* GYNewsRealDetailVC.xib in Resources */,
+				1E08AC511E641F4F00D71778 /* GYAddNewCaseFourthVC.xib in Resources */,
 				1E7E1DE61E49695900184531 /* Assets.xcassets in Resources */,
 				1EAD7F8F1E5E8933001274F5 /* GYSpDsrXxCell.xib in Resources */,
 				1E08AC2A1E63F8CB00D71778 /* GYAddNewCaseSecondVC.xib in Resources */,
@@ -1499,7 +1572,9 @@
 				1ECB76251E52D40A0077FDC3 /* GYPeopleContactVC.xib in Resources */,
 				1E580F6F1E5D382D0086C2AD /* GYNRDlrXxCell.xib in Resources */,
 				1E3357341E5EBB77003B4830 /* GYPCDetailCell.xib in Resources */,
+				1E08AC2F1E63FD3D00D71778 /* GYAddNCPushVC.xib in Resources */,
 				1E580F9B1E5D70100086C2AD /* GYSCDetailFourthVC.xib in Resources */,
+				1E08AC601E64237D00D71778 /* GYAddNewCaseSeventhVC.xib in Resources */,
 				1E580F911E5D6FF40086C2AD /* GYSCDetailSecondVC.xib in Resources */,
 				1EAD7F821E5E7994001274F5 /* GYSCZXDetailFourthVC.xib in Resources */,
 				1EC6271D1E4C55DE006A8BC2 /* GYCDSecondCell.xib in Resources */,
@@ -1518,6 +1593,7 @@
 				1EAAD48E1E5FC959003D1EA6 /* TopMenuSelectViewController.xib in Resources */,
 				1EAC05D61E4AF150007E6CE2 /* GYNoticePublicVC.xib in Resources */,
 				1ED1AE191E5157C300B8C8A5 /* GYNRDetailFirstVC.xib in Resources */,
+				1E08AC561E64228700D71778 /* GYAddNewCaseFifthVC.xib in Resources */,
 				1ED1AE3A1E51591400B8C8A5 /* gd11@2x.png in Resources */,
 				1E580F961E5D70010086C2AD /* GYSCDetailThirdVC.xib in Resources */,
 				1EAAD4991E5FEE82003D1EA6 /* GYNewsInfoListCell.xib in Resources */,
@@ -1598,11 +1674,13 @@
 			files = (
 				1EC627211E4C55EB006A8BC2 /* GYCDThirdCell.m in Sources */,
 				1E33573C1E5EC947003B4830 /* GYCourtListModel.m in Sources */,
+				1E08AC5A1E6422A400D71778 /* GYAddNewCaseSixthVC.m in Sources */,
 				1E580F8B1E5D6FE40086C2AD /* GYSCDetailFirstVC.m in Sources */,
 				1E7E1E691E496D3000184531 /* IQKeyboardManager.m in Sources */,
 				1ECB76241E52D40A0077FDC3 /* GYPeopleContactVC.m in Sources */,
 				1E7E1EB71E49730400184531 /* NSString+Add.m in Sources */,
 				1EAD7F991E5EAB87001274F5 /* GYZxFourthCell.m in Sources */,
+				1E08AC461E6418D900D71778 /* GYAddNewCaseThirdVC.m in Sources */,
 				1E33573F1E5EE12A003B4830 /* GYTop2NewsModel.m in Sources */,
 				1EAAD4D11E602C1E003D1EA6 /* LDImagePicker.m in Sources */,
 				1E33572F1E5EAFEC003B4830 /* GYBmllModel.m in Sources */,
@@ -1644,6 +1722,7 @@
 				1E580F9A1E5D70100086C2AD /* GYSCDetailFourthVC.m in Sources */,
 				1ED1AE131E514CA700B8C8A5 /* GYNRHomeCell.m in Sources */,
 				1E580F601E5C2EB80086C2AD /* MBProgressHUD+MJ.m in Sources */,
+				1E08AC421E6402F900D71778 /* LQXSwitch.m in Sources */,
 				1ED1AE091E4D5C3400B8C8A5 /* GYSearchCaseLoginVC.m in Sources */,
 				1E08AC241E63EDCC00D71778 /* GYAddNewsCaseVC.m in Sources */,
 				1EAC05C41E4ABCD3007E6CE2 /* GYLoginVC.m in Sources */,
@@ -1659,12 +1738,14 @@
 				1E7E1EC91E499ECE00184531 /* GYHomeCell.m in Sources */,
 				1EAD7F811E5E7994001274F5 /* GYSCZXDetailFourthVC.m in Sources */,
 				1E7E1E6E1E496D3000184531 /* IQToolbar.m in Sources */,
+				1E08AC501E641F4F00D71778 /* GYAddNewCaseFourthVC.m in Sources */,
 				1E7E1E7B1E496D4100184531 /* CZZCarouselView.m in Sources */,
 				1E580F9E1E5D70490086C2AD /* GYSCTabbarVC.m in Sources */,
 				1EAAD4941E5FDEE1003D1EA6 /* GYNewsInfoListModel.m in Sources */,
 				1E7E1E631E496D3000184531 /* IQNSArray+Sort.m in Sources */,
 				1EBCFF9A1E55684D006BB80A /* Foundation+Log.m in Sources */,
 				1EAD7F861E5E79A4001274F5 /* GYSCZXDetailThirdVC.m in Sources */,
+				1E08AC4B1E641D5000D71778 /* GYAddNCPushSecondVC.m in Sources */,
 				1E08AC291E63F8CB00D71778 /* GYAddNewCaseSecondVC.m in Sources */,
 				1E7E1E671E496D3000184531 /* IQUIViewController+Additions.m in Sources */,
 				1EAAD4A21E5FF9BC003D1EA6 /* GYNewsNoDetailVC.m in Sources */,
@@ -1677,11 +1758,13 @@
 				1ED1AE2B1E51580B00B8C8A5 /* CustomTabbarController.m in Sources */,
 				1E7E1E991E496D9A00184531 /* GYConst.m in Sources */,
 				1EC627261E4C55FB006A8BC2 /* GYCDFourthCell.m in Sources */,
+				1E08AC2E1E63FD3D00D71778 /* GYAddNCPushVC.m in Sources */,
 				1EAD7F8A1E5E8150001274F5 /* GYSCSpDetailModel.m in Sources */,
 				1EAD7F771E5E797B001274F5 /* GYSCZXDetailFirstVC.m in Sources */,
 				1ED1AE221E5157EE00B8C8A5 /* GYNRDetailThirdVC.m in Sources */,
 				1E580FA11E5D88A20086C2AD /* ZoomImageView.m in Sources */,
 				1EAD7F8E1E5E8933001274F5 /* GYSpDsrXxCell.m in Sources */,
+				1E08AC551E64228700D71778 /* GYAddNewCaseFifthVC.m in Sources */,
 				1E3357331E5EBB77003B4830 /* GYPCDetailCell.m in Sources */,
 				1E580F791E5D55A40086C2AD /* GYSearchCaseListVC.m in Sources */,
 				1E7E1DDB1E49695900184531 /* main.m in Sources */,
@@ -1701,6 +1784,7 @@
 				1EAAD48D1E5FC959003D1EA6 /* TopMenuSelectViewController.m in Sources */,
 				1E7E1EB61E49730400184531 /* MXTabBarController.m in Sources */,
 				1E580F901E5D6FF40086C2AD /* GYSCDetailSecondVC.m in Sources */,
+				1E08AC5F1E64237D00D71778 /* GYAddNewCaseSeventhVC.m in Sources */,
 				1E7E1E661E496D3000184531 /* IQUIView+Hierarchy.m in Sources */,
 				1ED1AE0E1E514AED00B8C8A5 /* GYNetRegistVC.m in Sources */,
 			);

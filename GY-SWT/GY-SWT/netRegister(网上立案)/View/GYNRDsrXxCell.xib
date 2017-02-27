@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGG-6y-23N">
-                        <rect key="frame" x="10" y="10" width="300" height="109"/>
+                        <rect key="frame" x="10" y="10" width="300" height="114.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="原告:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEm-u1-yez">
                                 <rect key="frame" x="8" y="8" width="46.5" height="24"/>
@@ -89,7 +89,7 @@
                     <constraint firstItem="cGG-6y-23N" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="3NS-MJ-0qw"/>
                     <constraint firstItem="cGG-6y-23N" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="7Kj-G3-gV4"/>
                     <constraint firstAttribute="trailing" secondItem="cGG-6y-23N" secondAttribute="trailing" constant="10" id="Cgf-aP-g7K"/>
-                    <constraint firstAttribute="bottom" secondItem="cGG-6y-23N" secondAttribute="bottom" constant="10" id="cry-sa-sHL"/>
+                    <constraint firstAttribute="bottom" secondItem="cGG-6y-23N" secondAttribute="bottom" constant="5" id="cry-sa-sHL"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

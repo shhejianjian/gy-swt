@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '041147923D0C9CC168926B17'
+               BlueprintIdentifier = 'C54E6897264AAA253B2A06E0'
                BlueprintName = 'WHC_AutoLayoutKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libWHC_AutoLayoutKit.a'>

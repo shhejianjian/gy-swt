@@ -6,4 +6,4 @@ pod 'SVProgressHUD'
 pod 'SDWebImage'
 pod 'MBProgressHUD'
 pod 'WHC_AutoLayoutKit'
-
+pod 'KNSemiModalViewController_hons82', '~> 0.4.4'

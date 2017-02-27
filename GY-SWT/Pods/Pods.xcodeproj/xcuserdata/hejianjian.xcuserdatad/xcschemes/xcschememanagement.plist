@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KNSemiModalViewController_hons82.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,17 +52,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>20C0E12EB527BC87F5116154E35BD258</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4A7065BAEDFBE9DDFC89FA8886CDF477</key>
+		<key>7683C35AF07AF7E36DE192CAEB8CBFE0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>75132C525A26B536F3F12C3E42BDA319</key>
+		<key>7C6C06FAF91F2730276EE7F92F8B09C7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,12 +82,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A895D091E513F40A6258CBA3D739FA5C</key>
+		<key>9F237EB5D3E2278FB3290B878D6ADD3B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F5F4B43BAD24F492EB5B31FD9CC12958</key>
+		<key>CBC37CE27BB3DBCE4913C2FB1767FC94</key>
 		<dict>
 			<key>primary</key>
 			<true/>
