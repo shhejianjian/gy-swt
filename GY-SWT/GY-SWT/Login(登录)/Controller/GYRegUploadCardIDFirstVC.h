@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface GYRegUploadCardIDFirstVC : UIViewController
-
+@property (nonatomic, copy) NSString *registIdStr;
 @end

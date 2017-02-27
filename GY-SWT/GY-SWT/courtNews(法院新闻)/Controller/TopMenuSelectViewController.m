@@ -9,7 +9,7 @@
 #import "TopMenuSelectViewController.h"
 #import "MXConstant.h"
 #import "GYNewsTypeListModel.h"
-#import "GYNewsInfoListModel.h"
+#import "GYTop2NewsModel.h"
 #import "GYNewsInfoListCell.h"
 #import "GYNewsRealDetailVC.h"
 #import "GYNewsNoDetailVC.h"
@@ -80,8 +80,8 @@ static NSString *ID=@"GYNewsInfoListCell";
     params[@"fydm"] = courtDm;
     [GYHttpTool post:news_ListByTypeIdUrl ticket:@"" params:params success:^(id json) {
         NSLog(@"%@",json);
-        NSArray *arr = [GYNewsInfoListModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
-        for (GYNewsInfoListModel *newsInfoModel in arr) {
+        NSArray *arr = [GYTop2NewsModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
+        for (GYTop2NewsModel *newsInfoModel in arr) {
             [self.newsListInfoArr addObject:newsInfoModel];
         }
         GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
@@ -187,7 +187,7 @@ static NSString *ID=@"GYNewsInfoListCell";
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    GYNewsInfoListModel *infolistModel = self.newsListInfoArr[indexPath.row];
+    GYTop2NewsModel *infolistModel = self.newsListInfoArr[indexPath.row];
     if (infolistModel.newstype == 1) {
         GYNewsRealDetailVC *newsRealDetailVC = [[GYNewsRealDetailVC alloc]init];
         newsRealDetailVC.newsDetail = infolistModel;

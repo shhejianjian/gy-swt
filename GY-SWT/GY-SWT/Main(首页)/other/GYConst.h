@@ -45,5 +45,5 @@ extern NSString *const news_typeListUrl;
 extern NSString *const news_ListByTypeIdUrl;
 extern NSString *const news_detailUrl;
 extern NSString *const wsla_dsrRegistUrl;
-
+extern NSString *const wsla_uploadPhotoUrl;
 

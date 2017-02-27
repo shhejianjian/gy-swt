@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GYNewsInfoListModel.h"
+#import "GYTop2NewsModel.h"
 @interface GYNewsRealDetailVC : UIViewController
-@property (nonatomic, strong) GYNewsInfoListModel* newsDetail;
+@property (nonatomic, strong) GYTop2NewsModel* newsDetail;
 @property (nonatomic, copy) NSString *myTitle;
 @end

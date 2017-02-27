@@ -15,6 +15,7 @@
                 <outlet property="detailView" destination="641-JT-dgA" id="8Lc-Gg-zPd"/>
                 <outlet property="myImageView" destination="hxH-A2-3dt" id="1Lf-fL-jLI"/>
                 <outlet property="nextBtn" destination="Odr-df-WDi" id="jdm-Jd-XCI"/>
+                <outlet property="titleLabel" destination="9qg-I9-Qva" id="1dl-XC-Oyu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -55,6 +56,9 @@
                             <state key="normal" title="下一步">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="nextClick:" destination="-1" eventType="touchUpInside" id="5O6-ge-6wg"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>

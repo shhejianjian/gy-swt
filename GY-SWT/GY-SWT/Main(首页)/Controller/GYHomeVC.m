@@ -22,6 +22,9 @@
 #import "GYHttpTool.h"
 #import "GYTop2NewsModel.h"
 #import "TopMenuSelectViewController.h"
+#import "GYNewsNoDetailVC.h"
+#import "GYNewsRealDetailVC.h"
+
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -159,8 +162,24 @@ static NSString *ID=@"homeCell";
     //  设置frame
     self.carouselView.frame = CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, carouselViewHeight);
     //  用block处理图片点击
+    __weak GYHomeVC *weakSelf = self;
     self.carouselView.imageClickBlock = ^(NSInteger index){
         NSLog(@"点击了第%ld张图片",index);
+        
+        GYTop2NewsModel *top2NewsModel = weakSelf.lunboNewsArr[index];
+        if (top2NewsModel.newstype == 1) {
+            GYNewsRealDetailVC *newsRealDetailVC = [[GYNewsRealDetailVC alloc]init];
+            newsRealDetailVC.newsDetail = top2NewsModel;
+            newsRealDetailVC.myTitle = @"法院新闻";
+            [weakSelf.navigationController pushViewController:newsRealDetailVC animated:YES];
+        }
+        if (top2NewsModel.newstype == 3) {
+            GYNewsNoDetailVC *noDetailVC = [[GYNewsNoDetailVC alloc]init];
+            noDetailVC.newsDetail = top2NewsModel;
+            noDetailVC.myTitle = @"法院新闻";
+            [weakSelf.navigationController pushViewController:noDetailVC animated:YES];
+            
+        }
     };
     //  用代理处理点击图片事件，如果两个方法都实现，block优先级高于代理
     //    self.carouselView.delegate = self;
@@ -317,7 +336,20 @@ static NSString *ID=@"homeCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-
+    GYTop2NewsModel *top2NewsModel = self.top2NewsArr[indexPath.row];
+    if (top2NewsModel.newstype == 1) {
+        GYNewsRealDetailVC *newsRealDetailVC = [[GYNewsRealDetailVC alloc]init];
+        newsRealDetailVC.newsDetail = top2NewsModel;
+        newsRealDetailVC.myTitle = @"法院新闻";
+        [self.navigationController pushViewController:newsRealDetailVC animated:YES];
+    }
+    if (top2NewsModel.newstype == 3) {
+        GYNewsNoDetailVC *noDetailVC = [[GYNewsNoDetailVC alloc]init];
+        noDetailVC.newsDetail = top2NewsModel;
+        noDetailVC.myTitle = @"法院新闻";
+        [self.navigationController pushViewController:noDetailVC animated:YES];
+        
+    }
     
 }
 

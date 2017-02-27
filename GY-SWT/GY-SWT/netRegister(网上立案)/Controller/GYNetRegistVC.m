@@ -11,6 +11,8 @@
 #import "MXConstant.h"
 #import "CustomTabbarController.h"
 #import "GYNetRegistModel.h"
+#import "GYAddNewsCaseVC.h"
+
 
 static NSString *ID=@"GYNRHomeCell";
 
@@ -127,6 +129,19 @@ static NSString *ID=@"GYNRHomeCell";
     [self.navigationController pushViewController:custom animated:YES];
     
 }
+
+- (IBAction)addNewCase:(id)sender {
+    
+    GYAddNewsCaseVC *addNewsCaseVC = [[GYAddNewsCaseVC alloc]init];
+    [self.navigationController pushViewController:addNewsCaseVC animated:YES];
+    
+}
+
+
+
+
+
+
 
 - (NSMutableArray *)wslaListArr {
     if(_wslaListArr == nil) {

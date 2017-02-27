@@ -83,6 +83,7 @@
         if ([loginModel.success isEqualToString:@"true"]) {
             [MBProgressHUD showSuccess:loginModel.msg];
             GYRegUploadCardIDFirstVC *uploadCardIDVC = [[GYRegUploadCardIDFirstVC alloc]init];
+            uploadCardIDVC.registIdStr = loginModel.id;
             [self.navigationController pushViewController:uploadCardIDVC animated:YES];
         } else {
             [MBProgressHUD showError:loginModel.msg];

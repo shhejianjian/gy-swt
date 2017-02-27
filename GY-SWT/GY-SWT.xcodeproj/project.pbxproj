@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E08AC241E63EDCC00D71778 /* GYAddNewsCaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E08AC221E63EDCC00D71778 /* GYAddNewsCaseVC.m */; };
+		1E08AC251E63EDCC00D71778 /* GYAddNewsCaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E08AC231E63EDCC00D71778 /* GYAddNewsCaseVC.xib */; };
+		1E08AC291E63F8CB00D71778 /* GYAddNewCaseSecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E08AC271E63F8CB00D71778 /* GYAddNewCaseSecondVC.m */; };
+		1E08AC2A1E63F8CB00D71778 /* GYAddNewCaseSecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E08AC281E63F8CB00D71778 /* GYAddNewCaseSecondVC.xib */; };
 		1E33572F1E5EAFEC003B4830 /* GYBmllModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E33572E1E5EAFEC003B4830 /* GYBmllModel.m */; };
 		1E3357331E5EBB77003B4830 /* GYPCDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3357311E5EBB77003B4830 /* GYPCDetailCell.m */; };
 		1E3357341E5EBB77003B4830 /* GYPCDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3357321E5EBB77003B4830 /* GYPCDetailCell.xib */; };
@@ -191,6 +195,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E08AC211E63EDCC00D71778 /* GYAddNewsCaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYAddNewsCaseVC.h; sourceTree = "<group>"; };
+		1E08AC221E63EDCC00D71778 /* GYAddNewsCaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYAddNewsCaseVC.m; sourceTree = "<group>"; };
+		1E08AC231E63EDCC00D71778 /* GYAddNewsCaseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYAddNewsCaseVC.xib; sourceTree = "<group>"; };
+		1E08AC261E63F8CB00D71778 /* GYAddNewCaseSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYAddNewCaseSecondVC.h; sourceTree = "<group>"; };
+		1E08AC271E63F8CB00D71778 /* GYAddNewCaseSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYAddNewCaseSecondVC.m; sourceTree = "<group>"; };
+		1E08AC281E63F8CB00D71778 /* GYAddNewCaseSecondVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYAddNewCaseSecondVC.xib; sourceTree = "<group>"; };
 		1E33572D1E5EAFEC003B4830 /* GYBmllModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYBmllModel.h; sourceTree = "<group>"; };
 		1E33572E1E5EAFEC003B4830 /* GYBmllModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYBmllModel.m; sourceTree = "<group>"; };
 		1E3357301E5EBB77003B4830 /* GYPCDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYPCDetailCell.h; sourceTree = "<group>"; };
@@ -837,6 +847,12 @@
 				1ED1AE2A1E51580B00B8C8A5 /* CustomTabbarController.m */,
 				1ECB761E1E52A95F0077FDC3 /* GYNRSegmentView.h */,
 				1ECB761F1E52A95F0077FDC3 /* GYNRSegmentView.m */,
+				1E08AC211E63EDCC00D71778 /* GYAddNewsCaseVC.h */,
+				1E08AC221E63EDCC00D71778 /* GYAddNewsCaseVC.m */,
+				1E08AC231E63EDCC00D71778 /* GYAddNewsCaseVC.xib */,
+				1E08AC261E63F8CB00D71778 /* GYAddNewCaseSecondVC.h */,
+				1E08AC271E63F8CB00D71778 /* GYAddNewCaseSecondVC.m */,
+				1E08AC281E63F8CB00D71778 /* GYAddNewCaseSecondVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1450,6 +1466,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E08AC251E63EDCC00D71778 /* GYAddNewsCaseVC.xib in Resources */,
 				1E7E1ECA1E499ECE00184531 /* GYHomeCell.xib in Resources */,
 				1E580F6A1E5D2C3B0086C2AD /* GYNRDsrXxCell.xib in Resources */,
 				1EAAD4A81E600C90003D1EA6 /* GYImageNewsCell.xib in Resources */,
@@ -1468,6 +1485,7 @@
 				1EAAD49E1E5FF9A2003D1EA6 /* GYNewsRealDetailVC.xib in Resources */,
 				1E7E1DE61E49695900184531 /* Assets.xcassets in Resources */,
 				1EAD7F8F1E5E8933001274F5 /* GYSpDsrXxCell.xib in Resources */,
+				1E08AC2A1E63F8CB00D71778 /* GYAddNewCaseSecondVC.xib in Resources */,
 				1ED1AE3E1E51591400B8C8A5 /* wd13@2x.png in Resources */,
 				1ED1AE231E5157EE00B8C8A5 /* GYNRDetailThirdVC.xib in Resources */,
 				1ED1AE3C1E51591400B8C8A5 /* sy11@2x.png in Resources */,
@@ -1627,6 +1645,7 @@
 				1ED1AE131E514CA700B8C8A5 /* GYNRHomeCell.m in Sources */,
 				1E580F601E5C2EB80086C2AD /* MBProgressHUD+MJ.m in Sources */,
 				1ED1AE091E4D5C3400B8C8A5 /* GYSearchCaseLoginVC.m in Sources */,
+				1E08AC241E63EDCC00D71778 /* GYAddNewsCaseVC.m in Sources */,
 				1EAC05C41E4ABCD3007E6CE2 /* GYLoginVC.m in Sources */,
 				1EC627151E4C47A9006A8BC2 /* XYCenterButton.m in Sources */,
 				1EC6271C1E4C55DE006A8BC2 /* GYCDSecondCell.m in Sources */,
@@ -1646,6 +1665,7 @@
 				1E7E1E631E496D3000184531 /* IQNSArray+Sort.m in Sources */,
 				1EBCFF9A1E55684D006BB80A /* Foundation+Log.m in Sources */,
 				1EAD7F861E5E79A4001274F5 /* GYSCZXDetailThirdVC.m in Sources */,
+				1E08AC291E63F8CB00D71778 /* GYAddNewCaseSecondVC.m in Sources */,
 				1E7E1E671E496D3000184531 /* IQUIViewController+Additions.m in Sources */,
 				1EAAD4A21E5FF9BC003D1EA6 /* GYNewsNoDetailVC.m in Sources */,
 				1E7E1E681E496D3000184531 /* IQUIWindow+Hierarchy.m in Sources */,

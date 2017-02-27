@@ -40,7 +40,7 @@ NSString *const news_ListByTypeIdUrl = @"xwListByTypeId";
 NSString *const news_detailUrl = @"xwImage_listInfo";
 
 NSString *const wsla_dsrRegistUrl = @"wsla_wslaAppRegister";
-
+NSString *const wsla_uploadPhotoUrl = @"wsla_registerFtp";
 
 
 
