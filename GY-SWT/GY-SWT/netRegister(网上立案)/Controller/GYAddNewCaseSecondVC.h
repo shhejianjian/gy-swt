@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface GYAddNewCaseSecondVC : UIViewController
-
+@property (nonatomic, copy) NSString *ajbsStr;
 @end

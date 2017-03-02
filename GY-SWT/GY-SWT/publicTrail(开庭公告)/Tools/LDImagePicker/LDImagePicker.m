@@ -31,7 +31,7 @@
 - (void)showImagePickerWithType:(ImagePickerType)type InViewController:(UIViewController *)viewController Scale:(double)scale{
     if (type == ImagePickerCamera) {
         self.imagePickerController.sourceType =  UIImagePickerControllerSourceTypeCamera;
-    }else{
+    }else {
         self.imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
     }
     if(scale>0 &&scale<=1.5){

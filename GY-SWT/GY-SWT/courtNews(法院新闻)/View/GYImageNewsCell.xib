@@ -18,8 +18,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="163"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ya8-Ye-2uT">
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="加载" translatesAutoresizingMaskIntoConstraints="NO" id="ya8-Ye-2uT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="143.5"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                 </subviews>
                 <constraints>
@@ -35,4 +36,7 @@
             <point key="canvasLocation" x="-106" y="-8"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="加载" width="16" height="16"/>
+    </resources>
 </document>

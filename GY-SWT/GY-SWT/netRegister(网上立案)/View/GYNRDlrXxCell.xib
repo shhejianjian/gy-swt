@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5B-nc-iiT">
-                        <rect key="frame" x="10" y="10" width="300" height="149"/>
+                        <rect key="frame" x="10" y="10" width="300" height="154.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="代理人:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOU-h0-K9e">
                                 <rect key="frame" x="8" y="8" width="67" height="24"/>
@@ -87,7 +87,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="l5B-nc-iiT" secondAttribute="trailing" constant="10" id="frW-fU-oyy"/>
-                    <constraint firstAttribute="bottom" secondItem="l5B-nc-iiT" secondAttribute="bottom" constant="10" id="i9k-gZ-YGV"/>
+                    <constraint firstAttribute="bottom" secondItem="l5B-nc-iiT" secondAttribute="bottom" constant="5" id="i9k-gZ-YGV"/>
                     <constraint firstItem="l5B-nc-iiT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="q31-u1-wyl"/>
                     <constraint firstItem="l5B-nc-iiT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="qbR-01-Nfh"/>
                 </constraints>

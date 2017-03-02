@@ -8,9 +8,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>亲，我们需要访问您的摄像头，可以吗？</string>
+	<string>需要访问您的摄像头才可以正常使用</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>亲，我们需要访问您的相册，可以吗？</string>
+	<string>需要访问您的相册才可以正常使用</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

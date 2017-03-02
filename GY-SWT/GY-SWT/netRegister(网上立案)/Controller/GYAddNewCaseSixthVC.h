@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HWPublishBaseController.h"
 
 @interface GYAddNewCaseSixthVC : UIViewController
+@property (nonatomic, copy) NSString *ajbsStr;
 
 @end

@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYNRDetailFourthVC">
             <connections>
                 <outlet property="detailView" destination="e2e-pS-z1h" id="Ges-YS-0mr"/>
-                <outlet property="myImageView" destination="xGs-ZS-Vn0" id="l2L-qP-t4d"/>
+                <outlet property="myCollectionView" destination="TJS-5S-xJ2" id="M2b-iW-E7o"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,12 +27,28 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2e-pS-z1h">
                     <rect key="frame" x="10" y="114" width="355" height="483"/>
                     <subviews>
-                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xGs-ZS-Vn0">
-                            <rect key="frame" x="48" y="113" width="240" height="128"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="TJS-5S-xJ2">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="483"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UVv-Vr-vjH">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="66T-bk-H2R"/>
+                                <outlet property="delegate" destination="-1" id="ojI-kB-hgY"/>
+                            </connections>
+                        </collectionView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="TJS-5S-xJ2" firstAttribute="top" secondItem="e2e-pS-z1h" secondAttribute="top" id="IUl-KT-XEK"/>
+                        <constraint firstAttribute="bottom" secondItem="TJS-5S-xJ2" secondAttribute="bottom" id="Lku-Pp-Rfw"/>
+                        <constraint firstAttribute="trailing" secondItem="TJS-5S-xJ2" secondAttribute="trailing" id="PBE-o0-eYp"/>
+                        <constraint firstItem="TJS-5S-xJ2" firstAttribute="leading" secondItem="e2e-pS-z1h" secondAttribute="leading" id="eXE-wU-Gbv"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

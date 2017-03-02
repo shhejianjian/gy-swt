@@ -101,6 +101,7 @@ typedef enum{
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.delegate = self;
         _currImageView = [[UIImageView alloc] init];
+        _currImageView.backgroundColor = [UIColor whiteColor];
         _currImageView.userInteractionEnabled = YES;
         [_currImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageClick)]];
         [_scrollView addSubview:_currImageView];

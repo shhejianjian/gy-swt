@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYAddNewCaseFifthVC">
             <connections>
                 <outlet property="blackLineView" destination="UDL-5w-Qh1" id="o5v-mB-Il6"/>
-                <outlet property="detailView" destination="ywb-PG-eJO" id="JGz-P7-AhS"/>
+                <outlet property="myCollectionView" destination="NcA-kg-EAD" id="1Fl-wI-Jyr"/>
                 <outlet property="nextBtn" destination="ewF-ar-mfR" id="HtM-si-ktT"/>
                 <outlet property="stepView" destination="tzG-Va-znI" id="BPC-1Z-msj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -26,17 +26,31 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="xC2-td-5Vi">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NcA-kg-EAD">
+                    <rect key="frame" x="10" y="140" width="355" height="457"/>
+                    <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jIl-fO-skV">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="xPY-PB-fCN"/>
+                        <outlet property="delegate" destination="-1" id="zTU-iP-n25"/>
+                    </connections>
+                </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxX-Wt-35H">
                     <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewF-ar-mfR">
-                            <rect key="frame" x="98" y="15" width="180" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewF-ar-mfR">
+                            <rect key="frame" x="118" y="15" width="140" height="30"/>
                             <color key="backgroundColor" red="0.81960784310000001" green="0.16862745100000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="180" id="2Oe-ZZ-kp9"/>
+                                <constraint firstAttribute="width" constant="140" id="2Oe-ZZ-kp9"/>
                                 <constraint firstAttribute="height" constant="30" id="fgj-N6-sbc"/>
                             </constraints>
-                            <state key="normal" title="下一步">
+                            <state key="normal" image="upload">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -62,13 +76,13 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前:核对起诉书" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9r-Cu-8nA">
-                            <rect key="frame" x="20" y="10" width="89.5" height="15"/>
+                            <rect key="frame" x="20" y="10" width="90" height="15"/>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下一步:核对证件材料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyC-RI-49J">
-                            <rect key="frame" x="119.5" y="10" width="114" height="15"/>
+                            <rect key="frame" x="120" y="10" width="114" height="15"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -87,7 +101,7 @@
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="进度提示_点黑" translatesAutoresizingMaskIntoConstraints="NO" id="FaH-OO-RDk">
-                            <rect key="frame" x="166.5" y="31" width="20" height="20"/>
+                            <rect key="frame" x="167" y="31" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="fFK-Jo-yA5"/>
                                 <constraint firstAttribute="width" constant="20" id="zcR-B4-PoW"/>
@@ -121,34 +135,30 @@
                         <constraint firstItem="FaH-OO-RDk" firstAttribute="centerY" secondItem="UDL-5w-Qh1" secondAttribute="centerY" id="zYP-MR-Uyj"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywb-PG-eJO">
-                    <rect key="frame" x="10" y="140" width="355" height="457"/>
-                    <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="tzG-Va-znI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="1hR-kx-EU1"/>
-                <constraint firstItem="cxX-Wt-35H" firstAttribute="top" secondItem="ywb-PG-eJO" secondAttribute="bottom" constant="10" id="2uA-Kn-lDj"/>
-                <constraint firstAttribute="trailing" secondItem="ywb-PG-eJO" secondAttribute="trailing" constant="10" id="AiU-2g-t5u"/>
                 <constraint firstItem="tzG-Va-znI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="QmQ-fw-F93"/>
                 <constraint firstItem="xC2-td-5Vi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Qor-3n-hpF"/>
-                <constraint firstItem="cxX-Wt-35H" firstAttribute="top" secondItem="ywb-PG-eJO" secondAttribute="bottom" constant="10" id="RRa-ze-2hp"/>
                 <constraint firstAttribute="bottom" secondItem="xC2-td-5Vi" secondAttribute="bottom" id="UkG-b5-uOP"/>
                 <constraint firstAttribute="bottom" secondItem="cxX-Wt-35H" secondAttribute="bottom" id="W6d-lP-AFQ"/>
-                <constraint firstItem="ywb-PG-eJO" firstAttribute="top" secondItem="tzG-Va-znI" secondAttribute="bottom" constant="10" id="Wel-Zo-tKk"/>
+                <constraint firstItem="NcA-kg-EAD" firstAttribute="top" secondItem="tzG-Va-znI" secondAttribute="bottom" constant="10" id="ceF-tm-qkj"/>
                 <constraint firstItem="cxX-Wt-35H" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dvs-t0-AxW"/>
                 <constraint firstAttribute="trailing" secondItem="tzG-Va-znI" secondAttribute="trailing" constant="10" id="fSz-ka-cXb"/>
-                <constraint firstItem="ywb-PG-eJO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="qQ3-TX-Pdr"/>
+                <constraint firstAttribute="trailing" secondItem="NcA-kg-EAD" secondAttribute="trailing" constant="10" id="j1w-gb-h7S"/>
                 <constraint firstItem="xC2-td-5Vi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qmf-Ku-lgE"/>
                 <constraint firstAttribute="trailing" secondItem="xC2-td-5Vi" secondAttribute="trailing" id="rjP-zq-0ya"/>
-                <constraint firstItem="ywb-PG-eJO" firstAttribute="top" secondItem="tzG-Va-znI" secondAttribute="bottom" constant="10" id="rnM-iZ-6A3"/>
+                <constraint firstItem="NcA-kg-EAD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="sC9-fG-LLN"/>
                 <constraint firstAttribute="trailing" secondItem="cxX-Wt-35H" secondAttribute="trailing" id="scU-ci-0E6"/>
+                <constraint firstItem="cxX-Wt-35H" firstAttribute="top" secondItem="NcA-kg-EAD" secondAttribute="bottom" constant="10" id="ve0-41-Lkx"/>
             </constraints>
+            <point key="canvasLocation" x="-129.5" y="38.5"/>
         </view>
     </objects>
     <resources>
         <image name="background" width="1080" height="1921"/>
+        <image name="upload" width="140" height="30"/>
         <image name="进度提示_点亮" width="71" height="71"/>
         <image name="进度提示_点黑" width="71" height="71"/>
     </resources>

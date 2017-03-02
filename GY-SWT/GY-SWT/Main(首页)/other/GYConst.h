@@ -46,4 +46,10 @@ extern NSString *const news_ListByTypeIdUrl;
 extern NSString *const news_detailUrl;
 extern NSString *const wsla_dsrRegistUrl;
 extern NSString *const wsla_uploadPhotoUrl;
+extern NSString *const wsla_oneStepUrl;
+extern NSString *const wsla_saveDsrInfoUrl;
+extern NSString *const wsla_dwxzListInfoUrl;
+extern NSString *const wsla_saveDlrInfoUrl;
+extern NSString *const wsla_savePhotoUrl;
+extern NSString *const wsla_deletePhotoUrl;
 

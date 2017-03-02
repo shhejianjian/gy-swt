@@ -31,7 +31,6 @@ NSString *const ajxcListUrl = @"ajcx_listInfo";
 NSString *const spajcxDetailUrl = @"spAjcx_getInfo";
 NSString *const bmll_ListInfoUrl = @"bmll_listInfo";
 
-
 NSString *const news_tjInfoUrl = @"xwtj_listInfo";
 NSString *const news_top2InfoUrl = @"xwTop2_listInfo";
 NSString *const news_allListUrl = @"xw_listInfo";
@@ -42,5 +41,12 @@ NSString *const news_detailUrl = @"xwImage_listInfo";
 NSString *const wsla_dsrRegistUrl = @"wsla_wslaAppRegister";
 NSString *const wsla_uploadPhotoUrl = @"wsla_registerFtp";
 
+NSString *const wsla_oneStepUrl = @"ajxx_oneStepApp";
+NSString *const wsla_saveDsrInfoUrl = @"dsr_saveOrUpdateInfo";
+NSString *const wsla_dwxzListInfoUrl = @"dsr_dwxzList";
+NSString *const wsla_saveDlrInfoUrl = @"dlr_saveOrUpdateInfo";
+
+NSString *const wsla_savePhotoUrl = @"jz_saveInfo";
+NSString *const wsla_deletePhotoUrl = @"jz_deleteInfo";
 
 

@@ -28,7 +28,9 @@
     _newsModel = newsModel;
     self.titleLabel.text = newsModel.title;
     self.dateLabel.text = newsModel.pubdate;
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",self.imageFileUrl,newsModel.imageurl]]placeholderImage:[UIImage imageNamed:@"加载"]];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",self.imageFileUrl,newsModel.imageurl]]placeholderImage:[UIImage imageNamed:@"加载"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.imageView.contentMode = UIViewContentModeScaleToFill;
+    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -39,7 +39,7 @@ static NSString *ID=@"GYNRDlrXxCell";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"ajbs"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"wsla_ajxx_ajbs"];
     params[@"page"] = @"1";
-    params[@"pageSize"] = @"8";
+    params[@"pageSize"] = @"100";
     NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"login_ticket"];
     [GYHttpTool post:wsla_ajxx_detailDlrInfoUrl ticket:ticket params:params success:^(id json) {
         NSLog(@"%@",json);

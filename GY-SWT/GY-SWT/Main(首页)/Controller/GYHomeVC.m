@@ -24,6 +24,7 @@
 #import "TopMenuSelectViewController.h"
 #import "GYNewsNoDetailVC.h"
 #import "GYNewsRealDetailVC.h"
+#import "GYWssdLoginVC.h"
 
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
@@ -258,7 +259,8 @@ static NSString *ID=@"homeCell";
             
             break;
         case 7:{
-            
+            GYWssdLoginVC *wssdLoginVC = [[GYWssdLoginVC alloc]init];
+            [self.navigationController pushViewController:wssdLoginVC animated:YES];
         }
             
             break;
@@ -369,8 +371,8 @@ static NSString *ID=@"homeCell";
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
     }];
-    
 }
+
 - (void)loadButtonWithArray:(NSArray *)arr{
     CGFloat w = 0;//保存前一个button的宽以及前一个button距离屏幕边缘的距离
     CGFloat h = 20;//用来控制button距离父视图的高
@@ -403,6 +405,7 @@ static NSString *ID=@"homeCell";
     GYCourtListModel *courtListModel = self.courtListArr[btn.tag];
     NSLog(@"%@",courtListModel.dm);
     [[NSUserDefaults standardUserDefaults] setObject:courtListModel.dm forKey:@"chooseCourt_dm"];
+    [[NSUserDefaults standardUserDefaults] setObject:courtListModel.dmms forKey:@"chooseCourt_name"];
     self.courtView.hidden = YES;
     self.homeDetailView.hidden = NO;
     self.mxNavigationBar.hidden = NO;

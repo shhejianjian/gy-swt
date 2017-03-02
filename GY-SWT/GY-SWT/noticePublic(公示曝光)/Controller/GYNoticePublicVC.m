@@ -97,7 +97,7 @@ static NSString *ID=@"GYNoticePucCell";
     [self.losePeopleListArr removeAllObjects];
     [MBProgressHUD showMessage:@"正在加载" toView:self.view];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"pageSize"] = @"10";
+    params[@"pageSize"] = @"100";
     params[@"page"] = @"1";
     params[@"lx"] = type;
     params[@"xm"] = name;

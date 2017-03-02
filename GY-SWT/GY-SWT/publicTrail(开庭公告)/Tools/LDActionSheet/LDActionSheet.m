@@ -139,22 +139,22 @@
 }
 
 - (void)didClickButton:(UIButton *)button {
+    NSLog(@"%ld",button.tag);
     if (_delegate && [_delegate respondsToSelector:@selector(actionSheet:clickedButtonAtIndex:)]) {
         [_delegate actionSheet:self clickedButtonAtIndex:button.tag];
     }
     [self hide];
 }
 - (void)cancelButton_Click:(UIButton *)button {
-    
+    NSLog(@"cancel:%ld",button.tag);
     if (_delegate && [_delegate respondsToSelector:@selector(actionSheetCancel:)]) {
         [_delegate actionSheetCancel:self];
     }
     [self hide];
 }
 - (void)dismissView:(UITapGestureRecognizer *)tap {
-    
-    if (_delegate && [_delegate respondsToSelector:@selector(actionSheet:clickedButtonAtIndex:)]) {
-        [_delegate actionSheet:self clickedButtonAtIndex:_otherButtonTitles.count];
+    if (_delegate && [_delegate respondsToSelector:@selector(actionSheetCancel:)]) {
+        [_delegate actionSheetCancel:self];
     }
     [self hide];
 }

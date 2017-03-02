@@ -29,7 +29,9 @@
     _newsInfoListModel = newsInfoListModel;
     self.titelLabel.text = newsInfoListModel.title;
     self.timeLabel.text = newsInfoListModel.pubdate;
-    [self.myImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",self.imageFileUrl,newsInfoListModel.imageurl]]placeholderImage:[UIImage imageNamed:@"加载"]];
+    [self.myImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",self.imageFileUrl,newsInfoListModel.imageurl]]placeholderImage:[UIImage imageNamed:@"加载"]completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.imageView.contentMode = UIViewContentModeScaleToFill;
+    }];
     
     if (newsInfoListModel.newstype == 3 && [newsInfoListModel.newstypeid isEqualToString:@"4"]) {
         self.myImageView.hidden = NO;

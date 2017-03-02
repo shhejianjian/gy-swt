@@ -49,6 +49,7 @@
     [actionSheet showInView:self.view];
 }
 - (void)actionSheet:(LDActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"%ld",(long)buttonIndex);
     LDImagePicker *imagePicker = [LDImagePicker sharedInstance];
     imagePicker.delegate = self;
     [imagePicker showImagePickerWithType:buttonIndex InViewController:self Scale:0.75];
@@ -63,14 +64,15 @@
 }
 
 - (IBAction)nextClick:(UIButton *)sender {
-    
+    NSData *imageData = UIImageJPEGRepresentation(self.myImageView.image , 0.5);
     if ([sender.titleLabel.text isEqualToString:@"下一步"]) {
         if (self.checkImage) {
+            
             NSMutableDictionary *params = [NSMutableDictionary dictionary];
             params[@"loginUserType"] = @"1";
             params[@"id"] = self.registIdStr;
             params[@"zplx"] = @"1";
-            [GYHttpTool uploadImage:wsla_uploadPhotoUrl andImageData:self.myImageView.image ticket:@"" params:params success:^(id json) {
+            [GYHttpTool uploadImage:wsla_uploadPhotoUrl andImageData:imageData ticket:@"" params:params success:^(id json) {
                 NSLog(@"json:%@",json);
                 GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
                 if ([loginModel.success isEqualToString:@"true"]) {
@@ -98,7 +100,7 @@
             params[@"loginUserType"] = @"1";
             params[@"id"] = self.secondIdStr;
             params[@"zplx"] = @"2";
-            [GYHttpTool uploadImage:wsla_uploadPhotoUrl andImageData:self.myImageView.image ticket:@"" params:params success:^(id json) {
+            [GYHttpTool uploadImage:wsla_uploadPhotoUrl andImageData:imageData ticket:@"" params:params success:^(id json) {
                 NSLog(@"json:%@",json);
                 GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
                 if ([loginModel.success isEqualToString:@"true"]) {

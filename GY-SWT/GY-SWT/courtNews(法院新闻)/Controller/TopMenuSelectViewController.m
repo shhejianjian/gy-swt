@@ -75,7 +75,7 @@ static NSString *ID=@"GYNewsInfoListCell";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"newsTypeId"] = typeId;
     params[@"page"] = @"1";
-    params[@"pageSize"] = @"8";
+    params[@"pageSize"] = @"100";
     NSString *courtDm = [[NSUserDefaults standardUserDefaults]objectForKey:@"chooseCourt_dm"];
     params[@"fydm"] = courtDm;
     [GYHttpTool post:news_ListByTypeIdUrl ticket:@"" params:params success:^(id json) {

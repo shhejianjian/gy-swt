@@ -44,7 +44,7 @@ static NSString *ID=@"GYImageNewsCell";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"newsId"] = self.newsDetail.id;
     params[@"page"] = @"1";
-    params[@"pageSize"] = @"20";
+    params[@"pageSize"] = @"100";
     
     [GYHttpTool post:news_detailUrl ticket:@"" params:params success:^(id json) {
         NSLog(@"loadNewsDetailData:%@",json);

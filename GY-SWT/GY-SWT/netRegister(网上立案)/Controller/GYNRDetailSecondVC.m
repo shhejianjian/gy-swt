@@ -25,6 +25,9 @@ static NSString *ID=@"GYNRDsrXxCell";
 @property (nonatomic, copy) NSString *ssdwType;
 
 @property (nonatomic, strong) NSMutableArray *dsrXxListArr;
+
+
+
 /** 记录当前页码 */
 @property (nonatomic, assign) int currentPage;
 /** 总数 */
@@ -56,23 +59,30 @@ static NSString *ID=@"GYNRDsrXxCell";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"ajbs"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"wsla_ajxx_ajbs"];
     params[@"page"] = @"1";
-    params[@"pageSize"] = @"8";
+    params[@"pageSize"] = @"100";
     NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"login_ticket"];
     [GYHttpTool post:wsla_ajxx_detailDsrInfoUrl ticket:ticket params:params success:^(id json) {
         NSLog(@"%@",json);
         NSArray *arr = [GYNRDsrXxModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
         for (GYNRDsrXxModel *dsrModel in arr) {
             NSLog(@"+++%@",dsrModel.ssdwmc);
+            
             if ([dsrModel.ssdwmc isEqualToString:ssdwName]) {
                 [self.dsrXxListArr addObject:dsrModel];
+                
             }
         }
+        
         [MBProgressHUD hideHUDForView:self.view];
         [self.myTableView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
         
     }];
+}
+- (IBAction)btnCLick:(id)sender {
+    
+    
 }
 
 

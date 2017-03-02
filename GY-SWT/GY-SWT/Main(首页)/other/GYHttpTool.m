@@ -38,7 +38,6 @@
     NSString *md5key = @"834ebef38ca6";
     NSString *version = @"1.0";
     NSString *pastMD5Str = [NSString stringWithFormat:@"%@%@%@%@%@%@",uuid,url,thirdFlowStr,appid,randCodeStr,md5key];
-    NSLog(@"pastmd5==%@====%@====%@",pastMD5Str,randCodeStr,thirdFlowStr);
     NSString *newMD5Str = [self md5HexDigest:pastMD5Str];
     
     // 2.利用AFN管理者发送请求
@@ -60,7 +59,6 @@
     NSString *urlStr = [NSString stringWithFormat:@"%@?params={%@}",BaseUrl,paramsDic];
     NSString *UrlString = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [manager GET:UrlString parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@"==%@",operation);
         if (success) {
             success(responseObject);
         }
@@ -78,7 +76,6 @@
     [formatter setDateFormat:@"YYYYMMddhhmmss"];
     date = [formatter stringFromDate:[NSDate date]];
     NSString *timeNow = [[NSString alloc] initWithFormat:@"%@", date];
-    NSLog(@"%@", timeNow);
     return timeNow;
 }
 
@@ -96,10 +93,8 @@
     
     //自动生成8位随机密码
     NSTimeInterval random=[NSDate timeIntervalSinceReferenceDate];
-    NSLog(@"now:%.8f",random);
     NSString *randomString = [NSString stringWithFormat:@"%.8f",random];
     NSString *randompassword = [[randomString componentsSeparatedByString:@"."]objectAtIndex:1];
-    NSLog(@"randompassword:%@",randompassword);
     
     return randompassword;
     
@@ -157,7 +152,6 @@
     NSString *urlStr = [NSString stringWithFormat:@"%@",BaseUrl];
     
     [manager POST:urlStr parameters:newParams success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"newParams:%@",newParams);
         if (success) {
             success(responseObject);
         }
@@ -227,7 +221,7 @@
     
 }
 
-+ (void)uploadImage:(NSString *)url andImageData:(UIImage *)image ticket:(NSString *)ticket params:(NSDictionary *)params success:(void(^)(id json))success failure:(void(^)(NSError *error)) failure{
++ (void)uploadImage:(NSString *)url andImageData:(NSData *)image ticket:(NSString *)ticket params:(NSDictionary *)params success:(void(^)(id json))success failure:(void(^)(NSError *error)) failure{
     
     
     
@@ -273,7 +267,7 @@
                                     parameters:newParams//上传的其他参数
                      constructingBodyWithBlock:^(id<AFMultipartFormData> formData)//设置请求体
      {
-         [formData appendPartWithFileData:[UIImageJPEGRepresentation(image, 0) base64EncodedDataWithOptions:0]//音乐媒体文件的data对象
+         [formData appendPartWithFileData:image//音乐媒体文件的data对象
                                      name:@"files"//与数据关联的参数名称，不能为nil
                                  fileName:fileName//上传的文件名，不能为nil
                                  mimeType:@"image/jpg"];
@@ -283,7 +277,6 @@
     AFHTTPRequestOperation *operation =
     [manager HTTPRequestOperationWithRequest:request
                                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                         NSLog(@"--success:%@--%@",newParams,fileName);
                                          if (success) {
                                              success(responseObject);
                                          }
@@ -299,15 +292,14 @@
      {
          double f =  ((double)totalBytesWritten / totalBytesExpectedToWrite);
          [SVProgressHUD showProgress:f status:@"上传中"];
-         NSLog(@"%f",f);
          if (f >= 1.000000) {
+             
              [SVProgressHUD dismiss];
              
          }
      }];
     [operation start];
-    
-    
-    
 }
+
+
 @end

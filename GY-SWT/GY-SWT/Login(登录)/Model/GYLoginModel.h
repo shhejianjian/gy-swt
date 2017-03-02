@@ -15,5 +15,8 @@
 @property (nonatomic, copy) NSString *imageServiceUrl;
 @property (nonatomic, copy) NSString *id;
 @property (nonatomic, copy) NSString *loginUserType;
+@property (nonatomic, copy) NSString *ajbs;
+@property (nonatomic, copy) NSString *count;
+
 
 @end

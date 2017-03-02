@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="blackLineView" destination="QhK-V6-52Z" id="RqB-Fl-QHZ"/>
                 <outlet property="detailView" destination="tfS-0N-dIz" id="dbr-Bw-f9M"/>
+                <outlet property="myCollectionView" destination="YIv-Ll-ZhB" id="b1B-CQ-UxT"/>
                 <outlet property="nextBtn" destination="boE-7Y-DdZ" id="tUs-xl-wVy"/>
                 <outlet property="stepView" destination="cVX-EU-qcB" id="aO3-CD-rxJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -43,7 +44,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下一步:完成立案" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSD-xQ-b40">
-                            <rect key="frame" x="132" y="10" width="89.5" height="15"/>
+                            <rect key="frame" x="132" y="10" width="90" height="15"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -100,11 +101,11 @@
                     <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boE-7Y-DdZ">
-                            <rect key="frame" x="98" y="15" width="180" height="30"/>
+                            <rect key="frame" x="118" y="15" width="140" height="30"/>
                             <color key="backgroundColor" red="0.81960784310000001" green="0.16862745100000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="RMY-ug-0Dr"/>
-                                <constraint firstAttribute="width" constant="180" id="ZJr-qx-S5H"/>
+                                <constraint firstAttribute="width" constant="140" id="ZJr-qx-S5H"/>
                             </constraints>
                             <state key="normal" title="完成">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -123,7 +124,29 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfS-0N-dIz">
                     <rect key="frame" x="10" y="140" width="355" height="457"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="YIv-Ll-ZhB">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="457"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tz2-LJ-N4c">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="P7m-3G-uJg"/>
+                                <outlet property="delegate" destination="-1" id="V3z-mu-lb6"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="YIv-Ll-ZhB" firstAttribute="top" secondItem="tfS-0N-dIz" secondAttribute="top" id="552-Pf-4e8"/>
+                        <constraint firstAttribute="bottom" secondItem="YIv-Ll-ZhB" secondAttribute="bottom" id="Xuh-A6-CFb"/>
+                        <constraint firstItem="YIv-Ll-ZhB" firstAttribute="leading" secondItem="tfS-0N-dIz" secondAttribute="leading" id="goU-12-wpd"/>
+                        <constraint firstAttribute="trailing" secondItem="YIv-Ll-ZhB" secondAttribute="trailing" id="hNC-5R-3fT"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

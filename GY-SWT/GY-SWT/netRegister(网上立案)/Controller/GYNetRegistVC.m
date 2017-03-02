@@ -13,6 +13,7 @@
 #import "GYNetRegistModel.h"
 #import "GYAddNewsCaseVC.h"
 
+extern NSString *checkSucessWsla;
 
 static NSString *ID=@"GYNRHomeCell";
 
@@ -41,29 +42,60 @@ static NSString *ID=@"GYNRHomeCell";
     self.detailView.layer.masksToBounds = YES;
     self.addNewRegistBtn.layer.cornerRadius = 15;
     
-    [self loadWslaAjxxListInfo];
+    self.myTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.myTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+
+    
+    [self.myTableView.mj_header beginRefreshing];
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)loadNewData
+{
+    [self.wslaListArr removeAllObjects];
+    self.currentPage = 1;
+    [self loadWslaAjxxListInfo];
+}
+- (void)loadMoreData
+{
+    self.currentPage ++;
+    [self loadWslaAjxxListInfo];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if ([checkSucessWsla isEqualToString:@"success"]) {
+        [self.myTableView.mj_header beginRefreshing];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    checkSucessWsla = nil;
+}
 
 - (void)loadWslaAjxxListInfo{
+    
     [MBProgressHUD showMessage:@"正在加载" toView:self.view];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"pageSize"] = @"20";
-    params[@"page"] = @"1";
+    params[@"pageSize"] = @"6";
+    params[@"page"] = @(self.currentPage);
     NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"login_ticket"];
     [GYHttpTool post:wsla_ajxx_listInfoUrl ticket:ticket params:params success:^(id json) {
         NSLog(@"%@",json);
+        GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
         NSArray *arr = [GYNetRegistModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
         for (GYNetRegistModel *nrModel in arr) {
             NSLog(@"%@",nrModel.ajbhqc);
             [self.wslaListArr addObject:nrModel];
         }
+        self.totalCount = [loginModel.count integerValue];
+        NSLog(@"%ld===%ld",self.totalCount,self.wslaListArr.count);
         [MBProgressHUD hideHUDForView:self.view];
         [self.myTableView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
     }];
+    [self.myTableView.mj_header endRefreshing];
+    [self.myTableView.mj_footer endRefreshing];
 }
 
 #pragma mark - tableViewDelegate
@@ -71,7 +103,11 @@ static NSString *ID=@"GYNRHomeCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 
 {
-    
+    if (self.wslaListArr.count == self.totalCount) {
+        self.myTableView.mj_footer.state = MJRefreshStateNoMoreData;
+    }else{
+        self.myTableView.mj_footer.state = MJRefreshStateIdle;
+    }
     return self.wslaListArr.count;
     
 }
@@ -91,13 +127,16 @@ static NSString *ID=@"GYNRHomeCell";
     
     GYNetRegistModel *cellNrModel = self.wslaListArr[indexPath.row];
     if ([cellNrModel.clztmc isEqualToString:@"收案"]) {
-        cell.typeLabel.backgroundColor = [UIColor grayColor];
+        cell.typeLabel.backgroundColor = wslaGrayColor;
     }
     if ([cellNrModel.clztmc isEqualToString:@"审核通过"]) {
-        cell.typeLabel.backgroundColor = [UIColor purpleColor];
+        cell.typeLabel.backgroundColor = wslapurpleColor;
     }
     if ([cellNrModel.clztmc isEqualToString:@"待审核"]) {
-        cell.typeLabel.backgroundColor = [UIColor greenColor];
+        cell.typeLabel.backgroundColor = wslagreenColor;
+    }
+    if ([cellNrModel.clztmc isEqualToString:@"申请"]) {
+        cell.typeLabel.backgroundColor = wslaredColor;
     }
     
     cell.nrModel = self.wslaListArr[indexPath.row];

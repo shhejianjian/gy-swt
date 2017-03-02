@@ -23,7 +23,9 @@
 
 - (void)setImageNewsModel:(GYImageNewsModel *)imageNewsModel {
     _imageNewsModel = imageNewsModel;
-    [self.myImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://202.101.70.125:8080/upload/%@",imageNewsModel.imageurl]]placeholderImage:[UIImage imageNamed:@"加载"]];
+    [self.myImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://202.101.70.125:8080/upload/%@",imageNewsModel.imageurl]]placeholderImage:[UIImage imageNamed:@"加载"]completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.imageView.contentMode = UIViewContentModeScaleToFill;
+    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

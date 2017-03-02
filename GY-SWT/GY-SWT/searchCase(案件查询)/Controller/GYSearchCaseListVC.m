@@ -46,7 +46,7 @@ static NSString *ID=@"GYNoticePucCell";
     [MBProgressHUD showMessage:@"正在加载" toView:self.view];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"page"] = @"1";
-    params[@"pageSize"] = @"8";
+    params[@"pageSize"] = @"100";
     NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"ajcx_loginTicket"];
     [GYHttpTool post:ajxcListUrl ticket:ticket params:params success:^(id json) {
         NSLog(@"%@",json);

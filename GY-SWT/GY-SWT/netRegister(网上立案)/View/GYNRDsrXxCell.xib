@@ -95,6 +95,7 @@
             <connections>
                 <outlet property="detailView" destination="cGG-6y-23N" id="XRY-Pj-Myp"/>
                 <outlet property="lxdzLabel" destination="hMo-8j-Cxg" id="SK8-H4-Led"/>
+                <outlet property="lxdzOrZzmcLabel" destination="bf7-PE-tTn" id="kfj-47-TWU"/>
                 <outlet property="ygbgLabel" destination="lEm-u1-yez" id="hY1-SK-8fr"/>
                 <outlet property="ygbgNameLabel" destination="cIQ-Kj-emf" id="HjH-vo-ZRC"/>
                 <outlet property="zzdmLabel" destination="rML-om-WHD" id="FN0-Fz-HVg"/>

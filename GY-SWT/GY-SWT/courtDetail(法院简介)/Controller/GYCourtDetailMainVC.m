@@ -103,7 +103,7 @@ static NSString *ID5=@"GYCDFIfthCell";
     params[@"fydm"] = courtDm;
     params[@"lx"] = type;
     params[@"page"] = @"1";
-    params[@"pageSize"] = @"10";
+    params[@"pageSize"] = @"100";
     [GYHttpTool post:xgmc_listInfoUrl ticket:@"" params:params success:^(id json) {
         NSLog(@"%@",json);
         NSArray *arr = [GYSWHModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
@@ -136,7 +136,7 @@ static NSString *ID5=@"GYCDFIfthCell";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"fydm"] = courtDm;
     params[@"page"] = @"1";
-    params[@"pageSize"] = @"10";
+    params[@"pageSize"] = @"100";
     [GYHttpTool post:bmzn_listInfoUrl ticket:@"" params:params success:^(id json) {
         NSLog(@"%@",json);
         NSArray *arr = [GYBmznModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];

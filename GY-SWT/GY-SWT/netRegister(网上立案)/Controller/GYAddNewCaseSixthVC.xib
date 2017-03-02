@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="blackLineView" destination="rkD-cL-V95" id="a3o-cw-Avu"/>
                 <outlet property="detailView" destination="BJ3-yn-amA" id="5rf-Ie-PWq"/>
+                <outlet property="myCollectionView" destination="nSI-1z-8nO" id="J3z-6Y-0EM"/>
                 <outlet property="nextBtn" destination="JXK-p3-hpN" id="q5I-gR-Frd"/>
                 <outlet property="stepView" destination="SbG-lL-Kgw" id="1WQ-el-otv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -99,14 +100,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QpS-XD-znW">
                     <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXK-p3-hpN">
-                            <rect key="frame" x="98" y="15" width="180" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXK-p3-hpN">
+                            <rect key="frame" x="118" y="15" width="140" height="30"/>
                             <color key="backgroundColor" red="0.81960784310000001" green="0.16862745100000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Rhh-5v-1fP"/>
-                                <constraint firstAttribute="width" constant="180" id="eM4-uV-2nJ"/>
+                                <constraint firstAttribute="width" constant="140" id="eM4-uV-2nJ"/>
                             </constraints>
-                            <state key="normal" title="下一步">
+                            <state key="normal" image="upload">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -123,7 +124,29 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJ3-yn-amA">
                     <rect key="frame" x="10" y="140" width="355" height="457"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="nSI-1z-8nO">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="457"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="32P-Rh-cFq">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="6IY-yi-ryW"/>
+                                <outlet property="delegate" destination="-1" id="u3o-Dh-CVJ"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="nSI-1z-8nO" secondAttribute="trailing" id="Y9R-XN-c5h"/>
+                        <constraint firstAttribute="bottom" secondItem="nSI-1z-8nO" secondAttribute="bottom" id="bf0-yq-uLh"/>
+                        <constraint firstItem="nSI-1z-8nO" firstAttribute="leading" secondItem="BJ3-yn-amA" secondAttribute="leading" id="fox-9Q-8CY"/>
+                        <constraint firstItem="nSI-1z-8nO" firstAttribute="top" secondItem="BJ3-yn-amA" secondAttribute="top" id="n7z-LK-H8H"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -147,10 +170,12 @@
                 <constraint firstItem="QpS-XD-znW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vVM-fa-IIO"/>
                 <constraint firstItem="SbG-lL-Kgw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="yRI-py-bdy"/>
             </constraints>
+            <point key="canvasLocation" x="-146" y="24"/>
         </view>
     </objects>
     <resources>
         <image name="background" width="1080" height="1921"/>
+        <image name="upload" width="140" height="30"/>
         <image name="进度提示_点亮" width="71" height="71"/>
         <image name="进度提示_点黑" width="71" height="71"/>
     </resources>
