@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "GYSPDsrModel.h"
+#import "GYSPSpzzModel.h"
+
 @interface GYSpDsrXxCell : UITableViewCell
 @property (nonatomic, strong) GYSPDsrModel *spDsrModel;
+@property (nonatomic, strong) GYSPSpzzModel *spDlrModel;
+@property (nonatomic, copy) NSString *cbbmString;
 @end

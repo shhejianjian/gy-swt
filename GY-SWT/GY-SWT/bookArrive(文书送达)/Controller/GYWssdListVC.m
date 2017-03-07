@@ -26,6 +26,8 @@
     segView.titles = @[@"待办文书",@"已办文书"];
     segView.titleFont = Font(15);
     [self.view addSubview:segView];
+    
+    [MBProgressHUD showError:@"当前没有信息"];
     // Do any additional setup after loading the view from its nib.
 }
 

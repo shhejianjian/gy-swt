@@ -106,9 +106,10 @@
 -(GYwslaDetailCollCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     GYwslaDetailCollCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCellID" forIndexPath:indexPath];
-    
-    cell.myImageView.image = [UIImage imageWithData:self.imageDataArr[indexPath.row]];
-    
+    UIImage *image = [UIImage imageWithData:self.imageDataArr[indexPath.row]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        cell.myImageView.image = image;
+    });
     return cell;
     
 }

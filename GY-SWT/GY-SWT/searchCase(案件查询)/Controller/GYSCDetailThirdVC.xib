@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYSCDetailThirdVC">
             <connections>
                 <outlet property="detailView" destination="jBW-po-6Rc" id="9n1-PJ-czh"/>
+                <outlet property="mytableView" destination="6VP-ZB-9gw" id="Jvc-Gp-poB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,7 +26,23 @@
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBW-po-6Rc">
                     <rect key="frame" x="10" y="74" width="355" height="523"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6VP-ZB-9gw">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="523"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="hcy-wt-60M"/>
+                                <outlet property="delegate" destination="-1" id="BcV-UT-rmb"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="6VP-ZB-9gw" secondAttribute="trailing" id="D5P-px-PHw"/>
+                        <constraint firstAttribute="bottom" secondItem="6VP-ZB-9gw" secondAttribute="bottom" id="E1m-mN-BUj"/>
+                        <constraint firstItem="6VP-ZB-9gw" firstAttribute="leading" secondItem="jBW-po-6Rc" secondAttribute="leading" id="Lsn-xt-eRO"/>
+                        <constraint firstItem="6VP-ZB-9gw" firstAttribute="top" secondItem="jBW-po-6Rc" secondAttribute="top" id="wHM-1O-RWV"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

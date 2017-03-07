@@ -9,6 +9,9 @@
 #import "GYSCDetailFirstVC.h"
 #import "MXConstant.h"
 #import "GYSCSpDetailModel.h"
+
+NSString *cbbmStr;
+
 @interface GYSCDetailFirstVC ()
 @property (strong, nonatomic) IBOutlet UIView *detailView;
 @property (strong, nonatomic) IBOutlet UILabel *ahqcLabel;
@@ -57,6 +60,7 @@
         self.larLabel.text = spDetailModel.larmc;
         self.sarqLabel.text = spDetailModel.szrq;
         self.cbbmLabel.text = spDetailModel.cbbm;
+        cbbmStr = spDetailModel.cbbm;
         self.ssbdLabel.text = [NSString stringWithFormat:@"%ld(万元)",(long)spDetailModel.gsbd];
         self.jarqLabel.text = spDetailModel.jarq;
         self.jafsLabel.text = spDetailModel.jafsmc;

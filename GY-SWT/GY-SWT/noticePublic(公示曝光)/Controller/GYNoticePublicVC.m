@@ -86,22 +86,40 @@ static NSString *ID=@"GYNoticePucCell";
     }];
     [self.view addSubview:searchBar];
     
+    self.myTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.myTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    
+    
+    [self.myTableView.mj_header beginRefreshing];
+    
     
      [self.myTableView registerNib:[UINib nibWithNibName:@"GYNoticePucCell" bundle:nil] forCellReuseIdentifier:ID];
     
-    [self loadLosePeopleDataWithType:@"2" AndName:@""];
+//    [self loadLosePeopleDataWithType:@"2" AndName:@""];
     // Do any additional setup after loading the view from its nib.
 }
-
-- (void)loadLosePeopleDataWithType:(NSString *)type AndName:(NSString *)name{
+- (void)loadNewData
+{
     [self.losePeopleListArr removeAllObjects];
+    self.currentPage = 1;
+    [self loadLosePeopleDataWithType:self.searchType AndName:@""];
+}
+- (void)loadMoreData
+{
+    self.currentPage ++;
+    [self loadLosePeopleDataWithType:self.searchType AndName:@""];
+}
+- (void)loadLosePeopleDataWithType:(NSString *)type AndName:(NSString *)name{
+//    [self.losePeopleListArr removeAllObjects];
     [MBProgressHUD showMessage:@"正在加载" toView:self.view];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"pageSize"] = @"100";
-    params[@"page"] = @"1";
+    params[@"pageSize"] = @"8";
+    params[@"page"] = @(self.currentPage);
     params[@"lx"] = type;
     params[@"xm"] = name;
     [GYHttpTool post:noticePublic ticket:@"" params:params success:^(id json) {
+        GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
+        self.totalCount = [loginModel.count integerValue];
         NSLog(@"%@",json);
         [MBProgressHUD hideHUDForView:self.view];
         NSArray *arr = [GYNPModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
@@ -112,6 +130,8 @@ static NSString *ID=@"GYNoticePucCell";
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
     }];
+    [self.myTableView.mj_header endRefreshing];
+    [self.myTableView.mj_footer endRefreshing];
 }
 
 
@@ -120,7 +140,11 @@ static NSString *ID=@"GYNoticePucCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 
 {
-    
+    if (self.losePeopleListArr.count == self.totalCount) {
+        self.myTableView.mj_footer.state = MJRefreshStateNoMoreData;
+    }else{
+        self.myTableView.mj_footer.state = MJRefreshStateIdle;
+    }
     return self.losePeopleListArr.count;
     
 }
@@ -197,22 +221,25 @@ static NSString *ID=@"GYNoticePucCell";
         switch (index) {
             case 0:
                 if (![self.searchType isEqualToString:@"2"]) {
-                    [self loadLosePeopleDataWithType:@"2" AndName:@""];
+                    
                     self.searchType = @"2";
-                }
-                break;
+                    [self loadNewData];
+                }                 break;
             case 1:
                 if (![self.searchType isEqualToString:@"1"]) {
-                    [self loadLosePeopleDataWithType:@"1" AndName:@""];
+                    
                     self.searchType = @"1";
+                    [self loadNewData];
                 }
                 break;
             case 2:
                 if (![self.searchType isEqualToString:@"3"]) {
-                    [self loadLosePeopleDataWithType:@"3" AndName:@""];
+
                     self.searchType = @"3";
+                    [self loadNewData];
+                }
                 break;
-                    }
+                    
             default:
                 break;
         }

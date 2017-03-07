@@ -26,6 +26,18 @@
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)loginBtnClick:(id)sender {
+    
+    if (self.userNameTextField.text.length == 0) {
+        [MBProgressHUD showError:@"用户名不能为空"];
+        return;
+    }
+    if (self.passwordTextField.text.length == 0) {
+        [MBProgressHUD showError:@"密码不能为空"];
+        return;
+    }
+    
+    
+    
     GYWssdListVC *wssdDetail = [[GYWssdListVC alloc]init];
     [self.navigationController pushViewController:wssdDetail animated:YES];
     

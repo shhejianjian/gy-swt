@@ -208,6 +208,7 @@
 		1ECB76241E52D40A0077FDC3 /* GYPeopleContactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECB76221E52D40A0077FDC3 /* GYPeopleContactVC.m */; };
 		1ECB76251E52D40A0077FDC3 /* GYPeopleContactVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ECB76231E52D40A0077FDC3 /* GYPeopleContactVC.xib */; };
 		1ECB762A1E52E4D70077FDC3 /* GYHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECB76271E52E36A0077FDC3 /* GYHttpTool.m */; };
+		1ECD40C91E6E427600225354 /* GYSPSpzzModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECD40C81E6E427600225354 /* GYSPSpzzModel.m */; };
 		1ED1AE091E4D5C3400B8C8A5 /* GYSearchCaseLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED1AE071E4D5C3400B8C8A5 /* GYSearchCaseLoginVC.m */; };
 		1ED1AE0A1E4D5C3400B8C8A5 /* GYSearchCaseLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ED1AE081E4D5C3400B8C8A5 /* GYSearchCaseLoginVC.xib */; };
 		1ED1AE0E1E514AED00B8C8A5 /* GYNetRegistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED1AE0C1E514AED00B8C8A5 /* GYNetRegistVC.m */; };
@@ -596,6 +597,8 @@
 		1ECB76231E52D40A0077FDC3 /* GYPeopleContactVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYPeopleContactVC.xib; sourceTree = "<group>"; };
 		1ECB76261E52E36A0077FDC3 /* GYHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHttpTool.h; sourceTree = "<group>"; };
 		1ECB76271E52E36A0077FDC3 /* GYHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHttpTool.m; sourceTree = "<group>"; };
+		1ECD40C71E6E427600225354 /* GYSPSpzzModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSPSpzzModel.h; sourceTree = "<group>"; };
+		1ECD40C81E6E427600225354 /* GYSPSpzzModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSPSpzzModel.m; sourceTree = "<group>"; };
 		1ED1AE061E4D5C3400B8C8A5 /* GYSearchCaseLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSearchCaseLoginVC.h; sourceTree = "<group>"; };
 		1ED1AE071E4D5C3400B8C8A5 /* GYSearchCaseLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSearchCaseLoginVC.m; sourceTree = "<group>"; };
 		1ED1AE081E4D5C3400B8C8A5 /* GYSearchCaseLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYSearchCaseLoginVC.xib; sourceTree = "<group>"; };
@@ -1259,6 +1262,8 @@
 				1EAD7F891E5E8150001274F5 /* GYSCSpDetailModel.m */,
 				1EAD7F901E5E9A34001274F5 /* GYSPDsrModel.h */,
 				1EAD7F911E5E9A34001274F5 /* GYSPDsrModel.m */,
+				1ECD40C71E6E427600225354 /* GYSPSpzzModel.h */,
+				1ECD40C81E6E427600225354 /* GYSPSpzzModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2017,6 +2022,7 @@
 				1EAAD4981E5FEE82003D1EA6 /* GYNewsInfoListCell.m in Sources */,
 				1E7E1EC91E499ECE00184531 /* GYHomeCell.m in Sources */,
 				1EAD7F811E5E7994001274F5 /* GYSCZXDetailFourthVC.m in Sources */,
+				1ECD40C91E6E427600225354 /* GYSPSpzzModel.m in Sources */,
 				1E7E1E6E1E496D3000184531 /* IQToolbar.m in Sources */,
 				1E08AC501E641F4F00D71778 /* GYAddNewCaseFourthVC.m in Sources */,
 				1E7E1E7B1E496D4100184531 /* CZZCarouselView.m in Sources */,
