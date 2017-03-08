@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYWssdListVC">
             <connections>
                 <outlet property="detailView" destination="Lgl-hX-XXg" id="AWI-gr-Kak"/>
+                <outlet property="myTableView" destination="a1J-Cm-pc8" id="j4h-ja-p4G"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,7 +26,23 @@
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lgl-hX-XXg">
                     <rect key="frame" x="10" y="114" width="355" height="543"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a1J-Cm-pc8">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="543"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="foP-Zq-NeT"/>
+                                <outlet property="delegate" destination="-1" id="eSM-Wf-9Vf"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="a1J-Cm-pc8" secondAttribute="bottom" id="7GB-oh-FkS"/>
+                        <constraint firstAttribute="trailing" secondItem="a1J-Cm-pc8" secondAttribute="trailing" id="HHt-Od-g4O"/>
+                        <constraint firstItem="a1J-Cm-pc8" firstAttribute="top" secondItem="Lgl-hX-XXg" secondAttribute="top" id="qhm-Qb-cne"/>
+                        <constraint firstItem="a1J-Cm-pc8" firstAttribute="leading" secondItem="Lgl-hX-XXg" secondAttribute="leading" id="rg9-Tq-iEz"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

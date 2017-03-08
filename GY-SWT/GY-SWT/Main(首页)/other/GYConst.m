@@ -51,3 +51,7 @@ NSString *const wsla_deletePhotoUrl = @"jz_deleteInfo";
 
 NSString *const wssd_loginUrl = @"wssd_login";
 NSString *const wssd_listInfoUrl = @"wssd_listSwtInfo";
+NSString *const wssd_detailInfoUrl = @"wssd_jmInfo";
+
+NSString *const ktgg_listInfoUrl = @"ktgg_listInfo";
+

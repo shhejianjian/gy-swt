@@ -54,8 +54,8 @@ extern NSString *const wsla_savePhotoUrl;
 extern NSString *const wsla_deletePhotoUrl;
 extern NSString *const wssd_loginUrl;
 extern NSString *const wssd_listInfoUrl;
-
-
+extern NSString *const wssd_detailInfoUrl;
+extern NSString *const ktgg_listInfoUrl;
 
 
 

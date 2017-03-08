@@ -179,7 +179,7 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer= [AFHTTPRequestSerializer serializer];
     manager.responseSerializer=[AFHTTPResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json",@"text/javascript",@"text/plain",@"image/jpg", nil];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json",@"text/javascript",@"text/plain",@"image/jpg",@"application/pdf", nil];
     NSString *randCodeStr = [self get8bitString];//随机字符串
     NSString *timeStr = [self getTimeNow];
     NSString *thirdFlowStr = [self get32bitString];
@@ -220,6 +220,13 @@
     }];
     
 }
+
+
+
+
+
+
+
 
 + (void)uploadImage:(NSString *)url andImageData:(NSData *)image ticket:(NSString *)ticket params:(NSDictionary *)params success:(void(^)(id json))success failure:(void(^)(NSError *error)) failure{
     

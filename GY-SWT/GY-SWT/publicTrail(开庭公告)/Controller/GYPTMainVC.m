@@ -9,9 +9,26 @@
 #import "GYPTMainVC.h"
 #import "GYNRSegmentView.h"
 #import "MXConstant.h"
+#import "GYKtggModel.h"
+#import "GYWssdListCell.h"
+
+static NSString *ID=@"GYWssdListCell";
+
+
 
 @interface GYPTMainVC ()<GYNRSegmentViewDelegate>
 @property (strong, nonatomic) IBOutlet UIView *detailView;
+@property (strong, nonatomic) IBOutlet UITableView *myTableView;
+@property (nonatomic, strong) NSMutableArray *ktggListArr;
+@property (nonatomic, copy) NSString *dayType;
+
+
+@property (strong, nonatomic) IBOutlet UIView *detailInfoView;
+@property (strong, nonatomic) IBOutlet UILabel *ahqcLabel;
+@property (strong, nonatomic) IBOutlet UILabel *realContentLabel;
+@property (strong, nonatomic) IBOutlet UILabel *cbrLabel;
+@property (strong, nonatomic) IBOutlet UIButton *backBtn;
+
 
 @end
 
@@ -19,6 +36,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.detailView.layer.cornerRadius = 5;
+    self.detailView.layer.masksToBounds = YES;
+    self.backBtn.layer.cornerRadius = 15;
+    self.backBtn.layer.masksToBounds = YES;
     self.mxNavigationItem.title = @"开庭公告";
     GYNRSegmentView *segView=[[GYNRSegmentView alloc]initWithFrame:Frame(0, 64, SCREEN_WIDTH, WH(40))];
     segView.delegate = self;
@@ -27,14 +48,129 @@
     [self.view addSubview:segView];
     
     
-    self.detailView.layer.cornerRadius = 5;
-    self.detailView.layer.masksToBounds = YES;
+    [self.myTableView registerNib:[UINib nibWithNibName:@"GYWssdListCell" bundle:nil] forCellReuseIdentifier:ID];
+    self.dayType = @"0";
+    [self loadPublicTalkInfoWithDayType:@"0"];
+
     // Do any additional setup after loading the view from its nib.
 }
 
--(void)segmentView:(GYNRSegmentView *)segmentView didSelectIndex:(NSInteger)index{
-    NSLog(@"%ld",(long)index);
+- (void)loadPublicTalkInfoWithDayType:(NSString *)dayType {
+    [self.ktggListArr removeAllObjects];
+    [MBProgressHUD showMessage:@"正在加载" toView:self.view];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"intypes"] = dayType;
+    params[@"page"] = @"1";
+    params[@"pageSize"] = @"100";
+    params[@"fydm"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"chooseCourt_dm"];;
+    [GYHttpTool post:ktgg_listInfoUrl ticket:@"" params:params success:^(id json) {
+        NSLog(@"json:%@==%@",json,params);
+        
+        GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
+        if ([loginModel.success isEqualToString:@"true"]) {
+            if ([loginModel.msg isEqualToString:@"当前没有信息"]) {
+                [MBProgressHUD showError:loginModel.msg];
+            }
+        } else {
+            [MBProgressHUD showError:loginModel.msg];
+        }
+        
+        NSArray *arr = [GYKtggModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
+        for (GYKtggModel *ktggModel in arr) {
+            [self.ktggListArr addObject:ktggModel];
+        }
+        [MBProgressHUD hideHUDForView:self.view];
+        [self.myTableView reloadData];
+    } failure:^(NSError *error) {
+        
+    }];
+}
+#pragma mark - tableViewDelegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+
+{
+    
+    return self.ktggListArr.count;
+    
 }
 
+
+- (GYWssdListCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+
+{
+    
+    GYWssdListCell *cell=[tableView dequeueReusableCellWithIdentifier:ID];
+    
+    if (!cell) {
+        
+        cell=[[GYWssdListCell alloc]init];
+        
+    }
+    cell.ktggModel = self.ktggListArr[indexPath.row];
+    cell.backgroundColor=[UIColor colorWithRed:1 green:1 blue:1 alpha:0.1];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+
+{
+    
+    return 100;
+    
+}
+
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.myTableView.hidden = YES;
+    self.detailInfoView.hidden = NO;
+    GYKtggModel *ktggModel = self.ktggListArr[indexPath.row];
+    self.ahqcLabel.text = ktggModel.ahqc;
+    self.realContentLabel.text = [NSString stringWithFormat:@"        %@",ktggModel.realContent];
+    self.cbrLabel.text = ktggModel.fbrxm;
+    
+}
+- (IBAction)hideDetaiInfoView:(id)sender {
+    self.myTableView.hidden = NO;
+    self.detailInfoView.hidden = YES;
+}
+
+
+
+-(void)segmentView:(GYNRSegmentView *)segmentView didSelectIndex:(NSInteger)index{
+    NSLog(@"%ld",(long)index);
+    switch (index) {
+        case 0:
+            if (![self.dayType isEqualToString:@"0"]) {
+                [self loadPublicTalkInfoWithDayType:@"0"];
+                self.dayType = @"0";
+                self.myTableView.hidden = NO;
+                self.detailInfoView.hidden = YES;
+            }
+            
+            break;
+        case 1:
+            if (![self.dayType isEqualToString:@"1"]) {
+                [self loadPublicTalkInfoWithDayType:@"1"];
+                self.dayType = @"1";
+                self.myTableView.hidden = NO;
+                self.detailInfoView.hidden = YES;
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+
+- (NSMutableArray *)ktggListArr {
+	if(_ktggListArr == nil) {
+		_ktggListArr = [[NSMutableArray alloc] init];
+	}
+	return _ktggListArr;
+}
 
 @end
