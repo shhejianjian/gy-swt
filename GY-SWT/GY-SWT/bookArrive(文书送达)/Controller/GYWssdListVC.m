@@ -26,9 +26,27 @@
     segView.titles = @[@"待办文书",@"已办文书"];
     segView.titleFont = Font(15);
     [self.view addSubview:segView];
-    
-    [MBProgressHUD showError:@"当前没有信息"];
-    // Do any additional setup after loading the view from its nib.
+    [self loadWssdDetailListInfo];
+}
+
+- (void)loadWssdDetailListInfo{
+    [MBProgressHUD showMessage:@"正在加载" toView:self.view];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"page"] = @"1";
+    params[@"pageSize"] = @"100";
+    NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"wssd_loginTicket"];
+    [GYHttpTool post:wssd_listInfoUrl ticket:ticket params:params success:^(id json) {
+        NSLog(@"%@---",json);
+        GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
+        if ([loginModel.success isEqualToString:@"true"]) {
+            [MBProgressHUD showSuccess:loginModel.msg];
+        } else {
+            [MBProgressHUD showError:loginModel.msg];
+        }
+        [MBProgressHUD hideHUDForView:self.view];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
 }
 
 -(void)segmentView:(GYNRSegmentView *)segmentView didSelectIndex:(NSInteger)index{

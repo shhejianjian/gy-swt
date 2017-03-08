@@ -52,4 +52,11 @@ extern NSString *const wsla_dwxzListInfoUrl;
 extern NSString *const wsla_saveDlrInfoUrl;
 extern NSString *const wsla_savePhotoUrl;
 extern NSString *const wsla_deletePhotoUrl;
+extern NSString *const wssd_loginUrl;
+extern NSString *const wssd_listInfoUrl;
+
+
+
+
+
 

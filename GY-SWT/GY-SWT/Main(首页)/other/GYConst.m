@@ -49,4 +49,5 @@ NSString *const wsla_saveDlrInfoUrl = @"dlr_saveOrUpdateInfo";
 NSString *const wsla_savePhotoUrl = @"jz_saveInfo";
 NSString *const wsla_deletePhotoUrl = @"jz_deleteInfo";
 
-
+NSString *const wssd_loginUrl = @"wssd_login";
+NSString *const wssd_listInfoUrl = @"wssd_listSwtInfo";

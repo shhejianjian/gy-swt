@@ -36,10 +36,31 @@
         return;
     }
     
+    [MBProgressHUD showMessage:@"正在登录" toView:self.view];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"userid"] = self.userNameTextField.text;
+    params[@"password"] = self.passwordTextField.text;
+    [GYHttpTool post:wssd_loginUrl ticket:@"" params:params success:^(id json) {
+        
+        NSLog(@"%@---%@",json,params);
+        GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
+        if ([loginModel.success isEqualToString:@"true"]) {
+            NSLog(@"ticket:%@",loginModel.ticket);
+            [MBProgressHUD showSuccess:loginModel.msg];
+            [[NSUserDefaults standardUserDefaults] setObject:loginModel.ticket forKey:@"wssd_loginTicket"];
+            GYWssdListVC *wssdDetail = [[GYWssdListVC alloc]init];
+            [self.navigationController pushViewController:wssdDetail animated:YES];
+        } else {
+            [MBProgressHUD showError:loginModel.msg];
+        }
+        [MBProgressHUD hideHUDForView:self.view];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+
     
     
-    GYWssdListVC *wssdDetail = [[GYWssdListVC alloc]init];
-    [self.navigationController pushViewController:wssdDetail animated:YES];
+    
     
 }
 
