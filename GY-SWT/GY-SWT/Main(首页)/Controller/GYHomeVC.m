@@ -31,10 +31,16 @@
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 //#define ViewH 210
 
-#define carouselViewHeight (kScreenIphone5 == 0)? 150: 180
-#define labelTopConstraintHeight (kScreenIphone5 == 0)? 220: 250
-#define ViewH (kScreenIphone5 == 0)? 185: 210
+//#define carouselViewHeight (kScreenIphone5 == 0)? 150: 180
+//#define labelTopConstraintHeight (kScreenIphone5 == 0)? 220: 250
+//#define ViewH (kScreenIphone5 == 0)? 185: 210
 
+
+#define IS_IPHONE_5 (fabs((double)[[UIScreen mainScreen] bounds].size.width - (double )320) < DBL_EPSILON )
+
+#define IS_IPHONE_6 (fabs((double)[[UIScreen mainScreen] bounds].size.width - (double )375) < DBL_EPSILON )
+
+#define IS_IPHONE_6_PLUS (fabs((double)[[UIScreen mainScreen] bounds].size.width - (double )414) < DBL_EPSILON )
 
 
 static NSString *ID=@"homeCell";
@@ -66,6 +72,10 @@ static NSString *ID=@"homeCell";
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *labelTopConstraint;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *funKeyBoardConstraint;
 
+@property (nonatomic, assign) int lunboViewHeight;
+@property (nonatomic, assign) int labelTopConstraintHeight;
+@property (nonatomic, assign) int carouselViewHeight;
+
 
 @end
 
@@ -91,10 +101,26 @@ static NSString *ID=@"homeCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self loadCourtData];
+    if (IS_IPHONE_5 == 1) {
+        self.lunboViewHeight = 185;
+        self.labelTopConstraintHeight = 220;
+        self.carouselViewHeight = 150;
+    } else if (IS_IPHONE_6 == 1){
+        self.lunboViewHeight = 210;
+        self.labelTopConstraintHeight = 250;
+        self.carouselViewHeight = 180;
 
-    self.labelTopConstraint.constant = labelTopConstraintHeight;
-    self.funKeyBoardConstraint.constant = ViewH;
+    }else if (IS_IPHONE_6_PLUS == 1){
+        self.lunboViewHeight = 249;
+        self.labelTopConstraintHeight = 280;
+        self.carouselViewHeight = 210;
+
+    }
+    
+    [self observeWorknet];
+    
+    self.labelTopConstraint.constant = _labelTopConstraintHeight;
+    self.funKeyBoardConstraint.constant = self.lunboViewHeight;
     NSString *homeDir = NSHomeDirectory();
     NSLog(@"%@",homeDir);
     
@@ -109,13 +135,55 @@ static NSString *ID=@"homeCell";
     titleImage.frame = CGRectMake(70, 32, 20, 20);
     self.mxNavigationItem.titleView = titleImage;
     
-    [self loadLunBoNewsInfo];
     [self.myFunKeboardView addSubview:self.btnScrollView];
-    [self loadTop2NewsInfo];
+   
 }
 
 
+- (void)observeWorknet{
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+                NSLog(@"未识别的网络");
+                break;
+                
+            case AFNetworkReachabilityStatusNotReachable:{
+                NSLog(@"不可达的网络(未连接)");
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"如无法弹出是否允许该应用使用数据网络弹框，请至设置中开启无线局域网助理即可" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    NSLog(@"取消");
+                }];
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    
+                }];
+                [alertController addAction:cancelAction];
+                [alertController addAction:okAction];
+            }
+                break;
+                
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                NSLog(@"2G,3G,4G...的网络");
+                [self loadCourtData];
+                [self loadLunBoNewsInfo];
+                [self loadTop2NewsInfo];
+                break;
+                
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                NSLog(@"wifi的网络");
+                [self loadCourtData];
+                [self loadLunBoNewsInfo];
+                [self loadTop2NewsInfo];
+                break;
+            default:
+                break;
+        }
+    }];
+    [manager startMonitoring];
+}
+
 - (void)loadTop2NewsInfo {
+    [self.top2NewsArr removeAllObjects];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     [GYHttpTool post:news_top2InfoUrl ticket:@"" params:params success:^(id json) {
@@ -133,6 +201,9 @@ static NSString *ID=@"homeCell";
 }
 
 - (void)loadLunBoNewsInfo {
+    [self.lunboNewsArr removeAllObjects];
+    [self.lunboTitleArr removeAllObjects];
+    [self.lunboImageArr removeAllObjects];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     [GYHttpTool post:news_tjInfoUrl ticket:@"" params:params success:^(id json) {
@@ -161,7 +232,7 @@ static NSString *ID=@"homeCell";
     NSArray *describleArray = titleArr;
     self.carouselView = [CZZCarouselView carouselViewWithImageArray:maxImageArray describeArray:describleArray];
     //  设置frame
-    self.carouselView.frame = CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, carouselViewHeight);
+    self.carouselView.frame = CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, _carouselViewHeight);
     //  用block处理图片点击
     __weak GYHomeVC *weakSelf = self;
     self.carouselView.imageClickBlock = ^(NSInteger index){
@@ -290,7 +361,7 @@ static NSString *ID=@"homeCell";
 -(CustomerScrollView *)btnScrollView{
     
     if (!_btnScrollView) {
-        _btnScrollView = [[CustomerScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, ViewH)];
+        _btnScrollView = [[CustomerScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.lunboViewHeight)];
         _btnScrollView.delegate = self;
     }
     return _btnScrollView;
@@ -356,6 +427,8 @@ static NSString *ID=@"homeCell";
 }
 
 - (void)loadCourtData {
+    [self.courtNameArr removeAllObjects];
+    [self.courtListArr removeAllObjects];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     [GYHttpTool post:courtUrl ticket:@"" params:params success:^(id json) {

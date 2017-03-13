@@ -45,6 +45,7 @@ NSString *const wsla_oneStepUrl = @"ajxx_oneStepApp";
 NSString *const wsla_saveDsrInfoUrl = @"dsr_saveOrUpdateInfo";
 NSString *const wsla_dwxzListInfoUrl = @"dsr_dwxzList";
 NSString *const wsla_saveDlrInfoUrl = @"dlr_saveOrUpdateInfo";
+NSString *const wsla_ajxxtjUrl = @"ajxxtj";
 
 NSString *const wsla_savePhotoUrl = @"jz_saveInfo";
 NSString *const wsla_deletePhotoUrl = @"jz_deleteInfo";
@@ -54,4 +55,6 @@ NSString *const wssd_listInfoUrl = @"wssd_listSwtInfo";
 NSString *const wssd_detailInfoUrl = @"wssd_jmInfo";
 
 NSString *const ktgg_listInfoUrl = @"ktgg_listInfo";
+
+
 

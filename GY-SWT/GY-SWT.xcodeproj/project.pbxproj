@@ -1771,7 +1771,7 @@
 				TargetAttributes = {
 					1E7E1DD51E49695900184531 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = XKF9ZBDS63;
+						DevelopmentTeam = NF5V873MQB;
 						ProvisioningStyle = Automatic;
 					};
 					1E7E1DEE1E49695900184531 = {
@@ -2254,11 +2254,11 @@
 			baseConfigurationReference = B1026A1E28D1A3D7A64C236E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XKF9ZBDS63;
+				DEVELOPMENT_TEAM = NF5V873MQB;
 				INFOPLIST_FILE = "GY-SWT/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.article.www.GY-SWT";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gy.swt.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -2268,11 +2268,11 @@
 			baseConfigurationReference = B8BD8DB0E3258E7CDC768386 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XKF9ZBDS63;
+				DEVELOPMENT_TEAM = NF5V873MQB;
 				INFOPLIST_FILE = "GY-SWT/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.article.www.GY-SWT";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gy.swt.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

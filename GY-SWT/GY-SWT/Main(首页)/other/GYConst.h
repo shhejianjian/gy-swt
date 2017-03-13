@@ -56,7 +56,7 @@ extern NSString *const wssd_loginUrl;
 extern NSString *const wssd_listInfoUrl;
 extern NSString *const wssd_detailInfoUrl;
 extern NSString *const ktgg_listInfoUrl;
-
+extern NSString *const wsla_ajxxtjUrl;
 
 
 

@@ -224,8 +224,26 @@ NSString *checkSucessWsla;
     if (self.imageDataArr.count == 0) {
         [MBProgressHUD showError:@"请先上传委托材料"];
     } else {
-        checkSucessWsla = @"success";
-        [self jumpToVC];
+        [MBProgressHUD showMessage:@"正在提交申请" toView:self.view];
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        params[@"ajbs"] = self.ajbsStr;
+        NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"login_ticket"];
+        [GYHttpTool post:wsla_ajxxtjUrl ticket:ticket params:params success:^(id json) {
+            NSLog(@"json:::%@",json);
+            GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
+            if ([loginModel.success isEqualToString:@"true"]) {
+                [MBProgressHUD hideHUDForView:self.view];
+                [MBProgressHUD showSuccess:@"立案成功"];
+                checkSucessWsla = @"success";
+                [self jumpToVC];
+            } else {
+                [MBProgressHUD showError:loginModel.msg];
+            }
+        } failure:^(NSError *error) {
+            
+        }];
+        
+        
     }
     
 }
