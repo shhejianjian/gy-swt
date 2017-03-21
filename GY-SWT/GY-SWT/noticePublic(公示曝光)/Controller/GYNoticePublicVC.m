@@ -98,6 +98,8 @@ static NSString *ID=@"GYNoticePucCell";
 //    [self loadLosePeopleDataWithType:@"2" AndName:@""];
     // Do any additional setup after loading the view from its nib.
 }
+
+
 - (void)loadNewData
 {
     [self.losePeopleListArr removeAllObjects];
@@ -161,7 +163,9 @@ static NSString *ID=@"GYNoticePucCell";
         cell=[[GYNoticePucCell alloc]init];
         
     }
-    cell.losePeopleModel = self.losePeopleListArr[indexPath.row];
+    if (self.losePeopleListArr.count !=0) {
+        cell.losePeopleModel = self.losePeopleListArr[indexPath.row];
+    }
     cell.backgroundColor=[UIColor colorWithRed:1 green:1 blue:1 alpha:0.1];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

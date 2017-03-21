@@ -46,6 +46,8 @@ NSString *const wsla_saveDsrInfoUrl = @"dsr_saveOrUpdateInfo";
 NSString *const wsla_dwxzListInfoUrl = @"dsr_dwxzList";
 NSString *const wsla_saveDlrInfoUrl = @"dlr_saveOrUpdateInfo";
 NSString *const wsla_ajxxtjUrl = @"ajxxtj";
+NSString *const wsla_deleteUrl = @"ajxx_deleteInfo";
+
 
 NSString *const wsla_savePhotoUrl = @"jz_saveInfo";
 NSString *const wsla_deletePhotoUrl = @"jz_deleteInfo";

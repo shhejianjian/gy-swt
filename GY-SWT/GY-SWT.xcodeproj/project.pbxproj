@@ -189,6 +189,11 @@
 		1EB1E5621E655E9B00F4F14C /* GYDwxzAndZjlxModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1E5611E655E9B00F4F14C /* GYDwxzAndZjlxModel.m */; };
 		1EB1E5651E65608600F4F14C /* SelectAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1E5641E65608600F4F14C /* SelectAlert.m */; };
 		1EBCFF9A1E55684D006BB80A /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBCFF991E55684D006BB80A /* Foundation+Log.m */; };
+		1EC24A7E1E80B97B00AAA1A5 /* ZYLAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC24A7D1E80B97B00AAA1A5 /* ZYLAlert.m */; };
+		1EC24A861E80BE3700AAA1A5 /* SVAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC24A831E80BE3700AAA1A5 /* SVAlertViewController.m */; };
+		1EC24A871E80BE3700AAA1A5 /* UIViewController+AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC24A851E80BE3700AAA1A5 /* UIViewController+AlertController.m */; };
+		1EC24A8C1E80C7D300AAA1A5 /* NSString+Morphing.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC24A891E80C7D300AAA1A5 /* NSString+Morphing.m */; };
+		1EC24A8D1E80C7D300AAA1A5 /* TOMSMorphingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC24A8B1E80C7D300AAA1A5 /* TOMSMorphingLabel.m */; };
 		1EC3CF901E6FC89E00C85D90 /* GYWssdListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3CF8E1E6FC89E00C85D90 /* GYWssdListCell.m */; };
 		1EC3CF911E6FC89E00C85D90 /* GYWssdListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EC3CF8F1E6FC89E00C85D90 /* GYWssdListCell.xib */; };
 		1EC3CF941E6FCA0000C85D90 /* GYWssdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3CF931E6FCA0000C85D90 /* GYWssdModel.m */; };
@@ -572,6 +577,16 @@
 		1EB1E5631E65608600F4F14C /* SelectAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectAlert.h; sourceTree = "<group>"; };
 		1EB1E5641E65608600F4F14C /* SelectAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectAlert.m; sourceTree = "<group>"; };
 		1EBCFF991E55684D006BB80A /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		1EC24A7C1E80B97B00AAA1A5 /* ZYLAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLAlert.h; sourceTree = "<group>"; };
+		1EC24A7D1E80B97B00AAA1A5 /* ZYLAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLAlert.m; sourceTree = "<group>"; };
+		1EC24A821E80BE3700AAA1A5 /* SVAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVAlertViewController.h; sourceTree = "<group>"; };
+		1EC24A831E80BE3700AAA1A5 /* SVAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVAlertViewController.m; sourceTree = "<group>"; };
+		1EC24A841E80BE3700AAA1A5 /* UIViewController+AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AlertController.h"; sourceTree = "<group>"; };
+		1EC24A851E80BE3700AAA1A5 /* UIViewController+AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AlertController.m"; sourceTree = "<group>"; };
+		1EC24A881E80C7D300AAA1A5 /* NSString+Morphing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Morphing.h"; sourceTree = "<group>"; };
+		1EC24A891E80C7D300AAA1A5 /* NSString+Morphing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Morphing.m"; sourceTree = "<group>"; };
+		1EC24A8A1E80C7D300AAA1A5 /* TOMSMorphingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMSMorphingLabel.h; sourceTree = "<group>"; };
+		1EC24A8B1E80C7D300AAA1A5 /* TOMSMorphingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMSMorphingLabel.m; sourceTree = "<group>"; };
 		1EC3CF8D1E6FC89E00C85D90 /* GYWssdListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYWssdListCell.h; sourceTree = "<group>"; };
 		1EC3CF8E1E6FC89E00C85D90 /* GYWssdListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYWssdListCell.m; sourceTree = "<group>"; };
 		1EC3CF8F1E6FC89E00C85D90 /* GYWssdListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYWssdListCell.xib; sourceTree = "<group>"; };
@@ -1322,6 +1337,16 @@
 				1EA9BE431E66A490006F3DEB /* ImagePickerView */,
 				1EA9BE401E666E1D006F3DEB /* THPickerView.h */,
 				1EA9BE411E666E1D006F3DEB /* THPickerView.m */,
+				1EC24A7C1E80B97B00AAA1A5 /* ZYLAlert.h */,
+				1EC24A7D1E80B97B00AAA1A5 /* ZYLAlert.m */,
+				1EC24A881E80C7D300AAA1A5 /* NSString+Morphing.h */,
+				1EC24A891E80C7D300AAA1A5 /* NSString+Morphing.m */,
+				1EC24A8A1E80C7D300AAA1A5 /* TOMSMorphingLabel.h */,
+				1EC24A8B1E80C7D300AAA1A5 /* TOMSMorphingLabel.m */,
+				1EC24A821E80BE3700AAA1A5 /* SVAlertViewController.h */,
+				1EC24A831E80BE3700AAA1A5 /* SVAlertViewController.m */,
+				1EC24A841E80BE3700AAA1A5 /* UIViewController+AlertController.h */,
+				1EC24A851E80BE3700AAA1A5 /* UIViewController+AlertController.m */,
 				1EB1E5631E65608600F4F14C /* SelectAlert.h */,
 				1EB1E5641E65608600F4F14C /* SelectAlert.m */,
 				1E08AC3F1E6402F900D71778 /* LQX */,
@@ -1970,6 +1995,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EC627211E4C55EB006A8BC2 /* GYCDThirdCell.m in Sources */,
+				1EC24A8C1E80C7D300AAA1A5 /* NSString+Morphing.m in Sources */,
 				1E33573C1E5EC947003B4830 /* GYCourtListModel.m in Sources */,
 				1E08AC5A1E6422A400D71778 /* GYAddNewCaseSixthVC.m in Sources */,
 				1E580F8B1E5D6FE40086C2AD /* GYSCDetailFirstVC.m in Sources */,
@@ -2041,6 +2067,7 @@
 				1ED1AE091E4D5C3400B8C8A5 /* GYSearchCaseLoginVC.m in Sources */,
 				1E08AC241E63EDCC00D71778 /* GYAddNewsCaseVC.m in Sources */,
 				1EAC05C41E4ABCD3007E6CE2 /* GYLoginVC.m in Sources */,
+				1EC24A871E80BE3700AAA1A5 /* UIViewController+AlertController.m in Sources */,
 				1EC627151E4C47A9006A8BC2 /* XYCenterButton.m in Sources */,
 				1EA9BE4D1E66A490006F3DEB /* HWImagePickerSheet.m in Sources */,
 				1EA9BE421E666E1D006F3DEB /* THPickerView.m in Sources */,
@@ -2079,10 +2106,13 @@
 				1ED1AE2B1E51580B00B8C8A5 /* CustomTabbarController.m in Sources */,
 				1E7E1E991E496D9A00184531 /* GYConst.m in Sources */,
 				1EC627261E4C55FB006A8BC2 /* GYCDFourthCell.m in Sources */,
+				1EC24A8D1E80C7D300AAA1A5 /* TOMSMorphingLabel.m in Sources */,
+				1EC24A861E80BE3700AAA1A5 /* SVAlertViewController.m in Sources */,
 				1E08AC2E1E63FD3D00D71778 /* GYAddNCPushVC.m in Sources */,
 				1EAD7F8A1E5E8150001274F5 /* GYSCSpDetailModel.m in Sources */,
 				1EA9BE841E66A4E9006F3DEB /* MImaLibTool.m in Sources */,
 				1EAD7F771E5E797B001274F5 /* GYSCZXDetailFirstVC.m in Sources */,
+				1EC24A7E1E80B97B00AAA1A5 /* ZYLAlert.m in Sources */,
 				1ED1AE221E5157EE00B8C8A5 /* GYNRDetailThirdVC.m in Sources */,
 				1E580FA11E5D88A20086C2AD /* ZoomImageView.m in Sources */,
 				1EAD7F8E1E5E8933001274F5 /* GYSpDsrXxCell.m in Sources */,

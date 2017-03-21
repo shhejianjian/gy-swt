@@ -25,7 +25,8 @@
 #import "GYNewsNoDetailVC.h"
 #import "GYNewsRealDetailVC.h"
 #import "GYWssdLoginVC.h"
-
+#import "TOMSMorphingLabel.h"
+#import "GYKtggModel.h"
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -76,7 +77,9 @@ static NSString *ID=@"homeCell";
 @property (nonatomic, assign) int labelTopConstraintHeight;
 @property (nonatomic, assign) int carouselViewHeight;
 
-
+@property (strong, nonatomic) IBOutlet UILabel *ktggLabel;
+@property (nonatomic, assign) NSInteger idx;
+@property (nonatomic, strong) NSMutableArray *ktggNameList;
 @end
 
 @implementation GYHomeVC
@@ -137,8 +140,50 @@ static NSString *ID=@"homeCell";
     
     [self.myFunKeboardView addSubview:self.btnScrollView];
    
+    
+    self.idx = 0;
+    
+    [self loadPublicTalkInfoWithDayType];
+}
+#pragma mark - toggling text
+- (void)loadPublicTalkInfoWithDayType {
+    [self.ktggNameList removeAllObjects];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"intypes"] = @"0";
+    params[@"page"] = @"1";
+    params[@"pageSize"] = @"100";
+    params[@"fydm"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"chooseCourt_dm"];;
+    [GYHttpTool post:ktgg_listInfoUrl ticket:@"" params:params success:^(id json) {
+        NSLog(@"json:%@==%@",json,params);
+        NSArray *arr = [GYKtggModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
+        for (GYKtggModel *ktggModel in arr) {
+            [self.ktggNameList addObject:ktggModel.ahqc];
+        }
+        if (self.ktggNameList.count != 0) {
+            [self toggleTextForLabel:self.ktggLabel];
+        }
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
+- (void)setIdx:(NSInteger)idx
+{
+    if (self.ktggNameList.count != 0) {
+        _idx = MAX(0, MIN(idx, idx % [self.ktggNameList count]));
+    }
+    
+}
+
+- (void)toggleTextForLabel:(UILabel *)label
+{
+    if (self.ktggNameList.count != 0) {
+        label.text = self.ktggNameList[self.idx++];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self toggleTextForLabel:label];
+        });
+    }
+}
 
 - (void)observeWorknet{
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
@@ -531,6 +576,13 @@ static NSString *ID=@"homeCell";
 		_lunboImageArr = [[NSMutableArray alloc] init];
 	}
 	return _lunboImageArr;
+}
+
+- (NSMutableArray *)ktggNameList {
+	if(_ktggNameList == nil) {
+		_ktggNameList = [[NSMutableArray alloc] init];
+	}
+	return _ktggNameList;
 }
 
 @end

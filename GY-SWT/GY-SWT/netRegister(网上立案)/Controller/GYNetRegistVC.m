@@ -13,6 +13,10 @@
 #import "GYNetRegistModel.h"
 #import "GYAddNewsCaseVC.h"
 #import "GYAddNewCaseSecondVC.h"
+#import "UIViewController+AlertController.h"
+
+
+
 extern NSString *checkSucessWsla;
 
 static NSString *ID=@"GYNRHomeCell";
@@ -63,9 +67,12 @@ static NSString *ID=@"GYNRHomeCell";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    
     if ([checkSucessWsla isEqualToString:@"success"]) {
         [self.myTableView.mj_header beginRefreshing];
     }
+    
+    NSLog(@"%@===%ld",checkSucessWsla,self.wslaListArr.count);
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -122,22 +129,25 @@ static NSString *ID=@"GYNRHomeCell";
         cell=[[GYNRHomeCell alloc]init];
         
     }
+    if (self.wslaListArr.count != 0) {
+        GYNetRegistModel *cellNrModel = self.wslaListArr[indexPath.row];
+        if ([cellNrModel.clztmc isEqualToString:@"收案"]) {
+            cell.typeLabel.backgroundColor = wslaGrayColor;
+        }
+        if ([cellNrModel.clztmc isEqualToString:@"审核通过"]) {
+            cell.typeLabel.backgroundColor = wslapurpleColor;
+        }
+        if ([cellNrModel.clztmc isEqualToString:@"待审核"]) {
+            cell.typeLabel.backgroundColor = wslagreenColor;
+        }
+        if ([cellNrModel.clztmc isEqualToString:@"申请"]) {
+            cell.typeLabel.backgroundColor = wslaredColor;
+        }
+        cell.nrModel = self.wslaListArr[indexPath.row];
+    }
     
-    GYNetRegistModel *cellNrModel = self.wslaListArr[indexPath.row];
-    if ([cellNrModel.clztmc isEqualToString:@"收案"]) {
-        cell.typeLabel.backgroundColor = wslaGrayColor;
-    }
-    if ([cellNrModel.clztmc isEqualToString:@"审核通过"]) {
-        cell.typeLabel.backgroundColor = wslapurpleColor;
-    }
-    if ([cellNrModel.clztmc isEqualToString:@"待审核"]) {
-        cell.typeLabel.backgroundColor = wslagreenColor;
-    }
-    if ([cellNrModel.clztmc isEqualToString:@"申请"]) {
-        cell.typeLabel.backgroundColor = wslaredColor;
-    }
     
-    cell.nrModel = self.wslaListArr[indexPath.row];
+    
     cell.backgroundColor=[UIColor colorWithRed:1 green:1 blue:1 alpha:0.1];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -162,15 +172,56 @@ static NSString *ID=@"GYNRHomeCell";
     
     [[NSUserDefaults standardUserDefaults] setObject:nrModel.ajbs forKey:@"wsla_ajxx_ajbs"];
     
+    
     if ([nrModel.clztmc isEqualToString:@"申请"]) {
-        GYAddNewCaseSecondVC *ncSecondVC = [[GYAddNewCaseSecondVC alloc]init];
-        ncSecondVC.ajbsStr = nrModel.ajbs;
-        [self.navigationController pushViewController:ncSecondVC animated:YES];
+        NSLog(@"1111");
+        [self showActionSheetWithTitle:@"温馨提示" message:@"请选择您的操作" appearanceProcess:^(SVAlertViewController * _Nonnull alertMaker) {
+            NSLog(@"2222");
+            alertMaker.addActionCancelTitle(@"修改").
+            addActionDestructiveTitle(@"删除").
+            addActionDefaultTitle(@"取消");
+            
+        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, SVAlertViewController * _Nonnull alertSelf) {
+            
+            if ([action.title isEqualToString:@"修改"]) {
+                GYAddNewCaseSecondVC *ncSecondVC = [[GYAddNewCaseSecondVC alloc]init];
+                ncSecondVC.ajbsStr = nrModel.ajbs;
+                [self.navigationController pushViewController:ncSecondVC animated:YES];
+            }
+            else if ([action.title isEqualToString:@"删除"]) {
+                [MBProgressHUD showError:@"删除中..." toView:self.view];
+                NSMutableDictionary *params = [NSMutableDictionary dictionary];
+                params[@"ajbs"] = nrModel.ajbs;
+                NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"login_ticket"];
+                [GYHttpTool post:wsla_deleteUrl ticket:ticket params:params success:^(id json) {
+                    [MBProgressHUD hideHUDForView:self.view];
+                    NSLog(@"%@",json);
+                    GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
+                    if ([loginModel.success isEqualToString:@"true"]) {
+                        [MBProgressHUD showSuccess:loginModel.msg];
+                        [self loadNewData];
+                    } else {
+                        [MBProgressHUD showError:loginModel.msg];
+                    }
+                } failure:^(NSError *error) {
+                    [MBProgressHUD showError:@"网络不稳定，请稍后再试"];
+                }];
+            }
+            else if ([action.title isEqualToString:@"取消"]) {
+                NSLog(@"取消");
+            }
+            
+        }];
     } else {
         CustomTabbarController *custom = [[CustomTabbarController alloc]init];
         [self.navigationController pushViewController:custom animated:YES];
     }
+    
+    
+    
 }
+
+
 
 - (IBAction)addNewCase:(id)sender {
     
