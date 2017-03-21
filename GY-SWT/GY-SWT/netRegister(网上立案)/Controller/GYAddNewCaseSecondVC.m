@@ -59,8 +59,8 @@ static NSString *ID=@"GYNRDsrXxCell";
     self.nextBtn.layer.cornerRadius = 15;
     self.nextBtn.layer.masksToBounds = YES;
     
-     [self.myTableView registerNib:[UINib nibWithNibName:@"GYNRDsrXxCell" bundle:nil] forCellReuseIdentifier:ID];
-    
+    [self.myTableView registerNib:[UINib nibWithNibName:@"GYNRDsrXxCell" bundle:nil] forCellReuseIdentifier:ID];
+    [self loadTableViewData];
 }
 
 #pragma mark - GYAddNCPushVCDelegate

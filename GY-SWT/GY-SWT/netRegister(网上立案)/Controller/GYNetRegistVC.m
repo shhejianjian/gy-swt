@@ -12,7 +12,7 @@
 #import "CustomTabbarController.h"
 #import "GYNetRegistModel.h"
 #import "GYAddNewsCaseVC.h"
-
+#import "GYAddNewCaseSecondVC.h"
 extern NSString *checkSucessWsla;
 
 static NSString *ID=@"GYNRHomeCell";
@@ -76,19 +76,17 @@ static NSString *ID=@"GYNRHomeCell";
     
     [MBProgressHUD showMessage:@"正在加载" toView:self.view];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"pageSize"] = @"6";
+    params[@"pageSize"] = @"8";
     params[@"page"] = @(self.currentPage);
     NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"login_ticket"];
     [GYHttpTool post:wsla_ajxx_listInfoUrl ticket:ticket params:params success:^(id json) {
-        NSLog(@"%@",json);
+        NSLog(@"json:%@",json);
         GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
         NSArray *arr = [GYNetRegistModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
         for (GYNetRegistModel *nrModel in arr) {
-            NSLog(@"%@",nrModel.ajbhqc);
             [self.wslaListArr addObject:nrModel];
         }
         self.totalCount = [loginModel.count integerValue];
-        NSLog(@"%ld===%ld",self.totalCount,self.wslaListArr.count);
         [MBProgressHUD hideHUDForView:self.view];
         [self.myTableView reloadData];
     } failure:^(NSError *error) {
@@ -164,9 +162,14 @@ static NSString *ID=@"GYNRHomeCell";
     
     [[NSUserDefaults standardUserDefaults] setObject:nrModel.ajbs forKey:@"wsla_ajxx_ajbs"];
     
-    CustomTabbarController *custom = [[CustomTabbarController alloc]init];
-    [self.navigationController pushViewController:custom animated:YES];
-    
+    if ([nrModel.clztmc isEqualToString:@"申请"]) {
+        GYAddNewCaseSecondVC *ncSecondVC = [[GYAddNewCaseSecondVC alloc]init];
+        ncSecondVC.ajbsStr = nrModel.ajbs;
+        [self.navigationController pushViewController:ncSecondVC animated:YES];
+    } else {
+        CustomTabbarController *custom = [[CustomTabbarController alloc]init];
+        [self.navigationController pushViewController:custom animated:YES];
+    }
 }
 
 - (IBAction)addNewCase:(id)sender {

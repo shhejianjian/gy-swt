@@ -26,6 +26,7 @@ static NSString *ID=@"GYNRDsrXxCell";
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (nonatomic, strong) GYAddNCPushVC *pushView;
 @property (nonatomic, strong) NSMutableArray *dsrListArr;
+@property (nonatomic, strong) NSMutableArray *dsrSfzhmListArr;
 /** 记录当前页码 */
 @property (nonatomic, assign) int currentPage;
 /** 总数 */
@@ -52,14 +53,20 @@ static NSString *ID=@"GYNRDsrXxCell";
     self.addNewInfoBtn.layer.masksToBounds = YES;
     self.nextBtn.layer.cornerRadius = 15;
     self.nextBtn.layer.masksToBounds = YES;
-    
+    [self loadDsrForYgInfo];
     [self.myTableView registerNib:[UINib nibWithNibName:@"GYNRDsrXxCell" bundle:nil] forCellReuseIdentifier:ID];
+    [self loadTableViewData];
 }
 
 
 #pragma mark - GYAddNCPushVCDelegate
 - (void)passFirstValueForName:(NSString *)name AndSex:(NSString *)sex AndSfzhm:(NSString *)sfzhm AndLxdz:(NSString *)lxdz AndSjhm:(NSString *)sjhm AndSfdzsd:(BOOL)sfdzsd AndSffrsw:(BOOL)sffrdw AndJlid:(NSString *)jlid{
-    
+    for (int i = 0;i<self.dsrSfzhmListArr.count; i++) {
+        if ([sfzhm isEqualToString:self.dsrSfzhmListArr[i]]) {
+            [MBProgressHUD showError:@"此身份证号码已添加至原告"];
+            return;
+        }
+    }
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"ajbs"] = self.ajbsStr;
     params[@"jlid"] = jlid;
@@ -98,6 +105,12 @@ static NSString *ID=@"GYNRDsrXxCell";
 }
 
 - (void)passSecondValueForName:(NSString *)name AndZjlx:(NSString *)zjlx AndZjlxmc:(NSString *)zjlxmc AndZjhm:(NSString *)zjhm AndZzmc:(NSString *)zzmc AndDwxz:(NSString *)dwxz AndSjhm:(NSString *)sjhm AndSfdzsd:(BOOL)sfdzsd AndSffrsw:(BOOL)sffrdw AndJlid:(NSString *)jlid{
+    for (int i = 0;i<self.dsrSfzhmListArr.count; i++) {
+        if ([zjhm isEqualToString:self.dsrSfzhmListArr[i]]) {
+            [MBProgressHUD showError:@"此身份证号码已添加至原告"];
+            return;
+        }
+    }
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"ajbs"] = self.ajbsStr;
     params[@"jlid"] = jlid;
@@ -140,6 +153,7 @@ static NSString *ID=@"GYNRDsrXxCell";
 }
 
 - (void)passThirdValueForZzmc:(NSString *)zzmc AndZzdz:(NSString *)zzdz AndZzdm:(NSString *)zzdm AndDwxz:(NSString *)dwxz AndSjhm:(NSString *)sjhm AndSfdzsd:(BOOL)sfdzsd AndSffrsw:(BOOL)sffrdw AndJlid:(NSString *)jlid{
+    
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"ajbs"] = self.ajbsStr;
     params[@"jlid"] = jlid;
@@ -176,6 +190,29 @@ static NSString *ID=@"GYNRDsrXxCell";
         
     }];
 }
+
+- (void)loadDsrForYgInfo{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"ajbs"] = self.ajbsStr;
+    params[@"page"] = @"1";
+    params[@"pageSize"] = @"100";
+    params[@"ssdw"] = @"1064020001";
+    NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"login_ticket"];
+    
+    [GYHttpTool post:wsla_ajxx_detailDsrInfoUrl ticket:ticket params:params success:^(id json) {
+        NSLog(@"%@",json);
+        NSArray *arr = [GYNRDsrXxModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
+        for (GYNRDsrXxModel *dsrModel in arr) {
+            NSLog(@"sfzjhm:+++%@",dsrModel.sfzjhm);
+            [self.dsrSfzhmListArr addObject:dsrModel.sfzjhm];
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+
+
 
 
 - (void)loadTableViewData {
@@ -319,6 +356,13 @@ static NSString *ID=@"GYNRDsrXxCell";
 		_dsrListArr = [[NSMutableArray alloc] init];
 	}
 	return _dsrListArr;
+}
+
+- (NSMutableArray *)dsrSfzhmListArr {
+	if(_dsrSfzhmListArr == nil) {
+		_dsrSfzhmListArr = [[NSMutableArray alloc] init];
+	}
+	return _dsrSfzhmListArr;
 }
 
 @end

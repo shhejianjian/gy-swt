@@ -50,6 +50,9 @@ NSString *checkSucessWsla;
     UILongPressGestureRecognizer * longPressGr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressToDo:)];
     longPressGr.minimumPressDuration = 1.5;
     [self.myCollectionView addGestureRecognizer:longPressGr];
+    
+    [self loadWslaAjxxDetailInfoWithMlid];
+    
 }
 -(void)longPressToDo:(UILongPressGestureRecognizer *)gesture
 {

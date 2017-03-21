@@ -51,6 +51,7 @@ static NSString *ID=@"GYNRDlrXxCell";
     self.nextBtn.layer.masksToBounds = YES;
     
     [self.myTableView registerNib:[UINib nibWithNibName:@"GYNRDlrXxCell" bundle:nil] forCellReuseIdentifier:ID];
+    [self loadTableViewData];
 }
 
 - (void)passValueForWtrName:(NSString *)name AndWtrId:(NSString *)ID Andlszjh:(NSString *)lszjh AndDlrName:(NSString *)dlrName AndDlrSjhm:(NSString *)dlrSjhm AndDlrSfzhm:(NSString *)dlrSfzhm AndJlid:(NSString *)jlid AndSfdzsd:(BOOL)sfdzsd{
@@ -181,13 +182,13 @@ static NSString *ID=@"GYNRDlrXxCell";
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 - (IBAction)nextBtnClick:(id)sender {
-    if (self.dlrXxListArr.count == 0) {
-        [MBProgressHUD showError:@"请先核对代理人信息"];
-    } else {
+//    if (self.dlrXxListArr.count == 0) {
+//        [MBProgressHUD showError:@"请先核对代理人信息"];
+//    } else {
         GYAddNewCaseFifthVC *addNCFifthVC = [[GYAddNewCaseFifthVC alloc]init];
         addNCFifthVC.ajbsStr = self.ajbsStr;
         [self.navigationController pushViewController:addNCFifthVC animated:YES];
-    }
+//    }
 }
 
 - (GYAddNCPushSecondVC *)pushView
