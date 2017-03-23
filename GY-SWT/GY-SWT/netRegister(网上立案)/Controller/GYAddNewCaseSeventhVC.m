@@ -138,7 +138,8 @@ NSString *checkSucessWsla;
             
             if ([loginModel.msg isEqualToString:@"当前没有信息"]) {
                 [MBProgressHUD hideHUDForView:self.view];
-                [MBProgressHUD showSuccess:loginModel.msg];
+                [self.myCollectionView reloadData];
+//                [MBProgressHUD showSuccess:loginModel.msg];
             }
             NSArray *arr = [GYClxxModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
             
@@ -240,6 +241,7 @@ NSString *checkSucessWsla;
                 checkSucessWsla = @"success";
                 [self jumpToVC];
             } else {
+                [MBProgressHUD hideHUDForView:self.view];
                 [MBProgressHUD showError:loginModel.msg];
             }
         } failure:^(NSError *error) {

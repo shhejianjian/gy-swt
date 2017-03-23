@@ -38,7 +38,7 @@ static NSString *ID=@"GYNewsInfoListCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.title = @"顶部标签菜单";
+//    self.title = @"顶部标签菜单";
     
     self.refreshTableView.delegate = self;
     self.refreshTableView.dataSource = self;

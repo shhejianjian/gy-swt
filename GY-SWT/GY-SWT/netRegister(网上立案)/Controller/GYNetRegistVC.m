@@ -98,6 +98,7 @@ static NSString *ID=@"GYNRHomeCell";
         [self.myTableView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
+        [MBProgressHUD showError:@"网络不稳定，请稍后再试"];
     }];
     [self.myTableView.mj_header endRefreshing];
     [self.myTableView.mj_footer endRefreshing];
@@ -173,7 +174,7 @@ static NSString *ID=@"GYNRHomeCell";
     [[NSUserDefaults standardUserDefaults] setObject:nrModel.ajbs forKey:@"wsla_ajxx_ajbs"];
     
     
-    if ([nrModel.clztmc isEqualToString:@"申请"]) {
+    if ([nrModel.clztmc isEqualToString:@"申请"] || [nrModel.clztmc isEqualToString:@"待审核"]) {
         NSLog(@"1111");
         [self showActionSheetWithTitle:@"温馨提示" message:@"请选择您的操作" appearanceProcess:^(SVAlertViewController * _Nonnull alertMaker) {
             NSLog(@"2222");

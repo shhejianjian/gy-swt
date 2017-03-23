@@ -100,7 +100,6 @@
 }
 - (void)btnSelect:(UIButton *)sender
 {
-    NSLog(@"被点了-%ld",(long)sender.tag);
     switch (sender.tag) {
         case 10000:
 

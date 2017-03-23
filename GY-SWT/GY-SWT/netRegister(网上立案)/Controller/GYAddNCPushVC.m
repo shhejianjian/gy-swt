@@ -26,7 +26,6 @@
 @implementation GYAddNCPushVC
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSLog(@"====%@",self.updateModel.jlid);
     XFSegmentView *segView=[[XFSegmentView alloc]initWithFrame:Frame(0, 0, SCREEN_WIDTH, WH(40))];
     segView.delegate = self;
     segView.titles = @[@"自然人",@"法人组织",@"非法人组织"];
@@ -176,20 +175,17 @@
     } else {
         self.sexStr = swit.offText;
     }
-    NSLog(@"%@",self.sexStr);
     [swit addTarget:self action:@selector(switchSex:) forControlEvents:UIControlEventValueChanged];
     
 }
 
 - (void)switchSex:(LQXSwitch *)swit
 {
-    NSLog(@"%d--%@",swit.on,swit.onText);
     if (swit.on) {
         self.sexStr = swit.onText;
     } else {
         self.sexStr = swit.offText;
     }
-    NSLog(@"%@",self.sexStr);
 }
 
 //firstView
@@ -284,7 +280,6 @@
     NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"login_ticket"];
 
     [GYHttpTool post:wsla_dwxzListInfoUrl ticket:ticket params:params success:^(id json) {
-        NSLog(@"%@",json);
         NSArray *arr = [GYDwxzAndZjlxModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
         for (GYDwxzAndZjlxModel *zjlxModel in arr) {
             [self.zjlxListArr addObject:zjlxModel];
@@ -310,7 +305,6 @@
     NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"login_ticket"];
 
     [GYHttpTool post:wsla_dwxzListInfoUrl ticket:ticket params:params success:^(id json) {
-        NSLog(@"%@",json);
         NSArray *arr = [GYDwxzAndZjlxModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
         for (GYDwxzAndZjlxModel *zjlxModel in arr) {
             [self.zjlxListArr addObject:zjlxModel.dmms];
@@ -333,7 +327,6 @@
     NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"login_ticket"];
 
     [GYHttpTool post:wsla_dwxzListInfoUrl ticket:ticket params:params success:^(id json) {
-        NSLog(@"%@",json);
         NSArray *arr = [GYDwxzAndZjlxModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
         for (GYDwxzAndZjlxModel *zjlxModel in arr) {
             [self.zjlxListArr addObject:zjlxModel.dmms];

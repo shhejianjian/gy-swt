@@ -96,7 +96,6 @@
     params[@"pageSize"] = @"100";
     NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"login_ticket"];
     [GYHttpTool post:wsla_ajxx_detailDsrInfoUrl ticket:ticket params:params success:^(id json) {
-        NSLog(@"%@",json);
         NSArray *arr = [GYNRDsrXxModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
         for (GYNRDsrXxModel *dsrModel in arr) {
             [self.dsrXxListArr addObject:dsrModel];
@@ -123,12 +122,10 @@
         }
         for (int i = 0; i < self.dsrNameArr.count; i++) {
             NSDictionary *dic = [[NSDictionary alloc]initWithObjectsAndKeys:self.dsrNameArr[i],@"test",self.dsrIdArr[i],@"ID", nil];
-            NSLog(@"dic==%@",dic);
             [self.dsrNameListArr addObject:dic];
         }
         for (int i = 0; i < self.dsrBGNameArr.count; i++) {
             NSDictionary *dic = [[NSDictionary alloc]initWithObjectsAndKeys:self.dsrBGNameArr[i],@"test",self.dsrBGIdArr[i],@"ID", nil];
-            NSLog(@"dic==%@",dic);
             [self.dsrBGNameListArr addObject:dic];
         }
         
@@ -137,7 +134,6 @@
         
         [MBProgressHUD hideHUDForView:self.view];
     } failure:^(NSError *error) {
-        NSLog(@"%@",error);
         
     }];
 }
@@ -146,7 +142,7 @@
     THPickerView *thic = [[THPickerView alloc]initWithDataKey:@"datas" AndDataArray:arr AndTestKey:@"test" AndNumberOfComponents:2];
     [thic showConfirmBlock:^(NSArray<NSString *> *indexArray) {
         for (NSString *strs in indexArray) {
-            NSLog(@"===%@",strs);
+
         }
         int k = 999;
         for (int i = 0; i < 1; i++) {
@@ -154,15 +150,11 @@
             k = [indexArray[1] intValue];
             if ([indexArray[0] isEqualToString:@"0"]) {
                 //原告
-                NSLog(@"原告");
-                NSLog(@"text:%@,id:%@",self.dsrNameListArr[k][@"test"],self.dsrNameListArr[k][@"ID"]);
                 self.wtrNameTextField.text = self.dsrNameListArr[k][@"test"];
                 self.dlrIdStr = self.dsrNameListArr[k][@"ID"];
             }
             if ([indexArray[0] isEqualToString:@"1"]) {
                 //被告
-                NSLog(@"被告");
-                NSLog(@"text:%@,id:%@",self.dsrBGNameListArr[k][@"test"],self.dsrBGNameListArr[k][@"ID"]);
                 self.wtrNameTextField.text = self.dsrBGNameListArr[k][@"test"];
                 self.dlrIdStr = self.dsrBGNameListArr[k][@"ID"];
             }

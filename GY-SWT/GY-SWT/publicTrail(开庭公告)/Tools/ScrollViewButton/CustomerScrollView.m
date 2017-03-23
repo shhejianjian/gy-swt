@@ -55,7 +55,6 @@
     
     if (!self.dataArr) {
         // 加载默认测试数据
-        NSLog(@"加载测试数据");
         NSString * dataPath = [[NSBundle mainBundle] pathForResource:@"funKeyboardData.plist" ofType:nil];
         _dataArr = [NSArray arrayWithContentsOfFile:dataPath];
     }
@@ -65,7 +64,6 @@
         pageCount += 1;
     }
     
-    NSLog(@"pageCount:%ld",pageCount);
     
     UIScrollView * contentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     _contentScrollView = contentScrollView;
@@ -120,7 +118,6 @@
         return;
     }
     
-    NSLog(@"btnCount:%ld",indexCount);
 
     for (int i = 0; i<indexCount; i++) {
         UIButton  * btn = [[UIButton alloc] init];
@@ -171,7 +168,6 @@
 
 -(void)btnClick:(UIButton *)btn{
     
-    NSLog(@"click:%ld",btn.tag);
     if ([self.delegate respondsToSelector:@selector(btnClickWithBtnTag:)]) {
         [self.delegate btnClickWithBtnTag:btn.tag];
     }

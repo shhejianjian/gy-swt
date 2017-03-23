@@ -51,7 +51,7 @@ static NSString *ID=@"GYNRDlrXxCell";
         [self.myTableView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
-        
+        [MBProgressHUD showError:@"网络不稳定，请稍后再试"];
     }];
 }
 #pragma mark - tableViewDelegate

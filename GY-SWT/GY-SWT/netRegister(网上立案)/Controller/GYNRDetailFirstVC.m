@@ -49,7 +49,7 @@
         [MBProgressHUD hideHUDForView:self.view];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
-        
+        [MBProgressHUD showError:@"网络不稳定，请稍后再试"];
     }];
 }
 
