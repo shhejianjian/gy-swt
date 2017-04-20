@@ -179,7 +179,7 @@ static NSString *ID=@"homeCell";
 {
     if (self.ktggNameList.count != 0) {
         label.text = self.ktggNameList[self.idx++];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self toggleTextForLabel:label];
         });
     }
@@ -493,7 +493,7 @@ static NSString *ID=@"homeCell";
 
 - (void)loadButtonWithArray:(NSArray *)arr{
     CGFloat w = 0;//保存前一个button的宽以及前一个button距离屏幕边缘的距离
-    CGFloat h = 20;//用来控制button距离父视图的高
+    CGFloat h = 40;//用来控制button距离父视图的高
     for (int i = 0; i < arr.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
         button.tag = i;
@@ -507,12 +507,12 @@ static NSString *ID=@"homeCell";
         //为button赋值
         [button setTitle:arr[i] forState:UIControlStateNormal];
         //设置button的frame
-        button.frame = CGRectMake(15 + w, h, KScreenW/3-20, 30);
+        button.frame = CGRectMake(15 + w, h, KScreenW-30, 30);
         //当button的位置超出屏幕边缘时换行 320 只是button所在父视图的宽度
         if(10 + w + (KScreenW/3-20) > KScreenW-20){
             w = 0; //换行时将w置为0
             h = h + button.frame.size.height + 10;//距离父视图也变化
-            button.frame = CGRectMake(15 + w, h, KScreenW/3-20, 30);//重设button的frame
+            button.frame = CGRectMake(15 + w, h, KScreenW-30, 30);//重设button的frame
         }
         w = button.frame.size.width + button.frame.origin.x;
         [self.courtView addSubview:button];

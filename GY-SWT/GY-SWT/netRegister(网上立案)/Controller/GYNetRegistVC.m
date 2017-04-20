@@ -144,6 +144,9 @@ static NSString *ID=@"GYNRHomeCell";
         if ([cellNrModel.clztmc isEqualToString:@"申请"]) {
             cell.typeLabel.backgroundColor = wslaredColor;
         }
+        if ([cellNrModel.clztmc isEqualToString:@"已立案"]) {
+            cell.typeLabel.backgroundColor = wslaredColor;
+        }
         cell.nrModel = self.wslaListArr[indexPath.row];
     }
     
