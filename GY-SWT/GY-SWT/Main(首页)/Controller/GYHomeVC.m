@@ -143,7 +143,7 @@ static NSString *ID=@"homeCell";
     
     self.idx = 0;
     
-    [self loadPublicTalkInfoWithDayType];
+    
 }
 #pragma mark - toggling text
 - (void)loadPublicTalkInfoWithDayType {
@@ -212,6 +212,7 @@ static NSString *ID=@"homeCell";
                 [self loadCourtData];
                 [self loadLunBoNewsInfo];
                 [self loadTop2NewsInfo];
+                [self loadPublicTalkInfoWithDayType];
                 break;
                 
             case AFNetworkReachabilityStatusReachableViaWiFi:
@@ -219,6 +220,7 @@ static NSString *ID=@"homeCell";
                 [self loadCourtData];
                 [self loadLunBoNewsInfo];
                 [self loadTop2NewsInfo];
+                [self loadPublicTalkInfoWithDayType];
                 break;
             default:
                 break;

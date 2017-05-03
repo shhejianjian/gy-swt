@@ -145,7 +145,7 @@
         [button setTitle:arr[i] forState:UIControlStateNormal];
         //设置button的frame
         button.frame = CGRectMake(15 + w, h, KScreenW-30, 30);
-        //当button的位置超出屏幕边缘时换行 320 只是button所在父视图的宽度
+        //当button的位置超出屏幕边缘时换行
         if(10 + w + (KScreenW/3-20) > KScreenW-20){
             w = 0; //换行时将w置为0
             h = h + button.frame.size.height + 10;//距离父视图也变化
