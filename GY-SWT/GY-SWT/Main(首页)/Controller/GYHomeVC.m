@@ -80,6 +80,9 @@ static NSString *ID=@"homeCell";
 @property (strong, nonatomic) IBOutlet UILabel *ktggLabel;
 @property (nonatomic, assign) NSInteger idx;
 @property (nonatomic, strong) NSMutableArray *ktggNameList;
+
+@property (nonatomic, copy) NSString *checkNetWork;
+
 @end
 
 @implementation GYHomeVC
@@ -121,6 +124,12 @@ static NSString *ID=@"homeCell";
     }
     
     [self observeWorknet];
+    
+    [self loadCourtData];
+    [self loadLunBoNewsInfo];
+    [self loadTop2NewsInfo];
+    [self loadPublicTalkInfoWithDayType];
+    
     
     self.labelTopConstraint.constant = _labelTopConstraintHeight;
     self.funKeyBoardConstraint.constant = self.lunboViewHeight;
@@ -195,6 +204,8 @@ static NSString *ID=@"homeCell";
                 
             case AFNetworkReachabilityStatusNotReachable:{
                 NSLog(@"不可达的网络(未连接)");
+                self.courtView.hidden = YES;
+                self.checkNetWork = @"yes";
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"如无法弹出是否允许该应用使用数据网络弹框，请至设置中开启无线局域网助理即可" preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
                     NSLog(@"取消");
@@ -209,18 +220,33 @@ static NSString *ID=@"homeCell";
                 
             case AFNetworkReachabilityStatusReachableViaWWAN:
                 NSLog(@"2G,3G,4G...的网络");
-                [self loadCourtData];
-                [self loadLunBoNewsInfo];
-                [self loadTop2NewsInfo];
-                [self loadPublicTalkInfoWithDayType];
+                if ([self.checkNetWork isEqualToString:@"yes"]) {
+                    self.courtView.hidden = NO;
+                    [self loadCourtData];
+                    [self loadLunBoNewsInfo];
+                    [self loadTop2NewsInfo];
+                    [self loadPublicTalkInfoWithDayType];
+                    self.checkNetWork = @"no";
+                } else {
+
+                }
+                
                 break;
                 
             case AFNetworkReachabilityStatusReachableViaWiFi:
                 NSLog(@"wifi的网络");
-                [self loadCourtData];
-                [self loadLunBoNewsInfo];
-                [self loadTop2NewsInfo];
-                [self loadPublicTalkInfoWithDayType];
+                if ([self.checkNetWork isEqualToString:@"yes"]) {
+                    self.courtView.hidden = NO;
+                    [self loadCourtData];
+                    [self loadLunBoNewsInfo];
+                    [self loadTop2NewsInfo];
+                    [self loadPublicTalkInfoWithDayType];
+                    self.checkNetWork = @"no";
+
+                } else {
+
+                }
+                
                 break;
             default:
                 break;

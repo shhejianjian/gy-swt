@@ -105,7 +105,6 @@
 		1E7E1ECA1E499ECE00184531 /* GYHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E7E1EC81E499ECE00184531 /* GYHomeCell.xib */; };
 		1EA5DA611E5A91F100D5FB47 /* GYPTMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5DA5F1E5A91F100D5FB47 /* GYPTMainVC.m */; };
 		1EA5DA621E5A91F100D5FB47 /* GYPTMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA5DA601E5A91F100D5FB47 /* GYPTMainVC.xib */; };
-		1EA5DA641E5A950C00D5FB47 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EA5DA631E5A950C00D5FB47 /* icon.png */; };
 		1EA9BE421E666E1D006F3DEB /* THPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9BE411E666E1D006F3DEB /* THPickerView.m */; };
 		1EA9BE4B1E66A490006F3DEB /* HWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9BE451E66A490006F3DEB /* HWCollectionViewCell.m */; };
 		1EA9BE4C1E66A490006F3DEB /* HWCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA9BE461E66A490006F3DEB /* HWCollectionViewCell.xib */; };
@@ -441,7 +440,6 @@
 		1EA5DA5E1E5A91F100D5FB47 /* GYPTMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYPTMainVC.h; sourceTree = "<group>"; };
 		1EA5DA5F1E5A91F100D5FB47 /* GYPTMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYPTMainVC.m; sourceTree = "<group>"; };
 		1EA5DA601E5A91F100D5FB47 /* GYPTMainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYPTMainVC.xib; sourceTree = "<group>"; };
-		1EA5DA631E5A950C00D5FB47 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		1EA9BE401E666E1D006F3DEB /* THPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THPickerView.h; sourceTree = "<group>"; };
 		1EA9BE411E666E1D006F3DEB /* THPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THPickerView.m; sourceTree = "<group>"; };
 		1EA9BE441E66A490006F3DEB /* HWCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWCollectionViewCell.h; sourceTree = "<group>"; };
@@ -715,7 +713,6 @@
 		1E7E1DCD1E49695900184531 = {
 			isa = PBXGroup;
 			children = (
-				1EA5DA631E5A950C00D5FB47 /* icon.png */,
 				1E7E1DD81E49695900184531 /* GY-SWT */,
 				1E7E1DF21E49695900184531 /* GY-SWTTests */,
 				1E7E1DFD1E49695900184531 /* GY-SWTUITests */,
@@ -1796,7 +1793,7 @@
 				TargetAttributes = {
 					1E7E1DD51E49695900184531 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = NF5V873MQB;
+						DevelopmentTeam = JQ9MC7KJ4J;
 						ProvisioningStyle = Automatic;
 					};
 					1E7E1DEE1E49695900184531 = {
@@ -1842,7 +1839,6 @@
 				1E7E1ECA1E499ECE00184531 /* GYHomeCell.xib in Resources */,
 				1E580F6A1E5D2C3B0086C2AD /* GYNRDsrXxCell.xib in Resources */,
 				1EAAD4A81E600C90003D1EA6 /* GYImageNewsCell.xib in Resources */,
-				1EA5DA641E5A950C00D5FB47 /* icon.png in Resources */,
 				1E08AC4C1E641D5000D71778 /* GYAddNCPushSecondVC.xib in Resources */,
 				1EA9BEA21E66A51E006F3DEB /* plus@3x.png in Resources */,
 				1EA5DA621E5A91F100D5FB47 /* GYPTMainVC.xib in Resources */,
@@ -2284,12 +2280,13 @@
 			baseConfigurationReference = B1026A1E28D1A3D7A64C236E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NF5V873MQB;
+				DEVELOPMENT_TEAM = JQ9MC7KJ4J;
 				INFOPLIST_FILE = "GY-SWT/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gy.swt.www;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gy.swt.www.GYSWT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -2298,12 +2295,13 @@
 			baseConfigurationReference = B8BD8DB0E3258E7CDC768386 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NF5V873MQB;
+				DEVELOPMENT_TEAM = JQ9MC7KJ4J;
 				INFOPLIST_FILE = "GY-SWT/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gy.swt.www;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gy.swt.www.GYSWT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

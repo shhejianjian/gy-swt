@@ -47,6 +47,8 @@ static NSString *ID5=@"GYCDFIfthCell";
 @property (strong, nonatomic) IBOutlet UITextView *detailViewNoteLabel;
 
 @property (nonatomic, strong) NSMutableArray *xgmcListArr;
+@property (nonatomic, strong) NSMutableArray *fgmcListArr;
+
 /** 记录当前页码 */
 @property (nonatomic, assign) int currentPage;
 /** 总数 */
@@ -93,8 +95,25 @@ static NSString *ID5=@"GYCDFIfthCell";
     
     [self.fifthTableView registerNib:[UINib nibWithNibName:@"GYCDFIfthCell" bundle:nil] forCellReuseIdentifier:ID5];
     
+    
+    self.fourthTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.fourthTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    
+    [self.fourthTableView.mj_header beginRefreshing];
+    
+    
 }
-
+- (void)loadNewData
+{
+    [self.fgmcListArr removeAllObjects];
+    self.currentPage = 1;
+    [self loadFourthData];
+}
+- (void)loadMoreData
+{
+    self.currentPage ++;
+    [self loadFourthData];
+}
 
 - (void)loadXgmcListInfoWithType:(NSString *)type {
     [self.xgmcListArr removeAllObjects];
@@ -116,10 +135,6 @@ static NSString *ID5=@"GYCDFIfthCell";
             [self.thirdTableView reloadData];
 
         }
-        if ([type isEqualToString:@"6"]) {
-            [self.fourthTableView reloadData];
-
-        }
         if ([type isEqualToString:@"1"]) {
             [self.fifthTableView reloadData];
 
@@ -130,6 +145,32 @@ static NSString *ID5=@"GYCDFIfthCell";
         NSLog(@"%@",error);
     }];
 }
+
+- (void)loadFourthData{
+    NSString *courtDm = [[NSUserDefaults standardUserDefaults]objectForKey:@"chooseCourt_dm"];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"fydm"] = courtDm;
+    params[@"lx"] = @"6";
+    params[@"page"] = @(self.currentPage);
+    params[@"pageSize"] = @"8";
+    [GYHttpTool post:xgmc_listInfoUrl ticket:@"" params:params success:^(id json) {
+        NSLog(@"%@",json);
+        GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
+        self.totalCount = [loginModel.count integerValue];
+        NSArray *arr = [GYSWHModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
+        for (GYSWHModel *swhModel in arr) {
+            [self.fgmcListArr addObject:swhModel];
+        }
+        [self.fourthTableView reloadData];
+            
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    [self.fourthTableView.mj_header endRefreshing];
+    [self.fourthTableView.mj_footer endRefreshing];
+}
+
 
 - (void)loadBmznListInfo {
     [self.xgmcListArr removeAllObjects];
@@ -161,6 +202,14 @@ static NSString *ID5=@"GYCDFIfthCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 
 {
+    if (tableView == self.fourthTableView) {
+        if (self.fgmcListArr.count == self.totalCount) {
+            self.fourthTableView.mj_footer.state = MJRefreshStateNoMoreData;
+        }else{
+            self.fourthTableView.mj_footer.state = MJRefreshStateIdle;
+        }
+        return self.fgmcListArr.count;
+    }
     return self.xgmcListArr.count;
 }
 
@@ -201,7 +250,9 @@ static NSString *ID5=@"GYCDFIfthCell";
             fourthcell=[[GYCDFourthCell alloc]init];
             
         }
-        fourthcell.fourthSwhModel = self.xgmcListArr[indexPath.row];
+        if (self.fgmcListArr.count !=0) {
+            fourthcell.fourthSwhModel = self.fgmcListArr[indexPath.row];
+        }
         fourthcell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell = fourthcell;
         
@@ -334,7 +385,7 @@ static NSString *ID5=@"GYCDFIfthCell";
 }
 - (IBAction)fourthBtnClick:(UIButton *)sender {
     if (self.fourthView.hidden == YES) {
-        [self loadXgmcListInfoWithType:@"6"];
+        
     }
     
     
@@ -381,6 +432,13 @@ static NSString *ID5=@"GYCDFIfthCell";
         _xgmcListArr = [[NSMutableArray alloc] init];
     }
     return _xgmcListArr;
+}
+
+- (NSMutableArray *)fgmcListArr {
+	if(_fgmcListArr == nil) {
+		_fgmcListArr = [[NSMutableArray alloc] init];
+	}
+	return _fgmcListArr;
 }
 
 @end
