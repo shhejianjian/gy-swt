@@ -102,18 +102,22 @@ static NSString *ID=@"GYNoticePucCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     GYSCListModel *scListModel = self.scListArr[indexPath.row];
-    NSLog(@"==%@",scListModel.ajbs);
+    NSLog(@"==%ld",(long)scListModel.ajlb);
     [[NSUserDefaults standardUserDefaults] setObject:scListModel.ajbs forKey:@"ajxxcx_ajbs"];
     
-    if ([self.ajTypeStr isEqualToString:@"2"]) {
-        GYSCTabbarVC *scTabbarVC = [[GYSCTabbarVC alloc]init];
-        scTabbarVC.ahqcStr = scListModel.ahqc;
-        [self.navigationController pushViewController:scTabbarVC animated:YES];
-    }
-    if ([self.ajTypeStr isEqualToString:@"1"]) {
+//    if ([self.ajTypeStr isEqualToString:@"2"]) {
+//        GYSCTabbarVC *scTabbarVC = [[GYSCTabbarVC alloc]init];
+//        scTabbarVC.ahqcStr = scListModel.ahqc;
+//        [self.navigationController pushViewController:scTabbarVC animated:YES];
+//    }
+    if (scListModel.ajlb == 8) {
         GYSCZXTabbarVC *zxTabbarVC = [[GYSCZXTabbarVC alloc]init];
         zxTabbarVC.ahqcStr = scListModel.ahqc;
         [self.navigationController pushViewController:zxTabbarVC animated:YES];
+    } else {
+        GYSCTabbarVC *scTabbarVC = [[GYSCTabbarVC alloc]init];
+        scTabbarVC.ahqcStr = scListModel.ahqc;
+        [self.navigationController pushViewController:scTabbarVC animated:YES];
     }
 }
 

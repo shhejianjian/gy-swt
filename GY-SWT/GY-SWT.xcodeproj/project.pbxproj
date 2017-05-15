@@ -30,6 +30,11 @@
 		1E1517DA1E6805420004FFB6 /* GYWssdLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E1517D81E6805420004FFB6 /* GYWssdLoginVC.xib */; };
 		1E1517DE1E6806B70004FFB6 /* GYWssdListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1517DC1E6806B70004FFB6 /* GYWssdListVC.m */; };
 		1E1517DF1E6806B70004FFB6 /* GYWssdListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E1517DD1E6806B70004FFB6 /* GYWssdListVC.xib */; };
+		1E21B8181EC954AC00D69E9D /* GYSpFourthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E21B8161EC954AC00D69E9D /* GYSpFourthCell.m */; };
+		1E21B8191EC954AC00D69E9D /* GYSpFourthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E21B8171EC954AC00D69E9D /* GYSpFourthCell.xib */; };
+		1E21B81C1EC9623500D69E9D /* GYSpSXxxModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E21B81B1EC9623500D69E9D /* GYSpSXxxModel.m */; };
+		1E21B81F1EC9650E00D69E9D /* GYSpSxbgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E21B81E1EC9650E00D69E9D /* GYSpSxbgModel.m */; };
+		1E21B8221EC9652B00D69E9D /* GYSpCxbgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E21B8211EC9652B00D69E9D /* GYSpCxbgModel.m */; };
 		1E33572F1E5EAFEC003B4830 /* GYBmllModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E33572E1E5EAFEC003B4830 /* GYBmllModel.m */; };
 		1E3357331E5EBB77003B4830 /* GYPCDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3357311E5EBB77003B4830 /* GYPCDetailCell.m */; };
 		1E3357341E5EBB77003B4830 /* GYPCDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3357321E5EBB77003B4830 /* GYPCDetailCell.xib */; };
@@ -299,6 +304,15 @@
 		1E1517DB1E6806B70004FFB6 /* GYWssdListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYWssdListVC.h; sourceTree = "<group>"; };
 		1E1517DC1E6806B70004FFB6 /* GYWssdListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYWssdListVC.m; sourceTree = "<group>"; };
 		1E1517DD1E6806B70004FFB6 /* GYWssdListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYWssdListVC.xib; sourceTree = "<group>"; };
+		1E21B8151EC954AC00D69E9D /* GYSpFourthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSpFourthCell.h; sourceTree = "<group>"; };
+		1E21B8161EC954AC00D69E9D /* GYSpFourthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSpFourthCell.m; sourceTree = "<group>"; };
+		1E21B8171EC954AC00D69E9D /* GYSpFourthCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYSpFourthCell.xib; sourceTree = "<group>"; };
+		1E21B81A1EC9623500D69E9D /* GYSpSXxxModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSpSXxxModel.h; sourceTree = "<group>"; };
+		1E21B81B1EC9623500D69E9D /* GYSpSXxxModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSpSXxxModel.m; sourceTree = "<group>"; };
+		1E21B81D1EC9650E00D69E9D /* GYSpSxbgModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSpSxbgModel.h; sourceTree = "<group>"; };
+		1E21B81E1EC9650E00D69E9D /* GYSpSxbgModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSpSxbgModel.m; sourceTree = "<group>"; };
+		1E21B8201EC9652B00D69E9D /* GYSpCxbgModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSpCxbgModel.h; sourceTree = "<group>"; };
+		1E21B8211EC9652B00D69E9D /* GYSpCxbgModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSpCxbgModel.m; sourceTree = "<group>"; };
 		1E33572D1E5EAFEC003B4830 /* GYBmllModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYBmllModel.h; sourceTree = "<group>"; };
 		1E33572E1E5EAFEC003B4830 /* GYBmllModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYBmllModel.m; sourceTree = "<group>"; };
 		1E3357301E5EBB77003B4830 /* GYPCDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYPCDetailCell.h; sourceTree = "<group>"; };
@@ -1302,6 +1316,12 @@
 				1EAD7F911E5E9A34001274F5 /* GYSPDsrModel.m */,
 				1ECD40C71E6E427600225354 /* GYSPSpzzModel.h */,
 				1ECD40C81E6E427600225354 /* GYSPSpzzModel.m */,
+				1E21B81A1EC9623500D69E9D /* GYSpSXxxModel.h */,
+				1E21B81B1EC9623500D69E9D /* GYSpSXxxModel.m */,
+				1E21B81D1EC9650E00D69E9D /* GYSpSxbgModel.h */,
+				1E21B81E1EC9650E00D69E9D /* GYSpSxbgModel.m */,
+				1E21B8201EC9652B00D69E9D /* GYSpCxbgModel.h */,
+				1E21B8211EC9652B00D69E9D /* GYSpCxbgModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1315,6 +1335,9 @@
 				1EAD7F961E5EAB87001274F5 /* GYZxFourthCell.h */,
 				1EAD7F971E5EAB87001274F5 /* GYZxFourthCell.m */,
 				1EAD7F981E5EAB87001274F5 /* GYZxFourthCell.xib */,
+				1E21B8151EC954AC00D69E9D /* GYSpFourthCell.h */,
+				1E21B8161EC954AC00D69E9D /* GYSpFourthCell.m */,
+				1E21B8171EC954AC00D69E9D /* GYSpFourthCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1899,6 +1922,7 @@
 				1EC627271E4C55FB006A8BC2 /* GYCDFourthCell.xib in Resources */,
 				1ED1AE3B1E51591400B8C8A5 /* gd9@2x.png in Resources */,
 				1ED1AE0A1E4D5C3400B8C8A5 /* GYSearchCaseLoginVC.xib in Resources */,
+				1E21B8191EC954AC00D69E9D /* GYSpFourthCell.xib in Resources */,
 				1E7E1E711E496D3000184531 /* IQKeyboardManager.bundle in Resources */,
 				1E7E1E761E496D3A00184531 /* JPullDown.bundle in Resources */,
 				1EAAD48E1E5FC959003D1EA6 /* TopMenuSelectViewController.xib in Resources */,
@@ -2008,6 +2032,7 @@
 				1E33572F1E5EAFEC003B4830 /* GYBmllModel.m in Sources */,
 				1EA9BE4E1E66A490006F3DEB /* HWPublishBaseController.m in Sources */,
 				1ED1AE271E5157FD00B8C8A5 /* GYNRDetailFourthVC.m in Sources */,
+				1E21B81F1EC9650E00D69E9D /* GYSpSxbgModel.m in Sources */,
 				1EA9BE571E66A4C3006F3DEB /* MHeaderImaCell.m in Sources */,
 				1E7E1EB21E49730400184531 /* MXBarButtonItem.m in Sources */,
 				1EB1CC7B1E67A1DF00EB48B0 /* GYwslaDetailCollCell.m in Sources */,
@@ -2041,6 +2066,7 @@
 				1E7E1E651E496D3000184531 /* IQUITextFieldView+Additions.m in Sources */,
 				1E580F501E5C2A090086C2AD /* GYNetRegistModel.m in Sources */,
 				1EAAD4A71E600C90003D1EA6 /* GYImageNewsCell.m in Sources */,
+				1E21B8221EC9652B00D69E9D /* GYSpCxbgModel.m in Sources */,
 				1E580F471E5C0A2A0086C2AD /* GYSWHModel.m in Sources */,
 				1E7E1EC51E49963500184531 /* UIView+WJExtension.m in Sources */,
 				1EAD7F951E5EA88C001274F5 /* GYZXSegmentView.m in Sources */,
@@ -2086,6 +2112,7 @@
 				1E7E1E631E496D3000184531 /* IQNSArray+Sort.m in Sources */,
 				1EBCFF9A1E55684D006BB80A /* Foundation+Log.m in Sources */,
 				1EA9BE581E66A4C3006F3DEB /* MHeadImaView.m in Sources */,
+				1E21B81C1EC9623500D69E9D /* GYSpSXxxModel.m in Sources */,
 				1EA9BE801E66A4E9006F3DEB /* MGroupCell.m in Sources */,
 				1EAD7F861E5E79A4001274F5 /* GYSCZXDetailThirdVC.m in Sources */,
 				1EB1E5651E65608600F4F14C /* SelectAlert.m in Sources */,
@@ -2118,6 +2145,7 @@
 				1E580F791E5D55A40086C2AD /* GYSearchCaseListVC.m in Sources */,
 				1E7E1DDB1E49695900184531 /* main.m in Sources */,
 				1EC626E81E4C0FA5006A8BC2 /* GYCourtDetailMainVC.m in Sources */,
+				1E21B8181EC954AC00D69E9D /* GYSpFourthCell.m in Sources */,
 				1E580F951E5D70010086C2AD /* GYSCDetailThirdVC.m in Sources */,
 				1EAD7F731E5E792A001274F5 /* GYSCZXTabbarVC.m in Sources */,
 				1E1517D91E6805420004FFB6 /* GYWssdLoginVC.m in Sources */,

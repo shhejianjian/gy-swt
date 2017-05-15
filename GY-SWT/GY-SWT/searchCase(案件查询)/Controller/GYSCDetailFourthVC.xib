@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYSCDetailFourthVC">
             <connections>
                 <outlet property="detailView" destination="xN6-mJ-krG" id="uof-er-PZK"/>
+                <outlet property="myTableView" destination="xp4-BP-Cf2" id="8zj-2I-Yyr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,7 +26,23 @@
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xN6-mJ-krG">
                     <rect key="frame" x="10" y="114" width="355" height="483"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xp4-BP-Cf2">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="483"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="lO1-mO-a3q"/>
+                                <outlet property="delegate" destination="-1" id="kYU-L3-nUv"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="xp4-BP-Cf2" secondAttribute="trailing" id="BmQ-Bd-XZs"/>
+                        <constraint firstAttribute="bottom" secondItem="xp4-BP-Cf2" secondAttribute="bottom" id="FHf-2X-8B2"/>
+                        <constraint firstItem="xp4-BP-Cf2" firstAttribute="top" secondItem="xN6-mJ-krG" secondAttribute="top" id="PY0-zD-Yk5"/>
+                        <constraint firstItem="xp4-BP-Cf2" firstAttribute="leading" secondItem="xN6-mJ-krG" secondAttribute="leading" id="aWf-PY-1Zh"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

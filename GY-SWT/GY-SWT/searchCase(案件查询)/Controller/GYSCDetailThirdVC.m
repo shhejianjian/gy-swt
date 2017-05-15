@@ -94,7 +94,7 @@ static NSString *ID=@"GYSpDsrXxCell";
 
 {
     
-    return 110;
+    return 105;
     
 }
 

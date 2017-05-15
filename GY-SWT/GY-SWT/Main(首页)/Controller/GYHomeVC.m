@@ -258,7 +258,7 @@ static NSString *ID=@"homeCell";
 - (void)loadTop2NewsInfo {
     [self.top2NewsArr removeAllObjects];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    
+    params[@"fydm"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"chooseCourt_dm"];
     [GYHttpTool post:news_top2InfoUrl ticket:@"" params:params success:^(id json) {
         NSLog(@"news==%@",json);
         NSArray *arr = [GYTop2NewsModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
@@ -278,7 +278,7 @@ static NSString *ID=@"homeCell";
     [self.lunboTitleArr removeAllObjects];
     [self.lunboImageArr removeAllObjects];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    
+    params[@"fydm"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"chooseCourt_dm"];
     [GYHttpTool post:news_tjInfoUrl ticket:@"" params:params success:^(id json) {
         NSLog(@"newstj==%@",json);
         NSArray *arr = [GYTop2NewsModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
@@ -290,7 +290,12 @@ static NSString *ID=@"homeCell";
             [self.lunboTitleArr addObject:top2NewsModel.title];
             [self.lunboImageArr addObject:[NSString stringWithFormat:@"%@%@",self.lunboImageFileUrl,top2NewsModel.imageurl]];
         }
-        [self loadLunboViewWithTitleArr:self.lunboTitleArr AndImageArr:self.lunboImageArr];
+        
+        NSLog(@"lunbocount:%ld",self.lunboNewsArr.count);
+        
+        if (self.lunboNewsArr.count > 0) {
+            [self loadLunboViewWithTitleArr:self.lunboTitleArr AndImageArr:self.lunboImageArr];
+        }
         
         
     } failure:^(NSError *error) {
@@ -552,6 +557,8 @@ static NSString *ID=@"homeCell";
     NSLog(@"%@",courtListModel.dm);
     [[NSUserDefaults standardUserDefaults] setObject:courtListModel.dm forKey:@"chooseCourt_dm"];
     [[NSUserDefaults standardUserDefaults] setObject:courtListModel.dmms forKey:@"chooseCourt_name"];
+    [self loadLunBoNewsInfo];
+    [self loadTop2NewsInfo];
     self.courtView.hidden = YES;
     self.homeDetailView.hidden = NO;
     self.mxNavigationBar.hidden = NO;
