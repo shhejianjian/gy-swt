@@ -172,11 +172,11 @@ static NSString *ID=@"GYWssdListCell";
     NSLog(@"%ld",(long)index);
     switch (index) {
         case 0:
-            [self loadWssdDetailListInfoWithSdzt:@"1"];
+            [self loadWssdDetailListInfoWithSdzt:@"2"];
             
             break;
         case 1:
-            [self loadWssdDetailListInfoWithSdzt:@"2"];
+            [self loadWssdDetailListInfoWithSdzt:@"1"];
             break;
         default:
             break;
