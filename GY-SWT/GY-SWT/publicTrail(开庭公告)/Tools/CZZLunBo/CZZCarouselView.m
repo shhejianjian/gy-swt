@@ -433,7 +433,7 @@ typedef enum{
 
 - (void)pauseScroll {
     //等于1表示没滚动
-    if (self.scrollView.contentOffset.x / self.width == 1) return;
+    if (self.describeArray.count == 1) return;
     self.currIndex = self.nextIndex;
     self.pageControl.currentPage = self.currIndex;
     self.currImageView.frame = CGRectMake(self.width, 0, self.width, self.height);

@@ -260,14 +260,17 @@ static NSString *ID=@"homeCell";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"fydm"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"chooseCourt_dm"];
     [GYHttpTool post:news_top2InfoUrl ticket:@"" params:params success:^(id json) {
-        NSLog(@"news==%@",json);
+        NSLog(@"top2news==%@",json);
         NSArray *arr = [GYTop2NewsModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
         for (GYTop2NewsModel *top2NewsModel in arr) {
             [self.top2NewsArr addObject:top2NewsModel];
         }
+        
         GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
         self.imageFileUrl = loginModel.imageServiceUrl;
-        [self.myTableView reloadData];
+        if (self.top2NewsArr.count > 0) {
+            [self.myTableView reloadData];
+        }
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
     }];
@@ -280,7 +283,7 @@ static NSString *ID=@"homeCell";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"fydm"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"chooseCourt_dm"];
     [GYHttpTool post:news_tjInfoUrl ticket:@"" params:params success:^(id json) {
-        NSLog(@"newstj==%@",json);
+        NSLog(@"lunbonews==%@",json);
         NSArray *arr = [GYTop2NewsModel mj_objectArrayWithKeyValuesArray:json[@"parameters"][@"rows"]];
         
         GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
