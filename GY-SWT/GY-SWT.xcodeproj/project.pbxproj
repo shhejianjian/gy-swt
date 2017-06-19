@@ -248,7 +248,7 @@
 		1ED1AE3C1E51591400B8C8A5 /* sy11@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ED1AE331E51591400B8C8A5 /* sy11@2x.png */; };
 		1ED1AE3D1E51591400B8C8A5 /* sy2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ED1AE341E51591400B8C8A5 /* sy2@2x.png */; };
 		1ED1AE3E1E51591400B8C8A5 /* wd13@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ED1AE351E51591400B8C8A5 /* wd13@2x.png */; };
-		86AA09432BC9FF52F69EEF6A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3044D27BA2C8D8D0F1B09CA /* libPods.a */; };
+		F5FB8CDBDFEF58EC15C9E741 /* libPods-GY-SWT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C49910C2E364C56BFEB56A41 /* libPods-GY-SWT.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -674,9 +674,9 @@
 		1ED1AE331E51591400B8C8A5 /* sy11@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sy11@2x.png"; sourceTree = "<group>"; };
 		1ED1AE341E51591400B8C8A5 /* sy2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sy2@2x.png"; sourceTree = "<group>"; };
 		1ED1AE351E51591400B8C8A5 /* wd13@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wd13@2x.png"; sourceTree = "<group>"; };
-		B1026A1E28D1A3D7A64C236E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		B8BD8DB0E3258E7CDC768386 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		E3044D27BA2C8D8D0F1B09CA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		419A052D8A33F713BE001486 /* Pods-GY-SWT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GY-SWT.release.xcconfig"; path = "Pods/Target Support Files/Pods-GY-SWT/Pods-GY-SWT.release.xcconfig"; sourceTree = "<group>"; };
+		9DE580D6DB4E1C0B2569FE56 /* Pods-GY-SWT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GY-SWT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GY-SWT/Pods-GY-SWT.debug.xcconfig"; sourceTree = "<group>"; };
+		C49910C2E364C56BFEB56A41 /* libPods-GY-SWT.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GY-SWT.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -684,7 +684,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86AA09432BC9FF52F69EEF6A /* libPods.a in Frameworks */,
+				F5FB8CDBDFEF58EC15C9E741 /* libPods-GY-SWT.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +705,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		088233F806643738E229A702 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C49910C2E364C56BFEB56A41 /* libPods-GY-SWT.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1E08AC3F1E6402F900D71778 /* LQX */ = {
 			isa = PBXGroup;
 			children = (
@@ -731,8 +739,8 @@
 				1E7E1DF21E49695900184531 /* GY-SWTTests */,
 				1E7E1DFD1E49695900184531 /* GY-SWTUITests */,
 				1E7E1DD71E49695900184531 /* Products */,
-				93A90D750B08273B56C7B580 /* Pods */,
-				75E25DD5001B39AB5F90A516 /* Frameworks */,
+				F600ADCC7D48ADB08C9E3387 /* Pods */,
+				088233F806643738E229A702 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1728,19 +1736,11 @@
 			path = otherImage;
 			sourceTree = "<group>";
 		};
-		75E25DD5001B39AB5F90A516 /* Frameworks */ = {
+		F600ADCC7D48ADB08C9E3387 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E3044D27BA2C8D8D0F1B09CA /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		93A90D750B08273B56C7B580 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B1026A1E28D1A3D7A64C236E /* Pods.debug.xcconfig */,
-				B8BD8DB0E3258E7CDC768386 /* Pods.release.xcconfig */,
+				9DE580D6DB4E1C0B2569FE56 /* Pods-GY-SWT.debug.xcconfig */,
+				419A052D8A33F713BE001486 /* Pods-GY-SWT.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1752,12 +1752,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E7E1E031E49695900184531 /* Build configuration list for PBXNativeTarget "GY-SWT" */;
 			buildPhases = (
-				CD08545CD4338112326B2105 /* Check Pods Manifest.lock */,
+				7DB30431ADD70B4B5FC705A2 /* [CP] Check Pods Manifest.lock */,
 				1E7E1DD21E49695900184531 /* Sources */,
 				1E7E1DD31E49695900184531 /* Frameworks */,
 				1E7E1DD41E49695900184531 /* Resources */,
-				7BA179B96C3878120C20CFB5 /* Embed Pods Frameworks */,
-				86B93810CDEA383984C4E0AB /* Copy Pods Resources */,
+				D58C85746170BF75882169F4 /* [CP] Embed Pods Frameworks */,
+				91AE7DCB63FE00B1CB1A9464 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1962,49 +1962,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7BA179B96C3878120C20CFB5 /* Embed Pods Frameworks */ = {
+		7DB30431ADD70B4B5FC705A2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		86B93810CDEA383984C4E0AB /* Copy Pods Resources */ = {
+		91AE7DCB63FE00B1CB1A9464 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GY-SWT/Pods-GY-SWT-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CD08545CD4338112326B2105 /* Check Pods Manifest.lock */ = {
+		D58C85746170BF75882169F4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GY-SWT/Pods-GY-SWT-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2305,7 +2305,7 @@
 		};
 		1E7E1E041E49695900184531 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1026A1E28D1A3D7A64C236E /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 9DE580D6DB4E1C0B2569FE56 /* Pods-GY-SWT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JQ9MC7KJ4J;
@@ -2320,7 +2320,7 @@
 		};
 		1E7E1E051E49695900184531 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8BD8DB0E3258E7CDC768386 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 419A052D8A33F713BE001486 /* Pods-GY-SWT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JQ9MC7KJ4J;

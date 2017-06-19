@@ -98,25 +98,26 @@
     NSData *imageData = UIImageJPEGRepresentation(editedImage, 0.5);
     
     
-    NSLog(@"editedImage:%@",editedImage);
+    if (imageData) {
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        params[@"ajbs"] = self.ajbsStr;
+        params[@"mlid"] = @"3";
+        params[@"fydm"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"chooseCourt_dm"];
+        NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"login_ticket"];
+        [GYHttpTool uploadImage:wsla_savePhotoUrl andImageData:imageData ticket:ticket params:params success:^(id json) {
+            NSLog(@"uploadSuccess:%@",json);
+            GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
+            if ([loginModel.success isEqualToString:@"true"]) {
+                NSLog(@"success");
+                [self loadWslaAjxxDetailInfoWithMlid];
+            } else {
+                [MBProgressHUD showError:loginModel.msg];
+            }
+        } failure:^(NSError *error) {
+            
+        }];
+    }
     
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"ajbs"] = self.ajbsStr;
-    params[@"mlid"] = @"3";
-    params[@"fydm"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"chooseCourt_dm"];
-    NSString *ticket = [[NSUserDefaults standardUserDefaults]objectForKey:@"login_ticket"];
-    [GYHttpTool uploadImage:wsla_savePhotoUrl andImageData:imageData ticket:ticket params:params success:^(id json) {
-        NSLog(@"uploadSuccess:%@",json);
-        GYLoginModel *loginModel = [GYLoginModel mj_objectWithKeyValues:json[@"parameters"]];
-        if ([loginModel.success isEqualToString:@"true"]) {
-            NSLog(@"success");
-            [self loadWslaAjxxDetailInfoWithMlid];
-        } else {
-            [MBProgressHUD showError:loginModel.msg];
-        }
-    } failure:^(NSError *error) {
-        
-    }];
 }
 
 

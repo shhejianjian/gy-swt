@@ -17,7 +17,7 @@
 #import "MXConstant.h"
 
 
-@interface GYHttpTool ()<MBProgressHUDDelegate>
+@interface GYHttpTool ()<MBProgressHUDDelegate,NSURLSessionDelegate>
 
 @end
 
@@ -25,7 +25,7 @@
 + (void)get:(NSString *)url ticket:(NSString *)ticket params:(NSDictionary *)params success:(void(^)(id json))success failure:(void(^)(NSError *error)) failure
 {
 
-    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json",@"text/javascript",@"text/plain",@"application/xml",@"application/javascript", nil];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
@@ -33,9 +33,9 @@
     NSString *timeStr = [self getTimeNow];
     NSString *thirdFlowStr = [self get32bitString];
     
-    NSString *appid = @"1c7bd52c-1bfe-11e6-b6ba-3e1d05defe78";
-    NSString *uuid = @"2c7be2ce-1bfe-11e6-b6ba-3e1d05defe79";
-    NSString *md5key = @"834ebef38ca6";
+    NSString *appid = @"90c170c1-7435-423f-b163-305051d3961c";
+    NSString *uuid = @"f5734f66-25aa-493f-ac5f-8342aee53df4";
+    NSString *md5key = @"86f9d5ac2a2280b3";
     NSString *version = @"1.0";
     NSString *pastMD5Str = [NSString stringWithFormat:@"%@%@%@%@%@%@",uuid,url,thirdFlowStr,appid,randCodeStr,md5key];
     NSString *newMD5Str = [self md5HexDigest:pastMD5Str];
@@ -58,15 +58,16 @@
     newParams[@"params"] = paramsDic;
     NSString *urlStr = [NSString stringWithFormat:@"%@?params={%@}",BaseUrl,paramsDic];
     NSString *UrlString = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    [manager GET:UrlString parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    [manager GET:UrlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             success(responseObject);
         }
-    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failure) {
             failure(error);
         }
     }];
+    
 }
 //获取系统当前时间，精确到秒
 + (NSString *)getTimeNow{
@@ -125,9 +126,9 @@
     NSString *timeStr = [self getTimeNow];
     NSString *thirdFlowStr = [self get32bitString];
     
-    NSString *appid = @"1c7bd52c-1bfe-11e6-b6ba-3e1d05defe78";
-    NSString *uuid = @"2c7be2ce-1bfe-11e6-b6ba-3e1d05defe79";
-    NSString *md5key = @"834ebef38ca6";
+    NSString *appid = @"90c170c1-7435-423f-b163-305051d3961c";
+    NSString *uuid = @"f5734f66-25aa-493f-ac5f-8342aee53df4";
+    NSString *md5key = @"86f9d5ac2a2280b3";
     NSString *version = @"1.0";
     NSString *pastMD5Str = [NSString stringWithFormat:@"%@%@%@%@%@%@",uuid,url,thirdFlowStr,appid,randCodeStr,md5key];
     NSString *newMD5Str = [self md5HexDigest:pastMD5Str];
@@ -184,9 +185,9 @@
     NSString *timeStr = [self getTimeNow];
     NSString *thirdFlowStr = [self get32bitString];
     
-    NSString *appid = @"1c7bd52c-1bfe-11e6-b6ba-3e1d05defe78";
-    NSString *uuid = @"2c7be2ce-1bfe-11e6-b6ba-3e1d05defe79";
-    NSString *md5key = @"834ebef38ca6";
+    NSString *appid = @"90c170c1-7435-423f-b163-305051d3961c";
+    NSString *uuid = @"f5734f66-25aa-493f-ac5f-8342aee53df4";
+    NSString *md5key = @"86f9d5ac2a2280b3";
     NSString *version = @"1.0";
     NSString *pastMD5Str = [NSString stringWithFormat:@"%@%@%@%@%@%@",uuid,url,thirdFlowStr,appid,randCodeStr,md5key];
     NSString *newMD5Str = [self md5HexDigest:pastMD5Str];
@@ -229,22 +230,18 @@
 
 
 + (void)uploadImage:(NSString *)url andImageData:(NSData *)image ticket:(NSString *)ticket params:(NSDictionary *)params success:(void(^)(id json))success failure:(void(^)(NSError *error)) failure{
-    
-    
-    
-    
+
     NSString *randCodeStr = [self get8bitString];//随机字符串
     NSString *timeStr = [self getTimeNow];
     NSString *thirdFlowStr = [self get32bitString];
     
-    NSString *appid = @"1c7bd52c-1bfe-11e6-b6ba-3e1d05defe78";
-    NSString *uuid = @"2c7be2ce-1bfe-11e6-b6ba-3e1d05defe79";
-    NSString *md5key = @"834ebef38ca6";
+    NSString *appid = @"90c170c1-7435-423f-b163-305051d3961c";
+    NSString *uuid = @"f5734f66-25aa-493f-ac5f-8342aee53df4";
+    NSString *md5key = @"86f9d5ac2a2280b3";
     NSString *version = @"1.0";
     NSString *pastMD5Str = [NSString stringWithFormat:@"%@%@%@%@%@%@",uuid,url,thirdFlowStr,appid,randCodeStr,md5key];
     NSString *newMD5Str = [self md5HexDigest:pastMD5Str];
     
-    // 2.利用AFN管理者发送请求
     NSMutableDictionary *paramsDic = [NSMutableDictionary dictionary];
     paramsDic[@"thirdFlow"] = thirdFlowStr;
     paramsDic[@"busiCode"] = url;
@@ -265,47 +262,41 @@
     NSString *urlStr = [NSString stringWithFormat:@"%@",BaseUrl];
     
     NSString *fileName = [NSString stringWithFormat:@"%@.jpg",timeStr];
-    
     NSError *playerError = nil;
+
     AFHTTPRequestSerializer *serializer = [AFHTTPRequestSerializer serializer];
-    NSMutableURLRequest *request =
-    [serializer multipartFormRequestWithMethod:@"POST"//请求方法为post
-                                     URLString:urlStr//上传文件URL
-                                    parameters:newParams//上传的其他参数
-                     constructingBodyWithBlock:^(id<AFMultipartFormData> formData)//设置请求体
-     {
-         [formData appendPartWithFileData:image//音乐媒体文件的data对象
-                                     name:@"files"//与数据关联的参数名称，不能为nil
-                                 fileName:fileName//上传的文件名，不能为nil
-                                 mimeType:@"image/jpg"];
-     } error:&playerError];
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json",@"text/javascript",@"text/plain",@"image/jpg", nil];
-    AFHTTPRequestOperation *operation =
-    [manager HTTPRequestOperationWithRequest:request
-                                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                         if (success) {
-                                             success(responseObject);
-                                         }
-                                     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                         
-                                         if (failure) {
-                                             failure(error);
-                                         }
-                                     }];
-    [operation setUploadProgressBlock:^(NSUInteger __unused bytesWritten,
-                                        long long totalBytesWritten,//已上传的字节数
-                                        long long totalBytesExpectedToWrite)//总字节数
-     {
-         double f =  ((double)totalBytesWritten / totalBytesExpectedToWrite);
-         [SVProgressHUD showProgress:f status:@"上传中"];
-         if (f >= 1.000000) {
-             
-             [SVProgressHUD dismiss];
-             
-         }
-     }];
-    [operation start];
+    NSMutableURLRequest *request = [serializer multipartFormRequestWithMethod:@"POST"//请求方法为post
+                                         URLString:urlStr//上传文件URL
+                                        parameters:newParams//上传的其他参数
+                         constructingBodyWithBlock:^(id<AFMultipartFormData> formData)//设置请求体
+                                    {
+                                        [formData appendPartWithFileData:image//音乐媒体文件的data对象
+                                                                    name:@"files"//与数据关联的参数名称，不能为nil
+                                                                fileName:fileName//上传的文件名，不能为nil
+                                                                mimeType:@"image/jpg"];
+                                    } error:&playerError];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 8;
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain", @"multipart/form-data", @"application/json", @"text/html", @"image/jpg", @"image/png", @"application/octet-stream", @"text/json", nil];
+    NSURLSessionUploadTask * uploadtask = [manager uploadTaskWithRequest:request fromData:nil progress:^(NSProgress * _Nonnull uploadProgress) {
+
+    } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if (success) {
+            success(responseObject);
+        }
+        if (failure) {
+            failure(error);
+        }
+    }];
+    
+    [uploadtask resume];
+    
+}
+
+-(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend{
+    NSLog(@"progress:%f",totalBytesSent/(float)totalBytesExpectedToSend);
+    
 }
 
 

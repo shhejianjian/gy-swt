@@ -67,7 +67,7 @@ static NSString *ID=@"GYNoticePucCell";
 //    names = @[@"1",@"2",@"3"];
 //    self.view.backgroundColor=ContentBackGroundColor;
     
-    XFSegmentView *segView=[[XFSegmentView alloc]initWithFrame:Frame(0, 64, SCREEN_WIDTH, WH(40))];
+    XFSegmentView *segView=[[XFSegmentView alloc]initWithFrame:Frame(0, 64, SCREEN_WIDTH, 40)];
     [self.view addSubview:segView];
     segView.delegate = self;
     segView.titles = @[@"限制高消费",@"限制出境",@"失信人员"];

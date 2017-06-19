@@ -104,8 +104,11 @@ static NSString *ID=@"homeCell";
     
 }
 
+    
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"+++111:%f---%f",DBL_EPSILON,[[UIScreen mainScreen] bounds].size.width);
     
     if (IS_IPHONE_5 == 1) {
         self.lunboViewHeight = 185;
@@ -115,13 +118,20 @@ static NSString *ID=@"homeCell";
         self.lunboViewHeight = 210;
         self.labelTopConstraintHeight = 250;
         self.carouselViewHeight = 180;
-
     }else if (IS_IPHONE_6_PLUS == 1){
         self.lunboViewHeight = 249;
         self.labelTopConstraintHeight = 280;
         self.carouselViewHeight = 210;
-
+    } else if([[UIScreen mainScreen] bounds].size.width == 768) {
+        self.lunboViewHeight = 300;
+        self.labelTopConstraintHeight = 470;
+        self.carouselViewHeight = 400;
+    } else if([[UIScreen mainScreen] bounds].size.width == 1024) {
+        self.lunboViewHeight = 400;
+        self.labelTopConstraintHeight = 510;
+        self.carouselViewHeight = 440;
     }
+    
     
     [self observeWorknet];
     
@@ -481,7 +491,13 @@ static NSString *ID=@"homeCell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 
 {
-    
+    if([[UIScreen mainScreen] bounds].size.width == 768){
+        return 110;
+    }
+    if([[UIScreen mainScreen] bounds].size.width == 1024){
+        return 210;
+    }
+
     return 88;
     
 }
@@ -524,10 +540,14 @@ static NSString *ID=@"homeCell";
         [self loadButtonWithArray:self.courtNameArr];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
+        [self loadButtonWithArray:self.courtNameArr];
     }];
 }
 
 - (void)loadButtonWithArray:(NSArray *)arr{
+    if (arr.count == 0) {
+        arr = @[@"贵阳中院",@"南明区",@"云岩区",@"花溪区",@"乌当区",@"白云区",@"清镇市",@"开阳县",@"修文县",@"息烽县",@"观山湖区",@"贵阳"];
+    }
     CGFloat w = 0;//保存前一个button的宽以及前一个button距离屏幕边缘的距离
     CGFloat h = 40;//用来控制button距离父视图的高
     for (int i = 0; i < arr.count; i++) {
@@ -556,12 +576,17 @@ static NSString *ID=@"homeCell";
 }
 
 - (void)handleClick:(UIButton *)btn{
-    GYCourtListModel *courtListModel = self.courtListArr[btn.tag];
-    NSLog(@"%@",courtListModel.dm);
-    [[NSUserDefaults standardUserDefaults] setObject:courtListModel.dm forKey:@"chooseCourt_dm"];
-    [[NSUserDefaults standardUserDefaults] setObject:courtListModel.dmms forKey:@"chooseCourt_name"];
-    [self loadLunBoNewsInfo];
-    [self loadTop2NewsInfo];
+    if (self.courtListArr.count > 0) {
+        GYCourtListModel *courtListModel = self.courtListArr[btn.tag];
+        NSLog(@"%@",courtListModel.dm);
+        [[NSUserDefaults standardUserDefaults] setObject:courtListModel.dm forKey:@"chooseCourt_dm"];
+        [[NSUserDefaults standardUserDefaults] setObject:courtListModel.dmms forKey:@"chooseCourt_name"];
+        [self loadLunBoNewsInfo];
+        [self loadTop2NewsInfo];
+    } else {
+        [[NSUserDefaults standardUserDefaults] setObject:@"O10" forKey:@"chooseCourt_dm"];
+    }
+   
     self.courtView.hidden = YES;
     self.homeDetailView.hidden = NO;
     self.mxNavigationBar.hidden = NO;

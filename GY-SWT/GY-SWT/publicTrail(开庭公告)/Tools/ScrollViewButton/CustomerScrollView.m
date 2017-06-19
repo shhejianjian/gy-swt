@@ -19,6 +19,8 @@
 #define HEIGHT_RATE (667/667)
 
 #define kScreenIphone5    (([[UIScreen mainScreen] bounds].size.width)>320)
+#define ipad79cun    (([[UIScreen mainScreen] bounds].size.width)==768)
+#define ipad129cun    (([[UIScreen mainScreen] bounds].size.width)==1024)
 
 #define BGColor [UIColor colorWithRed:1 green:1 blue:1 alpha:0.4]
 #define NumberOfSinglePage 8// 一个页面可容纳的最多按钮数
@@ -41,7 +43,13 @@
 {
     if (self = [super initWithFrame:frame]) {
         // 属性初始值
-        self.viewSize = CGSizeMake(BtnWH, BtnWH);
+        if (ipad79cun) {
+            self.viewSize = CGSizeMake(100, 100);
+        } else if (ipad129cun){
+            self.viewSize = CGSizeMake(120, 120);
+        } else {
+            self.viewSize = CGSizeMake(BtnWH, BtnWH);
+        }
         self.numberOfSinglePage = NumberOfSinglePage;
         self.viewGap = leftRightGap;
         self.viewMargin = ViewMargin;
@@ -134,7 +142,14 @@
         [btn setImage:[UIImage imageNamed:btnDic[@"image"]] forState:UIControlStateNormal];
         //[btn setTitle:btnDic[@"title"] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        btn.titleLabel.font = [UIFont systemFontOfSize:13];
+        if (ipad79cun) {
+            btn.titleLabel.font = [UIFont systemFontOfSize:17];
+        } else if (ipad129cun) {
+            btn.titleLabel.font = [UIFont systemFontOfSize:17];
+        } else {
+            btn.titleLabel.font = [UIFont systemFontOfSize:13];
+        }
+        
         // 设置图片frame
         
         btn.x = col * (btnW + leftRightGap) + leftRightMargin + number * self.width;
@@ -154,6 +169,13 @@
         if (SCREEN_WIDTH ==414) {
             [btn setTitleEdgeInsets:UIEdgeInsetsMake(btn.currentImage.size.height+30 ,-btn.imageView.frame.size.width-10, 0,0)];
         }
+        if (SCREEN_WIDTH == 768) {
+            [btn setTitleEdgeInsets:UIEdgeInsetsMake(btn.currentImage.size.height+35 ,-btn.imageView.frame.size.width-4, 0,0)];
+        }
+        if (SCREEN_WIDTH == 1024) {
+            [btn setTitleEdgeInsets:UIEdgeInsetsMake(btn.currentImage.size.height+40 ,-btn.imageView.frame.size.width+5, 0,0)];
+        }
+
         //文字距离上边框的距离增加imageView的高度，距离左边框减少imageView的宽度，距离下边框和右边框距离不变
         [btn setImageEdgeInsets:UIEdgeInsetsMake(0, (btn.width - btn.imageView.width)/2 ,0 ,0)];//图片距离右边框距离减少图片的宽度，其它不变
         

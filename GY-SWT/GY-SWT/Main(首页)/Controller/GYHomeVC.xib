@@ -27,6 +27,29 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJL-uO-ULZ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ra-MQ-XGO">
+                            <rect key="frame" x="170" y="622" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="BfV-Lj-e8W"/>
+                                <constraint firstAttribute="height" constant="35" id="kPs-bD-0ew"/>
+                            </constraints>
+                            <state key="normal" image="选法院_关闭">
+                                <color key="titleColor" red="0.19215686269999999" green="0.63137254899999995" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="courtViewBack:" destination="-1" eventType="touchUpInside" id="yjd-6M-7cc"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="0Ra-MQ-XGO" firstAttribute="centerX" secondItem="aJL-uO-ULZ" secondAttribute="centerX" id="c8V-B5-Ew1"/>
+                        <constraint firstAttribute="bottom" secondItem="0Ra-MQ-XGO" secondAttribute="bottom" constant="10" id="wEj-HR-5en"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAB-LO-g0u">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
@@ -90,29 +113,6 @@
                         <constraint firstItem="eTF-HN-tJO" firstAttribute="centerY" secondItem="0NT-oM-aAh" secondAttribute="centerY" id="upb-Qx-giG"/>
                         <constraint firstItem="jr7-dh-32o" firstAttribute="leading" secondItem="vAB-LO-g0u" secondAttribute="leading" id="wmq-CF-ZBa"/>
                         <constraint firstItem="jr7-dh-32o" firstAttribute="top" secondItem="vAB-LO-g0u" secondAttribute="top" id="yY8-rU-OOF"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJL-uO-ULZ">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ra-MQ-XGO">
-                            <rect key="frame" x="170" y="622" width="35" height="35"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="35" id="BfV-Lj-e8W"/>
-                                <constraint firstAttribute="height" constant="35" id="kPs-bD-0ew"/>
-                            </constraints>
-                            <state key="normal" image="选法院_关闭">
-                                <color key="titleColor" red="0.19215686269999999" green="0.63137254899999995" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="courtViewBack:" destination="-1" eventType="touchUpInside" id="yjd-6M-7cc"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="0Ra-MQ-XGO" firstAttribute="centerX" secondItem="aJL-uO-ULZ" secondAttribute="centerX" id="c8V-B5-Ew1"/>
-                        <constraint firstAttribute="bottom" secondItem="0Ra-MQ-XGO" secondAttribute="bottom" constant="10" id="wEj-HR-5en"/>
                     </constraints>
                 </view>
             </subviews>
